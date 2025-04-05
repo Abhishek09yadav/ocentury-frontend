@@ -21,7 +21,7 @@ class MyDocument extends Document {
             property="og:title"
             content={
               setting?.meta_title ||
-              "Jaipur Chakki - Grocery & Organic Food Store "
+              "punekar cotton - Grocery & Organic Food Store "
             }
           />
           <meta property="og:type" content="eCommerce Website" />
@@ -37,14 +37,11 @@ class MyDocument extends Document {
           />
           <meta
             property="og:url"
-            content={setting?.meta_url || "https://www.jaipurchakki.com"}
+            content={setting?.meta_url || "https://www.punekarcotton.com"}
           />
           <meta
             property="og:image"
-            content={
-              setting?.meta_img ||
-              "/HomePage.png"
-            }
+            content={setting?.meta_img || "/HomePage.png"}
           />
         </Head>
         <body>

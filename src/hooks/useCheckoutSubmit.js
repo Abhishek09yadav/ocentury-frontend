@@ -133,7 +133,7 @@ const useCheckoutSubmit = (storeSetting) => {
         city: data.city,
         // zipCode: data.zipCode,
         zipCode: selectedValue.zipCode,
-        location: selectedLocation ?? '',
+        location: selectedLocation ?? "",
       };
 
       let orderInfo = {
@@ -221,9 +221,7 @@ const useCheckoutSubmit = (storeSetting) => {
 
       // Proceed with order success
       router.push(`/order/${orderResponse?._id}`);
-      notifySuccess(
-        "Your Order Confirmed! "
-      );
+      notifySuccess("Your Order Confirmed! ");
       Cookies.remove("couponInfo");
       emptyCart();
       setIsCheckoutSubmit(false);
@@ -296,7 +294,7 @@ const useCheckoutSubmit = (storeSetting) => {
         key: storeSetting?.razorpay_id,
         amount,
         currency,
-        name: "Jaipur Chakki Store",
+        name: "punekar cotton Store",
         description: "This is the total cost of your purchase",
         order_id: id,
         handler: async (response) => {

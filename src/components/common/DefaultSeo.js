@@ -11,15 +11,15 @@ const DefaultSeo = () => {
     <NextSeo
       title={
         globalSetting?.meta_title ||
-        "Jaipur Chakki - Grocery & Organic Food Store "
+        "punekar cotton - Grocery & Organic Food Store "
       }
       openGraph={{
         type: "website",
         locale: "en_IE",
-        url: globalSetting?.meta_url || "https://www.jaipurchakki.com/",
+        url: globalSetting?.meta_url || "https://www.punekarcotton.com/",
         site_name:
           globalSetting?.meta_title ||
-          "Jaipur Chakki - Grocery & Organic Food Store ",
+          "punekar cotton - Grocery & Organic Food Store ",
       }}
       twitter={{
         handle: "@handle",

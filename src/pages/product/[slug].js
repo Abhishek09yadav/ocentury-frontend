@@ -230,7 +230,7 @@ const ProductScreen = ({ product, attributes, relatedProducts }) => {
     .replace(/[^A-Z0-9]+/gi, "-");
 
   // console.log("discount", discount);
-console.log("slug ->", router);
+  console.log("slug ->", router);
 
   return (
     <>
@@ -459,7 +459,7 @@ console.log("slug ->", router);
                             <ul className="flex mt-4">
                               <li className="flex items-center text-center border border-gray-100 rounded-full hover:bg-emerald-500  mr-2 transition ease-in-out duration-500">
                                 <FacebookShareButton
-                                  url={`https://www.jaipurchakki.com/product/${router.query.slug}`}
+                                  url={`https://www.punekarcotton.com/product/${router.query.slug}`}
                                   quote=""
                                 >
                                   <FacebookIcon size={32} round />
@@ -467,7 +467,7 @@ console.log("slug ->", router);
                               </li>
                               {/* <li className="flex items-center text-center border border-gray-100 rounded-full hover:bg-emerald-500  mr-2 transition ease-in-out duration-500">
                                 <TwitterShareButton
-                                  url={`https://www.jaipurchakki.com/product/${router.query.slug}`}
+                                  url={`https://www.punekarcotton.com/product/${router.query.slug}`}
                                   quote=""
                                 >
                                   <XIcon size={32} round />
@@ -475,7 +475,7 @@ console.log("slug ->", router);
                               </li> */}
                               <li className="flex items-center text-center border border-gray-100 rounded-full hover:bg-emerald-500  mr-2 transition ease-in-out duration-500">
                                 <RedditShareButton
-                                  url={`https://www.jaipurchakki.com/product/${router.query.slug}`}
+                                  url={`https://www.punekarcotton.com/product/${router.query.slug}`}
                                   quote=""
                                 >
                                   <RedditIcon size={32} round />
@@ -483,7 +483,7 @@ console.log("slug ->", router);
                               </li>
                               <li className="flex items-center text-center border border-gray-100 rounded-full hover:bg-emerald-500  mr-2 transition ease-in-out duration-500">
                                 <WhatsappShareButton
-                                  url={`https://www.jaipurchakki.com/product/${router.query.slug}`}
+                                  url={`https://www.punekarcotton.com/product/${router.query.slug}`}
                                   quote=""
                                 >
                                   <WhatsappIcon size={32} round />
@@ -491,7 +491,7 @@ console.log("slug ->", router);
                               </li>
                               <li className="flex items-center text-center border border-gray-100 rounded-full hover:bg-emerald-500  mr-2 transition ease-in-out duration-500">
                                 <LinkedinShareButton
-                                  url={`https://www.jaipurchakki.com/product/${router.query.slug}`}
+                                  url={`https://www.punekarcotton.com/product/${router.query.slug}`}
                                   quote=""
                                 >
                                   <LinkedinIcon size={32} round />
