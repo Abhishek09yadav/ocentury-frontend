@@ -72,7 +72,7 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
                           data={storeCustomizationSetting?.home?.feature_title}
                         />
                       </h2>
-                      <p className="text-base font-sans text-gray-600 leading-6">
+                      {/* <p className="text-base font-sans text-gray-600 leading-6">
                         <CMSkeleton
                           count={4}
                           height={10}
@@ -82,7 +82,7 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
                             storeCustomizationSetting?.home?.feature_description
                           }
                         />
-                      </p>
+                      </p> */}
                     </div>
                   </div>
 
@@ -104,7 +104,7 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
                         data={storeCustomizationSetting?.home?.popular_title}
                       />
                     </h2>
-                    <p className="text-base font-sans text-gray-600 leading-6">
+                    {/* <p className="text-base font-sans text-gray-600 leading-6">
                       <CMSkeleton
                         count={5}
                         height={10}
@@ -114,7 +114,7 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
                           storeCustomizationSetting?.home?.popular_description
                         }
                       />
-                    </p>
+                    </p> */}
                   </div>
                 </div>
                 <div className="flex">
@@ -149,7 +149,7 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
             )}
 
             {/* promotional banner card */}
-            {storeCustomizationSetting?.home?.delivery_status && (
+            {/* {storeCustomizationSetting?.home?.delivery_status && (
               <div className="block mx-auto max-w-screen-2xl">
                 <div className="mx-auto max-w-screen-2xl px-4 sm:px-10">
                   <div className="lg:p-16 p-6 bg-customPink shadow-sm border rounded-lg">
@@ -157,7 +157,7 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
                   </div>
                 </div>
               </div>
-            )}
+            )} */}
 
             {/* discounted products */}
             {storeCustomizationSetting?.home?.discount_product_status &&

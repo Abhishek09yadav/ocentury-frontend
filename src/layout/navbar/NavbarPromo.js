@@ -147,7 +147,7 @@ const userInfo = getUserSession();
                     )}
 
                     <Popover className="relative font-serif">
-                      <Popover.Button className="group inline-flex items-center py-2 text-sm font-medium hover:text-customPink focus:outline-none">
+                      {/* <Popover.Button className="group inline-flex items-center py-2 text-sm font-medium hover:text-customPink focus:outline-none">
                         <span>
                           {showingTranslateValue(
                             storeCustomizationSetting?.navbar?.pages
@@ -157,7 +157,7 @@ const userInfo = getUserSession();
                           className="ml-1 h-3 w-3 group-hover:text-customPink"
                           aria-hidden="true"
                         />
-                      </Popover.Button>
+                      </Popover.Button> */}
                       <Transition
                         as={Fragment}
                         enter="transition ease-out duration-200"
@@ -338,7 +338,7 @@ const userInfo = getUserSession();
           </div>
           <div className="flex">
             {/* flag */}
-            <div className="dropdown">
+            {/* <div className="dropdown">
               <div
                 className={`flot-l flag ${currentLang?.flag?.toLowerCase()}`}
               ></div>
@@ -365,7 +365,7 @@ const userInfo = getUserSession();
                   );
                 })}
               </div>
-            </div>
+            </div> */}
 
             {storeCustomizationSetting?.navbar?.privacy_policy_status && (
               <Link
@@ -401,7 +401,7 @@ const userInfo = getUserSession();
 
             {
               <Popover className="relative font-serif">
-                <Popover.Button className="group inline-flex items-center py-2 hover:text-customPink focus:outline-none">
+                {/* <Popover.Button className="group inline-flex items-center py-2 hover:text-customPink focus:outline-none">
                   <span className="font-serif text-sm font-medium">
                     Join Us
                   </span>
@@ -410,7 +410,7 @@ const userInfo = getUserSession();
                     className="ml-1 h-3 w-3 group-hover:text-customPink"
                     aria-hidden="true"
                   />
-                </Popover.Button>
+                </Popover.Button> */}
 
                 <Transition
                   as={Fragment}
