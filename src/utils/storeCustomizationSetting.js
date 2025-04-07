@@ -142,7 +142,7 @@ export const storeCustomization = {
     },
     latest_discount_product_limit: 18,
     daily_need_title: {
-      en: "Get Your Daily Needs From Our punekar cotton Store",
+      en: "Get Your Daily Needs From Our ocentury Store",
       de: "Holen Sie sich Ihren täglichen Bedarf in Ihrem CloudCleaver-Shop",
     },
     daily_need_description: {
@@ -870,7 +870,7 @@ export const storeCustomization = {
     meta_img:
       "https://res.cloudinary.com/ahossain/image/upload/v1636729752/facebook-page_j7alju.png",
     meta_keywords: "e-commerce, online store",
-    meta_title: "punekar cotton - Grocery & Organic Food Store ",
-    meta_url: "https://punekarcotton.com/",
+    meta_title: "ocentury  ",
+    meta_url: "https://ocentury.in/",
   },
 };

@@ -10,16 +10,15 @@ const DefaultSeo = () => {
   return (
     <NextSeo
       title={
-        globalSetting?.meta_title ||
-        "punekar cotton - Grocery & Organic Food Store "
+        globalSetting?.meta_title || "ocentury - Grocery & Organic Food Store "
       }
       openGraph={{
         type: "website",
         locale: "en_IE",
-        url: globalSetting?.meta_url || "https://www.punekarcotton.com/",
+        url: globalSetting?.meta_url || "https://www.ocentury.in/",
         site_name:
           globalSetting?.meta_title ||
-          "punekar cotton - Grocery & Organic Food Store ",
+          "ocentury - Grocery & Organic Food Store ",
       }}
       twitter={{
         handle: "@handle",

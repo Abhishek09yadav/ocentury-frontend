@@ -20,8 +20,7 @@ class MyDocument extends Document {
           <meta
             property="og:title"
             content={
-              setting?.meta_title ||
-              "punekar cotton - Grocery & Organic Food Store "
+              setting?.meta_title || "ocentury - Grocery & Organic Food Store "
             }
           />
           <meta property="og:type" content="eCommerce Website" />
@@ -37,7 +36,7 @@ class MyDocument extends Document {
           />
           <meta
             property="og:url"
-            content={setting?.meta_url || "https://www.punekarcotton.com"}
+            content={setting?.meta_url || "https://www.ocentury.in"}
           />
           <meta
             property="og:image"
