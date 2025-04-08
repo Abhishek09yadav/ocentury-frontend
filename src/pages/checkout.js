@@ -37,11 +37,11 @@ const Checkout = () => {
   const { t } = useTranslation();
   const { storeCustomizationSetting } = useGetSetting();
   const { showingTranslateValue } = useUtilsFunction();
-  const [zipCodes, setZipCodes] = useState([]);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  // const [zipCodes, setZipCodes] = useState([]);
+  // const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleOpenMap = () => setIsModalOpen(true);
-  const handleCloseMap = () => setIsModalOpen(false);
+  // const handleOpenMap = () => setIsModalOpen(true);
+  // const handleCloseMap = () => setIsModalOpen(false);
 
   const { data: storeSetting } = useQuery({
     queryKey: ["storeSetting"],
@@ -86,30 +86,30 @@ const Checkout = () => {
     }));
   };
 
-  const handleLocationSelect = (location) => {
-    setSelectedLocation(
-      `https://www.google.com/maps?q=${location.lat},${location.lng}`
-    );
+  // const handleLocationSelect = (location) => {
+  //   setSelectedLocation(
+  //     `https://www.google.com/maps?q=${location.lat},${location.lng}`
+  //   );
 
-    console.log(
-      "Selected location:",
-      `https://www.google.com/maps?q=${location.lat},${location.lng}`
-    );
-  };
+  //   console.log(
+  //     "Selected location:",
+  //     `https://www.google.com/maps?q=${location.lat},${location.lng}`
+  //   );
+  // };
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const result = await requests.get("/tele/get/pincodes");
-        console.log("pincodes ", result.message);
-        setZipCodes(result.message);
-      } catch (error) {
-        console.error("Error fetching pincodes:", error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const result = await requests.get("/tele/get/pincodes");
+  //       console.log("pincodes ", result.message);
+  //       setZipCodes(result.message);
+  //     } catch (error) {
+  //       console.error("Error fetching pincodes:", error);
+  //     }
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   return (
     <>
@@ -244,7 +244,7 @@ const Checkout = () => {
                       </div>
 
                       <div className="col-span-6 sm:col-span-3 lg:col-span-2">
-                        {/* <InputArea
+                        <InputArea
                           register={register}
                           label={showingTranslateValue(
                             storeCustomizationSetting?.checkout?.zip_code
@@ -252,8 +252,8 @@ const Checkout = () => {
                           name="zipCode"
                           type="text"
                           placeholder="2345"
-                        /> */}
-                        <SelectOption
+                        />
+                        {/* <SelectOption
                           name="zipCode"
                           label="Zip Code"
                           options={zipCodes?.map((e) => e)}
@@ -262,10 +262,10 @@ const Checkout = () => {
                           value={selectedValue?.zipCode}
                           // setValue={setValue}
                           onChange={handleInputChange}
-                        />
+                        /> */} 
                         <Error errorName={errors.zipCode} />
                       </div>
-                      <div className="col-span-6 sm:col-span-3 lg:col-span-2">
+                      {/* <div className="col-span-6 sm:col-span-3 lg:col-span-2">
                         <button
                           type="button"
                           className="py-2.5 px-6 text-sm bg-customPink text-white rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-customPinkDark"
@@ -273,14 +273,14 @@ const Checkout = () => {
                         >
                           Add location
                         </button>
-                      </div>
+                      </div> */}
 
                       {/* Modal with location selection */}
-                      <MapModal
+                      {/* <MapModal
                         isOpen={isModalOpen}
                         onClose={handleCloseMap}
                         onLocationSelect={handleLocationSelect}
-                      />
+                      /> */}
                     </div>
 
                     <Label

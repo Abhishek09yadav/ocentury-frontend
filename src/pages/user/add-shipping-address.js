@@ -19,7 +19,7 @@ const AddShippingAddress = () => {
     errors,
     // cities,
     // areas,
-    zipCodes,
+    // zipCodes,
    
     handleSubmit,
     selectedValue,
@@ -155,15 +155,15 @@ const AddShippingAddress = () => {
                         <Error errorName={errors.area} />
                       </div>
                       <div className="col-span-6 sm:col-span-3">
-                        {/* <InputArea
+                        <InputArea
                           register={register}
                           label="Zip Code"
                           name="zipCode"
                           type="text"
                           placeholder="Zip Code"
                           required={false}
-                        /> */}
-                        <SelectOption
+                        />
+                        {/* <SelectOption
                           name="zipCode"
                           label="Zip Code"
                           options={zipCodes?.map((zipCode) => zipCode)}
@@ -172,7 +172,7 @@ const AddShippingAddress = () => {
                           //   setValue={setValue}
                           onChange={handleInputChange}
                           value={selectedValue?.zipCode}
-                        />
+                        /> */}
                         <Error errorName={errors.zipCode} />
                       </div>
                     </div>

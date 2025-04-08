@@ -14,10 +14,10 @@ const useShippingAddressSubmit = (id) => {
   const router = useRouter();
   // const [cities, setCities] = useState([]);
   // const [areas, setAreas] = useState([]);
-  const [zipCodes, setZipCodes] = useState([]);
+  // const [zipCodes, setZipCodes] = useState([]);
   const [selectedValue, setSelectedValue] = useState({
     country: "",
-    zipCode: "",
+    // zipCode: "",
     // city: "",
     // area: "",
   });
@@ -27,19 +27,19 @@ const useShippingAddressSubmit = (id) => {
 
   // const { handlerTextTranslateHandler } = useTranslationValue();
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const result = await requests.get("/tele/get/pincodes");
-        console.log("result", result.message);
-        setZipCodes(result.message);
-      } catch (error) {
-        console.error("Error fetching pincodes:", error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const result = await requests.get("/tele/get/pincodes");
+  //       console.log("result", result.message);
+  //       setZipCodes(result.message);
+  //     } catch (error) {
+  //       console.error("Error fetching pincodes:", error);
+  //     }
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   const {
     register,
@@ -52,12 +52,12 @@ const useShippingAddressSubmit = (id) => {
 
   const onSubmit = async (data) => {
     if (
-      !selectedValue?.country ||
+      !selectedValue?.country 
       //  !selectedValue?.city ||
       //  !selectedValue?.area
-      !selectedValue?.zipCode
+      // !selectedValue?.zipCode
     ) {
-      return notifyError("Country & zip Code is required!");
+      return notifyError("Country is required!");
     }
     setIsSubmitting(true);
     try {
@@ -66,7 +66,7 @@ const useShippingAddressSubmit = (id) => {
         shippingAddressData: {
           ...data,
           country: selectedValue.country,
-          zipCode: selectedValue.zipCode,
+          // zipCode: selectedValue.zipCode,
           // city: selectedValue.city,
           // area: selectedValue.area,
         },
@@ -130,7 +130,7 @@ const useShippingAddressSubmit = (id) => {
       setValue("zipCode", data.zipCode);
       setSelectedValue({
         country: data.country,
-        zipCode: data.zipCode,
+        // zipCode: data.zipCode,
         // city: data.city,
         // area: data.area,
       });
@@ -152,7 +152,7 @@ const useShippingAddressSubmit = (id) => {
     // cities,
     // areas,
  
-    zipCodes,
+    // zipCodes,
     setValue,
     handleSubmit,
     selectedValue,
