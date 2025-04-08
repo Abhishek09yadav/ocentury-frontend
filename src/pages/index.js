@@ -179,7 +179,7 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
                           }
                         />
                       </h2>
-                      <p className="text-base font-sans text-gray-600 leading-6">
+                      {/* <p className="text-base font-sans text-gray-600 leading-6">
                         <CMSkeleton
                           count={5}
                           height={20}
@@ -189,7 +189,7 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
                               ?.latest_discount_description
                           }
                         />
-                      </p>
+                      </p> */}
                     </div>
                   </div>
                   <div className="flex">

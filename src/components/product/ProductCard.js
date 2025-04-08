@@ -208,7 +208,7 @@ const ProductCard = ({ product, attributes }) => {
             <div className="tooltip-container flex items-center justify-center gap-1">
               <div className="w-12 h-12 flex items-center justify-center shadow-gray-200 rounded-full hover:bg-green-500 hover:text-gray-50">
                 <WhatsappShareButton
-                  url={`https://www.ocentury.in/product/${product.slug}`}
+                  url={`${process.env.NEXT_PUBLIC_STORE_DOMAIN}/product/${product.slug}`}
                   quote=""
                 >
                   <WhatsappIcon size={32} round />
@@ -216,7 +216,7 @@ const ProductCard = ({ product, attributes }) => {
               </div>
               {/* <div className="w-12 h-12 flex items-center justify-center bg-gray-50 shadow-md shadow-gray-200 rounded-full hover:bg-sky-500 hover:text-gray-50">
                 <FacebookShareButton
-                  url={`https://www.ocentury.in/product/${product.slug}`}
+                   url={`${process.env.NEXT_PUBLIC_STORE_DOMAIN}/product/${product.slug}`}
                   quote=""
                 >
                   <FacebookIcon size={32} round />
@@ -225,7 +225,7 @@ const ProductCard = ({ product, attributes }) => {
 
               {/* <div className="w-12 h-12 flex items-center justify-center  bg-gray-50 rounded-full shadow-md shadow-gray-200 hover:bg-gray-700 hover:text-gray-50">
                 <TwitterShareButton
-                  url={`https://www.ocentury.in/product/${product.slug}`}
+                   url={`${process.env.NEXT_PUBLIC_STORE_DOMAIN}/product/${product.slug}`}
                   quote=""
                 >
                   <XIcon size={32} round />
