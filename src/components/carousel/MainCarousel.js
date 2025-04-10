@@ -127,20 +127,18 @@ const MainCarousel = () => {
         className="mySwiper"
       >
         {sliderData?.map((item, i) => (
-          <SwiperSlide
-            className="h-full relative rounded-lg overflow-hidden"
-            key={i + 1}
-          >
-            <div className="text-sm text-gray-600 hover:text-emerald-dark">
+          <SwiperSlide className="w-full h-full relative overflow-hidden" key={i + 1}>
+
+            <div className="relative h-[55vh] sm:h-[70vh] md:h-[90vh]">
               <Image
-                width={950}
-                height={400}
                 src={item.image || "/slider/slider-1.jpg"}
                 alt={item.title}
+                fill
                 className="object-cover"
                 priority
               />
             </div>
+
             <div className="absolute top-0 left-0 z-10 p-r-16 flex-col flex w-full h-full place-items-start justify-center">
               <div className="pl-4 pr-12 sm:pl-10 sm:pr-16 w-10/12 lg:w-8/12 xl:w-7/12">
                 <h1 className="mb-2 font-serif text-xl sm:text-lg md:text-2xl line-clamp-1 md:line-clamp-none  lg:line-clamp-none  lg:text-3xl font-bold text-gray-800">
