@@ -86,7 +86,7 @@ const ProductCard = ({ product, attributes }) => {
         />
       )}
 
-      <div className="group box-border overflow-hidden flex rounded-md shadow-sm pe-0 flex-col items-center bg-white relative">
+      <div className="md:w-[44%] lg:w-[22%] w-full group box-border overflow-hidden flex rounded-md shadow-sm pe-0 flex-col items-center bg-white relative hover:shadow-2xl">
         <div className="w-full flex justify-between">
           <Stock product={product} stock={product.stock} card />
           <Discount product={product} />
@@ -100,9 +100,9 @@ const ProductCard = ({ product, attributes }) => {
             // );
             router.push(`/product/${product.slug}`);
           }}
-          className="relative flex justify-center cursor-pointer pt-2 w-full h-44"
+          className="relative flex justify-center cursor-pointer pt-2 w-full h-80"
         >
-          <div className="relative w-full h-full p-2">
+          <div className="relative w-full h-full">
             {product.image[0] ? (
               <ImageWithFallback src={product.image[0]} alt="product" />
             ) : (
@@ -120,17 +120,17 @@ const ProductCard = ({ product, attributes }) => {
           </div>
         </div>
         <div className="w-full px-3 lg:px-4 pb-4 overflow-hidden">
-          <div className="relative mb-1">
+          <div className="relative mb-1 mt-4">
             <span className="text-gray-400 font-medium text-xs d-block mb-1">
               {product.unit}
             </span>
             <h2 className="text-heading truncate mb-0 block text-sm font-medium text-gray-600">
-              <span className="line-clamp-2">
+              <span className="line-clamp-2 font-bold">
                 {showingTranslateValue(product?.title)}
               </span>
             </h2>
           </div>
-
+          {/* //^ Price section */}
           <div className="flex justify-between items-center text-heading text-sm sm:text-base space-s-2 md:text-base lg:text-xl">
             <Price
               card
@@ -197,9 +197,7 @@ const ProductCard = ({ product, attributes }) => {
               </button>
             )}
           </div>
-
           {/* share button */}
-
           <div
             className={`absolute transition-transform ease-in-out shadow-lg shadow-gray-400/35 bg-gray-100 p-1 rounded-3xl ${
               isToolTipVisible ? "flex -translate-y-20" : "hidden"

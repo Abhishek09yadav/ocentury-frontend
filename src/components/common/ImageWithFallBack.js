@@ -24,10 +24,10 @@ const ImageWithFallback = ({
       {...props}
       fill
       style={{
-        objectFit: "contain",
+        objectFit: "cover",
       }}
       sizes="100%"
-      className="object-contain transition duration-150 ease-linear transform group-hover:scale-105 p-2"
+      className="object-cover transition duration-150 ease-linear transform group-hover:scale-105"
     />
   );
 };

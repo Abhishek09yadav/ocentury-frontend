@@ -127,7 +127,8 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
                         loading={loading}
                       />
                     ) : (
-                      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-5 2xl:grid-cols-6 gap-2 md:gap-3 lg:gap-3">
+                      // <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-5 2xl:grid-cols-6 gap-2 md:gap-3 lg:gap-3">
+                      <div className="flex md:flex-row flex-wrap gap-10 justify-center flex-col">
                         {popularProducts
                           ?.slice(
                             0,
@@ -192,7 +193,7 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
                       </p> */}
                     </div>
                   </div>
-                  <div className="flex">
+                  <div className="flex flex-row flex-wrap gap-5">
                     <div className="w-full">
                       {loading ? (
                         <CMSkeleton
@@ -202,7 +203,8 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
                           loading={loading}
                         />
                       ) : (
-                        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-5 2xl:grid-cols-6 gap-2 md:gap-3 lg:gap-3">
+                        // <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-5 2xl:grid-cols-6 gap-2 md:gap-3 lg:gap-3">
+                        <div className="flex md:flex-row flex-wrap gap-10 justify-center flex-col">
                           {discountProducts
                             ?.slice(
                               0,
