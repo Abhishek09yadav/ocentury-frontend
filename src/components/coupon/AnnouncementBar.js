@@ -59,7 +59,7 @@ const announcements =
     setCopied(true);
   };
 
-  console.log("data in announcementbar", data);
+  // console.log("data in announcementbar", data);
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) =>
