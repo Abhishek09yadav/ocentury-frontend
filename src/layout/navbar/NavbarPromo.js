@@ -147,17 +147,6 @@ const userInfo = getUserSession();
                     )}
 
                     <Popover className="relative font-serif">
-                      {/* <Popover.Button className="group inline-flex items-center py-2 text-sm font-medium hover:text-customPink focus:outline-none">
-                        <span>
-                          {showingTranslateValue(
-                            storeCustomizationSetting?.navbar?.pages
-                          )}
-                        </span>
-                        <ChevronDownIcon
-                          className="ml-1 h-3 w-3 group-hover:text-customPink"
-                          aria-hidden="true"
-                        />
-                      </Popover.Button> */}
                       <Transition
                         as={Fragment}
                         enter="transition ease-out duration-200"
@@ -315,22 +304,6 @@ const userInfo = getUserSession();
                         </Popover.Panel>
                       </Transition>
                     </Popover>
-
-                    {storeCustomizationSetting?.navbar?.offers_menu_status && (
-                      <Link
-                        href="/offer"
-                        onClick={() => setIsLoading(!isLoading)}
-                        className="relative inline-flex items-center  bg-red-100 font-serif ml-4 py-0 px-2 rounded text-sm font-medium text-red-500 hover:text-customPink"
-                      >
-                        {showingTranslateValue(
-                          storeCustomizationSetting?.navbar?.offers
-                        )}
-                        <div className="absolute flex w-2 h-2 left-auto -right-1 -top-1">
-                          <span className="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-red-400 opacity-75"></span>
-                          <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
-                        </div>
-                      </Link>
-                    )}
                   </Popover.Group>
                 </div>
               </div>

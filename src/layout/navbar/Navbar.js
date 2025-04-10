@@ -1,13 +1,13 @@
-import { useContext, useState } from "react";
+import { useContext, useState, Fragment } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import { useCart } from "react-use-cart";
 import { IoSearchOutline } from "react-icons/io5";
-
 import { FaShoppingCart, FaUser, FaBell } from "react-icons/fa";
-
+import { Popover, Transition } from "@headlessui/react";
+import { ChevronDownIcon } from "@heroicons/react/outline";
 import useTranslation from "next-translate/useTranslation";
 
 //internal import
@@ -17,6 +17,8 @@ import { handleLogEvent } from "src/lib/analytics";
 import NavbarPromo from "@layout/navbar/NavbarPromo";
 import CartDrawer from "@components/drawer/CartDrawer";
 import { SidebarContext } from "@context/SidebarContext";
+import useUtilsFunction from "@hooks/useUtilsFunction";
+import Category from "@components/category/Category";
 
 const Navbar = () => {
   const { t, lang } = useTranslation("common");
@@ -24,6 +26,7 @@ const Navbar = () => {
   const { toggleCartDrawer } = useContext(SidebarContext);
   const { totalItems } = useCart();
   const router = useRouter();
+  const { showingTranslateValue } = useUtilsFunction();
 
   const userInfo = getUserSession();
 
@@ -58,51 +61,88 @@ const Navbar = () => {
       <div className="bg-customPink sticky top-0 z-20">
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-10">
           <div className="top-bar h-14 lg:h-18 flex items-center justify-between py-1 mx-auto">
-            {/* Desktop logo - hidden on mobile */}
-{/* Mobile logo - centered */}
-<Link
-  href="/"
-  className="mx-auto lg:mx-0 flex justify-center lg:justify-start w-full lg:w-auto"
->
-  <div className="w-10 sm:w-12">
-    <Image
-      width="0"
-      height="0"
-      sizes="100vw"
-      className="w-full h-auto"
-      priority
-      src="/logo/logo.png"
-      alt="logo"
-    />
-  </div>
-</Link>
-
-            {/* <div className="w-full transition-all duration-200 ease-in-out lg:flex lg:max-w-[520px] xl:max-w-[750px] 2xl:max-w-[900px] md:mx-12 lg:mx-4 xl:mx-0">
-              <div className="w-full flex flex-col justify-center flex-shrink-0 relative z-30">
-                <div className="flex flex-col mx-auto w-full">
-                  <form
-                    onSubmit={handleSubmit}
-                    className="relative pr-12 md:pr-14 bg-white overflow-hidden shadow-sm rounded-md w-full"
-                  >
-                    <label className="flex items-center py-0.5">
-                      <input
-                        onChange={(e) => setSearchText(e.target.value)}
-                        value={searchText}
-                        className="form-input w-full pl-5 appearance-none transition ease-in-out border text-input text-sm font-sans rounded-md min-h-10 h-10 duration-200 bg-white focus:ring-0 outline-none border-none focus:outline-none placeholder-gray-500 placeholder-opacity-75"
-                        placeholder={t("search-placeholder")}
-                      />
-                    </label>
-                    <button
-                      aria-label="Search"
-                      type="submit"
-                      className="outline-none text-xl text-gray-400 absolute top-0 right-0 end-0 w-12 md:w-14 h-full flex items-center justify-center transition duration-200 ease-in-out hover:text-heading focus:outline-none"
-                    >
-                      <IoSearchOutline />
-                    </button>
-                  </form>
-                </div>
+            <Link
+              href="/"
+              className="mx-auto lg:mx-0 flex justify-center lg:justify-start w-full lg:w-auto"
+            >
+              <div className="w-10 sm:w-12">
+                <Image
+                  width="0"
+                  height="0"
+                  sizes="100vw"
+                  className="w-full h-auto"
+                  priority
+                  src="/logo/logo.png"
+                  alt="logo"
+                />
               </div>
-            </div> */}
+            </Link>
+
+            {/* Navigation Items */}
+            <div className="hidden lg:flex items-center space-x-6 ml-6">
+              {storeCustomizationSetting?.navbar?.categories_menu_status && (
+                <Popover className="relative">
+                  <Popover.Button className="group inline-flex items-center text-white hover:text-gray-200 text-sm font-medium focus:outline-none">
+                    <span>
+                      {showingTranslateValue(storeCustomizationSetting?.navbar?.categories)}
+                    </span>
+                    <ChevronDownIcon
+                      className="ml-1 h-3 w-3 group-hover:text-gray-200"
+                      aria-hidden="true"
+                    />
+                  </Popover.Button>
+
+                  <Transition
+                    as={Fragment}
+                    enter="transition ease-out duration-200"
+                    enterFrom="opacity-0 translate-y-1"
+                    enterTo="opacity-100 translate-y-0"
+                    leave="transition ease-in duration-150"
+                    leaveFrom="opacity-100 translate-y-0"
+                    leaveTo="opacity-0 translate-y-1"
+                  >
+                    <Popover.Panel className="absolute z-10 -ml-1 mt-1 transform w-screen max-w-xs c-h-65vh bg-white">
+                      <div className="rounded-md shadow-lg ring-1 ring-black ring-opacity-5 overflow-y-scroll flex-grow scrollbar-hide w-full h-full">
+                        <Category />
+                      </div>
+                    </Popover.Panel>
+                  </Transition>
+                </Popover>
+              )}
+              {storeCustomizationSetting?.navbar?.about_menu_status && (
+                <Link
+                  href="/about-us"
+                  className="text-white hover:text-gray-200 text-sm font-medium"
+                >
+                  {showingTranslateValue(storeCustomizationSetting?.navbar?.about_us)}
+                </Link>
+              )}
+              {storeCustomizationSetting?.navbar?.contact_menu_status && (
+                <Link
+                  href="/contact-us"
+                  className="text-white hover:text-gray-200 text-sm font-medium"
+                >
+                  {showingTranslateValue(storeCustomizationSetting?.navbar?.contact_us)}
+                </Link>
+              )}
+              {storeCustomizationSetting?.navbar?.privacy_policy_status && (
+                <Link
+                  href="/privacy-policy"
+                  className="text-white hover:text-gray-200 text-sm font-medium"
+                >
+                  {showingTranslateValue(storeCustomizationSetting?.navbar?.privacy_policy)}
+                </Link>
+              )}
+              {storeCustomizationSetting?.navbar?.term_and_condition_status && (
+                <Link
+                  href="/terms-and-conditions"
+                  className="text-white hover:text-gray-200 text-sm font-medium"
+                >
+                  {showingTranslateValue(storeCustomizationSetting?.navbar?.term_and_condition)}
+                </Link>
+              )}
+            </div>
+
             <div className="hidden md:hidden md:items-center lg:flex xl:block absolute inset-y-0 right-0 pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
               <button
                 className="pr-5 text-white text-2xl font-bold"
@@ -157,7 +197,7 @@ const Navbar = () => {
         </div>
 
         {/* second header */}
-        <NavbarPromo />
+        {/* <NavbarPromo /> */}
       </div>
     </>
   );
