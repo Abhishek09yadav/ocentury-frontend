@@ -57,23 +57,26 @@ const Navbar = () => {
       <CartDrawer />
       <div className="bg-customPink sticky top-0 z-20">
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-10">
-          <div className="top-bar h-16 lg:h-auto flex items-center justify-between py-1 mx-auto">
-            <Link
-              href="/"
-              className="mr-3 lg:mr-12 xl:mr-12 hidden md:hidden lg:block"
-            >
-              <div className="relative w-12 ">
-                <Image
-                  width="0"
-                  height="0"
-                  sizes="100vw"
-                  className="w-full h-auto"
-                  priority
-                  src={"/logo/logo.png"}
-                  alt="logo"
-                />
-              </div>
-            </Link>
+          <div className="top-bar h-14 lg:h-18 flex items-center justify-between py-1 mx-auto">
+            {/* Desktop logo - hidden on mobile */}
+{/* Mobile logo - centered */}
+<Link
+  href="/"
+  className="mx-auto lg:mx-0 flex justify-center lg:justify-start w-full lg:w-auto"
+>
+  <div className="w-10 sm:w-12">
+    <Image
+      width="0"
+      height="0"
+      sizes="100vw"
+      className="w-full h-auto"
+      priority
+      src="/logo/logo.png"
+      alt="logo"
+    />
+  </div>
+</Link>
+
             {/* <div className="w-full transition-all duration-200 ease-in-out lg:flex lg:max-w-[520px] xl:max-w-[750px] 2xl:max-w-[900px] md:mx-12 lg:mx-4 xl:mx-0">
               <div className="w-full flex flex-col justify-center flex-shrink-0 relative z-30">
                 <div className="flex flex-col mx-auto w-full">
