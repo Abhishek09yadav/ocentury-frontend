@@ -5,7 +5,9 @@ import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import { useCart } from "react-use-cart";
 import { IoSearchOutline } from "react-icons/io5";
-import { FiShoppingCart, FiUser, FiBell } from "react-icons/fi";
+
+import { FaShoppingCart, FaUser, FaBell } from "react-icons/fa";
+
 import useTranslation from "next-translate/useTranslation";
 
 //internal import
@@ -55,12 +57,12 @@ const Navbar = () => {
       <CartDrawer />
       <div className="bg-customPink sticky top-0 z-20">
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-10">
-          <div className="top-bar h-16 lg:h-auto flex items-center justify-between py-4 mx-auto">
+          <div className="top-bar h-16 lg:h-auto flex items-center justify-between py-1 mx-auto">
             <Link
               href="/"
               className="mr-3 lg:mr-12 xl:mr-12 hidden md:hidden lg:block"
             >
-              <div className="relative w-32 ">
+              <div className="relative w-12 ">
                 <Image
                   width="0"
                   height="0"
@@ -72,7 +74,7 @@ const Navbar = () => {
                 />
               </div>
             </Link>
-            <div className="w-full transition-all duration-200 ease-in-out lg:flex lg:max-w-[520px] xl:max-w-[750px] 2xl:max-w-[900px] md:mx-12 lg:mx-4 xl:mx-0">
+            {/* <div className="w-full transition-all duration-200 ease-in-out lg:flex lg:max-w-[520px] xl:max-w-[750px] 2xl:max-w-[900px] md:mx-12 lg:mx-4 xl:mx-0">
               <div className="w-full flex flex-col justify-center flex-shrink-0 relative z-30">
                 <div className="flex flex-col mx-auto w-full">
                   <form
@@ -97,13 +99,13 @@ const Navbar = () => {
                   </form>
                 </div>
               </div>
-            </div>
+            </div> */}
             <div className="hidden md:hidden md:items-center lg:flex xl:block absolute inset-y-0 right-0 pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
               <button
                 className="pr-5 text-white text-2xl font-bold"
                 aria-label="Alert"
               >
-                <FiBell className="w-6 h-6 drop-shadow-xl" />
+                <FaBell className="w-6 h-6 drop-shadow-xl" />
               </button>
               <button
                 aria-label="Total"
@@ -113,7 +115,7 @@ const Navbar = () => {
                 <span className="absolute z-10 top-0 right-0 inline-flex items-center justify-center p-1 h-5 w-5 text-xs font-medium leading-none text-red-100 transform -translate-x-1/2 -translate-y-1/2 bg-red-500 rounded-full">
                   {totalItems}
                 </span>
-                <FiShoppingCart className="w-6 h-6 drop-shadow-xl" />
+                <FaShoppingCart className="w-6 h-6 drop-shadow-xl" />
               </button>
               {/* Profile dropdown */}
 
@@ -143,7 +145,7 @@ const Navbar = () => {
                   </Link>
                 ) : (
                   <Link href="/auth/login">
-                    <FiUser className="w-6 h-6 drop-shadow-xl" />
+                    <FaUser className="w-6 h-6 drop-shadow-xl" />
                   </Link>
                 )}
               </button>
