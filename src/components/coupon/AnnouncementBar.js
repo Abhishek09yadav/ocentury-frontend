@@ -46,11 +46,11 @@ const announcements =
     const minAmount = coupon.minimumAmount;
 
     if (discountType === "percentage" && discount > 0) {
-      return `${code} ${discount}% OFF on purchase of ₹${minAmount} & Above`;
+      return `CODE: ${code} | ${discount}% OFF on purchase of ₹${minAmount} & Above`;
     } else if (discountType === "fixed" && discount > 0) {
-      return `${code} ₹${discount} OFF on purchase of ₹${minAmount} & Above`;
+      return `CODE: ${code} | ₹${discount} OFF on purchase of ₹${minAmount} & Above`;
     } else {
-      return `${code} Free Shipping on orders above ₹${minAmount}`;
+      return `CODE: ${code} | Free Shipping on orders above ₹${minAmount}`;
     }
   }) || [];
 
