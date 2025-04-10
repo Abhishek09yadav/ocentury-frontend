@@ -2,10 +2,9 @@ import Head from "next/head";
 import { ToastContainer } from "react-toastify";
 
 //internal import
-
+import NavbarPromo from "./navbar/NavbarPromo";
 import Navbar from "@layout/navbar/Navbar";
 import Footer from "@layout/footer/Footer";
-import NavBarTop from "./navbar/NavBarTop";
 import FooterTop from "@layout/footer/FooterTop";
 import MobileFooter from "@layout/footer/MobileFooter";
 import FeatureCard from "@components/feature-card/FeatureCard";
@@ -23,7 +22,6 @@ const Layout = ({ title, description, children }) => {
           <link ref="icon" href="/favicon.png" />
         </Head>
         <AnnouncementBar />
-        <NavBarTop />
         <Navbar />
         <div className="bg-gray-50">{children}</div>
         <MobileFooter />
