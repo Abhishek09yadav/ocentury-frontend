@@ -20,6 +20,7 @@ const Coupon = ({ couponInHome }) => {
     // staleTime: 5 * 60 * 1000, //default cache for 5 minute, if you want to without cache then comment this and gcTime lines
     // gcTime: 5 * 60 * 1000,
   });
+  
 
   const { showingTranslateValue, currency } = useUtilsFunction();
 
@@ -30,7 +31,7 @@ const Coupon = ({ couponInHome }) => {
     setCopied(true);
   };
 
-  // console.log("data", data);
+  console.log("data", data);
 
   return (
     <>

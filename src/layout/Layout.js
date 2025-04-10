@@ -9,6 +9,7 @@ import NavBarTop from "./navbar/NavBarTop";
 import FooterTop from "@layout/footer/FooterTop";
 import MobileFooter from "@layout/footer/MobileFooter";
 import FeatureCard from "@components/feature-card/FeatureCard";
+import AnnouncementBar from "@components/coupon/AnnouncementBar";
 
 const Layout = ({ title, description, children }) => {
   return (
@@ -21,6 +22,7 @@ const Layout = ({ title, description, children }) => {
           {description && <meta name="description" content={description} />}
           <link ref="icon" href="/favicon.png" />
         </Head>
+        <AnnouncementBar />
         <NavBarTop />
         <Navbar />
         <div className="bg-gray-50">{children}</div>
