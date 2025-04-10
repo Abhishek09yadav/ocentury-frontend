@@ -27,26 +27,6 @@ const pages = [
   //   icon: FiUser,
   // },
   {
-    title: "offer-page",
-    href: "/offer",
-    icon: FiGift,
-  },
-  {
-    title: "join-as-telecaller",
-    href: "/telecaller-form",
-    icon: IoDocument,
-  },
-  {
-    title: "join-as-store-partner",
-    href: "/store-owner-form",
-    icon: IoDocument,
-  },
-  {
-    title: "checkout-page",
-    href: "/checkout",
-    icon: FiShoppingBag,
-  },
-  {
     title: "faq-page",
     href: "/faq",
     icon: FiHelpCircle,
@@ -70,11 +50,6 @@ const pages = [
     title: "terms-and-conditions-page",
     href: "/terms-and-conditions",
     icon: FiFileText,
-  },
-  {
-    title: "not-found-page",
-    href: "/404",
-    icon: FiAlertCircle,
   },
 ];
 
