@@ -32,6 +32,7 @@ const StickyCart = () => {
         </div>
       </div>
     </button>
+    
   );
 };
 
