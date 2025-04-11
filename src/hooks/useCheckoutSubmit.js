@@ -352,8 +352,8 @@ const useCheckoutSubmit = (storeSetting) => {
       // setValue("email", address.email);
       setValue("city", address.city);
       setValue("country", address.country);
-      // setValue("zipCode", address.zipCode);
-      setSelectedValue({ zipCode: address.zipCode });
+      setValue("zipCode", address.zipCode);
+      console.log("address.zipCode", address.zipCode);
     } else {
       setValue("firstName");
       setValue("lastName");
