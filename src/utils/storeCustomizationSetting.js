@@ -1,5 +1,6 @@
 export const storeCustomization = {
   navbar: {
+    home_menu_status: true,
     categories_menu_status: true,
     about_menu_status: true,
     contact_menu_status: true,
@@ -10,6 +11,10 @@ export const storeCustomization = {
     help_text: {
       en: "We are available 24/7, Need help?",
       de: "Wir sind erreichbar 24/7, Brauchen Sie Hilfe?",
+    },
+    home: {
+      en: "Home",
+      de: "Startseite",
     },
     categories: {
       en: "Categories",
@@ -168,23 +173,23 @@ export const storeCustomization = {
     content_middle_status: true,
     founder_status: true,
     header_bg:
-      "https://res.cloudinary.com/ahossain/image/upload/v1697439245/settings/yw3cd2xupqwqpqcbxv9l.jpg",
+      "/slider/slider-1.jpg",
     content_right_img:
-      "https://res.cloudinary.com/ahossain/image/upload/v1697439245/settings/v7g6gowiju0wanpwx70f.jpg",
+      "/slider/slider-1.jpg",
     content_middle_Img:
-      "https://res.cloudinary.com/ahossain/image/upload/v1697439195/settings/sl8vzvzm54jgzq6sphn2.jpg",
+      "/slider/slider-1.jpg",
     founder_one_img:
-      "https://res.cloudinary.com/ahossain/image/upload/v1697439688/settings/team-1_acjmv7.webp",
+      "/slider/slider-1.jpg",
     founder_two_img:
-      "https://res.cloudinary.com/ahossain/image/upload/v1697439689/settings/team-2_dw7zs1.webp",
+      "/slider/slider-1.jpg",
     founder_three_img:
-      "https://res.cloudinary.com/ahossain/image/upload/v1697439689/settings/team-3_ld3323.webp",
+      "/slider/slider-1.jpg",
     founder_four_img:
-      "https://res.cloudinary.com/ahossain/image/upload/v1697439689/settings/team-4_i7jvx7.webp",
+      "/slider/slider-1.jpg",
     founder_five_img:
-      "https://res.cloudinary.com/ahossain/image/upload/v1697439689/settings/team-5_ylyklw.webp",
+      "/slider/slider-1.jpg",
     founder_six_img:
-      "https://res.cloudinary.com/ahossain/image/upload/v1697439689/settings/team-6_gmlts4.webp",
+     "/slider/slider-1.jpg",
     title: {
       en: "About Us",
       de: "Über uns",
@@ -294,9 +299,9 @@ export const storeCustomization = {
     left_col_status: true,
     form_status: true,
     header_bg:
-      "https://res.cloudinary.com/ahossain/image/upload/v1697439245/settings/yw3cd2xupqwqpqcbxv9l.jpg",
+      "/slider/slider-1.jpg",
     left_col_img:
-      "https://res.cloudinary.com/ahossain/image/upload/v1697472924/settings/contact-us_zvwn2n.png",
+      "/slider/slider-1.jpg",
     title: {
       en: "Contact Us",
       de: "Kontaktiere uns",
@@ -353,7 +358,7 @@ export const storeCustomization = {
   offers: {
     header_status: true,
     header_bg:
-      "https://res.cloudinary.com/ahossain/image/upload/v1697439245/settings/yw3cd2xupqwqpqcbxv9l.jpg",
+      "/slider/slider-1.jpg",
     title: {
       en: "Mega Offer",
       de: "Mega Angebot",
@@ -363,7 +368,7 @@ export const storeCustomization = {
   privacy_policy: {
     status: true,
     header_bg:
-      "https://res.cloudinary.com/ahossain/image/upload/v1697439245/settings/yw3cd2xupqwqpqcbxv9l.jpg",
+      "/slider/slider-1.jpg",
     title: {
       en: "Privacy Policy",
       de: "Datenschutz-Bestimmungen",
@@ -375,7 +380,7 @@ export const storeCustomization = {
   term_and_condition: {
     status: true,
     header_bg:
-      "https://res.cloudinary.com/ahossain/image/upload/v1697439245/settings/yw3cd2xupqwqpqcbxv9l.jpg",
+      "/slider/slider-1.jpg",
     title: {
       en: "Terms & Conditions",
       de: "Terms & Bedingungen",
@@ -466,14 +471,14 @@ export const storeCustomization = {
     bottom_dots: true,
     both_slider: false,
     first_img:
-      "https://res.cloudinary.com/ahossain/image/upload/v1697688491/settings/slider-1_rl8qdc.jpg",
+      "/slider/slider-1.jpg",
     first_title: {
-      en: "The Best Quality Products Guaranteed!",
-      de: "Die besten Qualitätsprodukte garantiert!",
+      en: "",
+      de: "",
     },
     first_description: {
-      en: "The Best Quality Products Guaranteed!",
-      de: "Die besten Qualitätsprodukte garantiert!",
+      en: "",
+      de: "",
     },
     first_button: {
       en: "Shop Now",
@@ -481,14 +486,14 @@ export const storeCustomization = {
     },
     first_link: "/search?category=milk-dairy",
     second_img:
-      "https://res.cloudinary.com/ahossain/image/upload/v1697688491/settings/slider-2_o6aezc.jpg",
+      "/slider/slider-1.jpg",
     second_title: {
-      en: "Best Different Type of Grocery Store",
-      de: "Bestes anderes Lebensmittelgeschäft",
+      en: "",
+      de: "",
     },
     second_description: {
-      en: "Quickly aggregate empowered networks after emerging products...",
-      de: "Schnelle Bündelung leistungsstarker Netzwerke nach neuen Produkten ...",
+      en: "",
+      de: "",
     },
     second_button: {
       en: "Shop Now",
@@ -496,14 +501,14 @@ export const storeCustomization = {
     },
     second_link: "/search?category=fish-meat",
     third_img:
-      "https://res.cloudinary.com/ahossain/image/upload/v1697688492/settings/slider-3_iw4nnf.jpg",
+      "/slider/slider-1.jpg",
     third_title: {
-      en: "Quality Freshness Guaranteed!",
+      en: "",
       de: "Qualitätsfrische garantiert!",
     },
     third_description: {
-      en: "Intrinsicly fashion performance based products rather than accurate benefits...",
-      de: "Gestalten Sie Produkte grundsätzlich auf Leistung und nicht auf konkrete Vorteile ...",
+      en: "",
+      de: "",
     },
     third_button: {
       en: "Shop Now",

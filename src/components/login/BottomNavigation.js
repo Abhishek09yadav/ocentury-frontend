@@ -30,7 +30,7 @@ const BottomNavigation = ({ or, route, desc, pageName, loginTitle }) => {
         </div>
       )}
 
-      {!error && !isLoading && (
+      {/* {!error && !isLoading && (
         <div className="flex flex-col mb-4">
           {storeSetting?.google_login_status && (
             <button
@@ -81,7 +81,7 @@ const BottomNavigation = ({ or, route, desc, pageName, loginTitle }) => {
             </button>
           )}
         </div>
-      )}
+      )} */}
 
       <div className="text-center text-sm text-gray-900 mt-4">
         <div className="text-gray-500 mt-2.5">

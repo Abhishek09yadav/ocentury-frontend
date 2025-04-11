@@ -443,7 +443,7 @@ const ProductScreen = ({ product, attributes, relatedProducts }) => {
                             <p className="text-xs sm:text-sm text-gray-700 font-medium">
                               Call Us To Order By Mobile Number :{" "}
                               <span className="text-emerald-700 font-semibold">
-                                +0044235234
+                                +91-7014267489
                               </span>{" "}
                             </p>
                           </div>
@@ -459,23 +459,23 @@ const ProductScreen = ({ product, attributes, relatedProducts }) => {
                             <ul className="flex mt-4">
                               <li className="flex items-center text-center border border-gray-100 rounded-full hover:bg-emerald-500  mr-2 transition ease-in-out duration-500">
                                 <FacebookShareButton
-                                  url={`https://www.ocentury.in/product/${router.query.slug}`}
+                                  url={`${process.env.NEXT_PUBLIC_STORE_DOMAIN}/product/${router.query.slug}`}
                                   quote=""
                                 >
                                   <FacebookIcon size={32} round />
                                 </FacebookShareButton>
                               </li>
-                              {/* <li className="flex items-center text-center border border-gray-100 rounded-full hover:bg-emerald-500  mr-2 transition ease-in-out duration-500">
+                              <li className="flex items-center text-center border border-gray-100 rounded-full hover:bg-emerald-500  mr-2 transition ease-in-out duration-500">
                                 <TwitterShareButton
-                                  url={`https://www.ocentury.in/product/${router.query.slug}`}
+                                  url={`${process.env.NEXT_PUBLIC_STORE_DOMAIN}/product/${router.query.slug}`}
                                   quote=""
                                 >
                                   <XIcon size={32} round />
                                 </TwitterShareButton>
-                              </li> */}
+                              </li>
                               <li className="flex items-center text-center border border-gray-100 rounded-full hover:bg-emerald-500  mr-2 transition ease-in-out duration-500">
                                 <RedditShareButton
-                                  url={`https://www.ocentury.in/product/${router.query.slug}`}
+                                  url={`${process.env.NEXT_PUBLIC_STORE_DOMAIN}/product/${router.query.slug}`}
                                   quote=""
                                 >
                                   <RedditIcon size={32} round />
@@ -483,7 +483,7 @@ const ProductScreen = ({ product, attributes, relatedProducts }) => {
                               </li>
                               <li className="flex items-center text-center border border-gray-100 rounded-full hover:bg-emerald-500  mr-2 transition ease-in-out duration-500">
                                 <WhatsappShareButton
-                                  url={`https://www.ocentury.in/product/${router.query.slug}`}
+                                  url={`${process.env.NEXT_PUBLIC_STORE_DOMAIN}/product/${router.query.slug}`}
                                   quote=""
                                 >
                                   <WhatsappIcon size={32} round />
@@ -491,7 +491,7 @@ const ProductScreen = ({ product, attributes, relatedProducts }) => {
                               </li>
                               <li className="flex items-center text-center border border-gray-100 rounded-full hover:bg-emerald-500  mr-2 transition ease-in-out duration-500">
                                 <LinkedinShareButton
-                                  url={`https://www.ocentury.in/product/${router.query.slug}`}
+                                  url={`${process.env.NEXT_PUBLIC_STORE_DOMAIN}/product/${router.query.slug}`}
                                   quote=""
                                 >
                                   <LinkedinIcon size={32} round />

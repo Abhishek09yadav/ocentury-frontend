@@ -20,16 +20,6 @@ const MainCarousel = () => {
   const sliderData = [
     {
       id: 1,
-
-      title: showingTranslateValue(
-        storeCustomizationSetting?.slider?.first_title
-      ),
-      info: showingTranslateValue(
-        storeCustomizationSetting?.slider?.first_description
-      ),
-      buttonName: showingTranslateValue(
-        storeCustomizationSetting?.slider?.first_button
-      ),
       url: showingUrl(storeCustomizationSetting?.slider?.first_link),
       image:
         showingImage(storeCustomizationSetting?.slider?.first_img) ||
@@ -37,15 +27,6 @@ const MainCarousel = () => {
     },
     {
       id: 2,
-      title: showingTranslateValue(
-        storeCustomizationSetting?.slider?.second_title
-      ),
-      info: showingTranslateValue(
-        storeCustomizationSetting?.slider?.second_description
-      ),
-      buttonName: showingTranslateValue(
-        storeCustomizationSetting?.slider?.second_button
-      ),
       url: showingUrl(storeCustomizationSetting?.slider?.second_link),
       image:
         showingImage(storeCustomizationSetting?.slider?.second_img) ||
@@ -53,15 +34,6 @@ const MainCarousel = () => {
     },
     {
       id: 3,
-      title: showingTranslateValue(
-        storeCustomizationSetting?.slider?.third_title
-      ),
-      info: showingTranslateValue(
-        storeCustomizationSetting?.slider?.third_description
-      ),
-      buttonName: showingTranslateValue(
-        storeCustomizationSetting?.slider?.third_button
-      ),
       url: showingUrl(storeCustomizationSetting?.slider?.third_link),
       image:
         showingImage(storeCustomizationSetting?.slider?.third_img) ||
@@ -69,15 +41,6 @@ const MainCarousel = () => {
     },
     {
       id: 4,
-      title: showingTranslateValue(
-        storeCustomizationSetting?.slider?.four_title
-      ),
-      info: showingTranslateValue(
-        storeCustomizationSetting?.slider?.four_description
-      ),
-      buttonName: showingTranslateValue(
-        storeCustomizationSetting?.slider?.four_button
-      ),
       url: showingUrl(storeCustomizationSetting?.slider?.four_link),
       image:
         showingImage(storeCustomizationSetting?.slider?.four_img) ||
@@ -85,15 +48,6 @@ const MainCarousel = () => {
     },
     {
       id: 5,
-      title: showingTranslateValue(
-        storeCustomizationSetting?.slider?.five_title
-      ),
-      info: showingTranslateValue(
-        storeCustomizationSetting?.slider?.five_description
-      ),
-      buttonName: showingTranslateValue(
-        storeCustomizationSetting?.slider?.five_button
-      ),
       url: showingUrl(storeCustomizationSetting?.slider?.five_link),
       image:
         showingImage(storeCustomizationSetting?.slider?.five_img) ||
@@ -147,12 +101,7 @@ const MainCarousel = () => {
                 <p className="text-base leading-6 text-gray-600 font-sans line-clamp-1  md:line-clamp-none lg:line-clamp-none">
                   {item.info}
                 </p>
-                <Link
-                  href={item.url}
-                  className="hidden sm:inline-block lg:inline-block text-sm leading-6 font-serif font-medium mt-6 px-6 py-2 bg-customPink text-center rounded-md text-white hover:bg-customPinkDark"
-                >
-                  {item.buttonName}
-                </Link>
+
               </div>
             </div>
           </SwiperSlide>

@@ -12,14 +12,10 @@ import requests from "@services/httpServices";
 
 const useShippingAddressSubmit = (id) => {
   const router = useRouter();
-  // const [cities, setCities] = useState([]);
-  // const [areas, setAreas] = useState([]);
-  // const [zipCodes, setZipCodes] = useState([]);
+
   const [selectedValue, setSelectedValue] = useState({
     country: "",
-    // zipCode: "",
-    // city: "",
-    // area: "",
+
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -27,19 +23,7 @@ const useShippingAddressSubmit = (id) => {
 
   // const { handlerTextTranslateHandler } = useTranslationValue();
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const result = await requests.get("/tele/get/pincodes");
-  //       console.log("result", result.message);
-  //       setZipCodes(result.message);
-  //     } catch (error) {
-  //       console.error("Error fetching pincodes:", error);
-  //     }
-  //   };
 
-  //   fetchData();
-  // }, []);
 
   const {
     register,
@@ -90,23 +74,7 @@ const useShippingAddressSubmit = (id) => {
       [name]: value,
     }));
 
-    // if (name === "country") {
-    //   const result = countries?.find(
-    //     (country) => country?.name === value
-    //   ).cities;
-    //   setCities(result);
-    //   setAreas([]);
-    // }
 
-    // if (name === "city") {
-    //   const result = cities?.find((city) => city?.name === value).areas;
-    //   setAreas(result);
-    // }
-
-    // if (name === "zipCode") {
-    //   const result = zipCode?.find((data) => data?.name === value);
-    //   ZipCode(result);
-    // }
   };
 
   const { data, isFetched } = useQuery({
@@ -130,16 +98,9 @@ const useShippingAddressSubmit = (id) => {
       setValue("zipCode", data.zipCode);
       setSelectedValue({
         country: data.country,
-        // zipCode: data.zipCode,
-        // city: data.city,
-        // area: data.area,
+ 
       });
-      // setCities([
-      //   {
-      //     name: data.city,
-      //   },
-      // ]);
-      // setAreas([data.area]);
+
     } else {
       setValue("email", userInfo?.email);
     }
@@ -149,10 +110,7 @@ const useShippingAddressSubmit = (id) => {
     register,
     onSubmit,
     errors,
-    // cities,
-    // areas,
- 
-    // zipCodes,
+   
     setValue,
     handleSubmit,
     selectedValue,

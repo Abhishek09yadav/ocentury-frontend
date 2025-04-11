@@ -65,21 +65,25 @@ const Navbar = () => {
               href="/"
               className="mx-auto lg:mx-0 flex justify-center lg:justify-start w-full lg:w-auto"
             >
-              <div className="w-10 sm:w-12">
-                <Image
-                  width="0"
-                  height="0"
-                  sizes="100vw"
-                  className="w-full h-auto"
-                  priority
-                  src="/logo/logo.png"
-                  alt="logo"
-                />
-              </div>
+<div className="w-18 sm:w-20">
+  <Image
+    width={80}
+    height={80}
+    className="w-full h-auto"
+    priority
+    src="/logo/logo.png"
+    alt="logo"
+  />
+</div>
             </Link>
-
             {/* Navigation Items */}
             <div className="hidden lg:flex items-center space-x-6 ml-6">
+              <Link
+                href="/"
+                className="text-white hover:text-gray-200 text-sm font-medium"
+              >
+                {showingTranslateValue(storeCustomizationSetting?.navbar?.home) || "Home"}
+              </Link>
               {storeCustomizationSetting?.navbar?.categories_menu_status && (
                 <Popover className="relative">
                   <Popover.Button className="group inline-flex items-center text-white hover:text-gray-200 text-sm font-medium focus:outline-none">
@@ -161,7 +165,6 @@ const Navbar = () => {
                 <FaShoppingCart className="w-6 h-6 drop-shadow-xl" />
               </button>
               {/* Profile dropdown */}
-
               <button
                 className="pl-5 text-white text-2xl font-bold"
                 aria-label="Login"

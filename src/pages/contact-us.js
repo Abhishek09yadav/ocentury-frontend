@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useForm } from "react-hook-form";
 import useTranslation from "next-translate/useTranslation";
 import { FiMail, FiMapPin, FiBell } from "react-icons/fi";
-
+import { useState } from "react";
 //internal import
 import Layout from "@layout/Layout";
 import Label from "@components/form/Label";
@@ -15,22 +15,48 @@ import PageHeader from "@components/header/PageHeader";
 import CMSkeleton from "@components/preloader/CMSkeleton";
 import useUtilsFunction from "@hooks/useUtilsFunction";
 
-const ContactUs = () => {
-  const { t } = useTranslation();
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
 
+const ContactUs = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  const { t } = useTranslation();
+  const { register, handleSubmit, formState: { errors }, reset} = useForm();
   const { showingTranslateValue } = useUtilsFunction();
   const { storeCustomizationSetting, loading, error } = useGetSetting();
 
-  const submitHandler = () => {
-    notifySuccess(
-      "your message sent successfully. We will contact you shortly."
-    );
+  const submitHandler = async (data) => {
+    setIsSubmitting(true);
+    const formData = {
+      access_key: "93d67399-7852-4437-b553-73042a7abb7c", // Replace this with your actual Web3Forms key
+      name: data.name,
+      email: data.email,
+      subject: data.subject,
+      message: data.message,
+    };
+  
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      const result = await res.json();
+      if (result.success) {
+        reset();
+        notifySuccess("Form submitted successfully!");
+      } else {
+        console.error("Web3Forms error:", result);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }finally{
+      setIsSubmitting(false);
+    }
   };
+  
 
   return (
     <Layout title="Contact Us" description="This is contact us page">
@@ -252,7 +278,7 @@ const ContactUs = () => {
                       data-variant="flat"
                       className="md:text-sm leading-4 inline-flex items-center cursor-pointer transition ease-in-out duration-300 font-semibold text-center justify-center border-0 border-transparent rounded-md placeholder-white focus-visible:outline-none focus:outline-none bg-emerald-500 text-white px-5 md:px-6 lg:px-8 py-3 md:py-3.5 lg:py-3 hover:text-white hover:bg-emerald-600 h-12 mt-1 text-sm lg:text-base w-full sm:w-auto"
                     >
-                      {t("common:contact-page-form-send-btn")}
+                      {isSubmitting ? "Sending..." : t("common:contact-page-form-send-btn")}
                     </button>
                   </div>
                 </div>
