@@ -168,23 +168,23 @@ export const storeCustomization = {
     content_middle_status: true,
     founder_status: true,
     header_bg:
-      "https://res.cloudinary.com/ahossain/image/upload/v1697439245/settings/yw3cd2xupqwqpqcbxv9l.jpg",
+      "/slider/slider-1.jpg",
     content_right_img:
-      "https://res.cloudinary.com/ahossain/image/upload/v1697439245/settings/v7g6gowiju0wanpwx70f.jpg",
+      "/slider/slider-1.jpg",
     content_middle_Img:
-      "https://res.cloudinary.com/ahossain/image/upload/v1697439195/settings/sl8vzvzm54jgzq6sphn2.jpg",
+      "/slider/slider-1.jpg",
     founder_one_img:
-      "https://res.cloudinary.com/ahossain/image/upload/v1697439688/settings/team-1_acjmv7.webp",
+      "/slider/slider-1.jpg",
     founder_two_img:
-      "https://res.cloudinary.com/ahossain/image/upload/v1697439689/settings/team-2_dw7zs1.webp",
+      "/slider/slider-1.jpg",
     founder_three_img:
-      "https://res.cloudinary.com/ahossain/image/upload/v1697439689/settings/team-3_ld3323.webp",
+      "/slider/slider-1.jpg",
     founder_four_img:
-      "https://res.cloudinary.com/ahossain/image/upload/v1697439689/settings/team-4_i7jvx7.webp",
+      "/slider/slider-1.jpg",
     founder_five_img:
-      "https://res.cloudinary.com/ahossain/image/upload/v1697439689/settings/team-5_ylyklw.webp",
+      "/slider/slider-1.jpg",
     founder_six_img:
-      "https://res.cloudinary.com/ahossain/image/upload/v1697439689/settings/team-6_gmlts4.webp",
+     "/slider/slider-1.jpg",
     title: {
       en: "About Us",
       de: "Über uns",
@@ -294,9 +294,9 @@ export const storeCustomization = {
     left_col_status: true,
     form_status: true,
     header_bg:
-      "https://res.cloudinary.com/ahossain/image/upload/v1697439245/settings/yw3cd2xupqwqpqcbxv9l.jpg",
+      "/slider/slider-1.jpg",
     left_col_img:
-      "https://res.cloudinary.com/ahossain/image/upload/v1697472924/settings/contact-us_zvwn2n.png",
+      "/slider/slider-1.jpg",
     title: {
       en: "Contact Us",
       de: "Kontaktiere uns",
@@ -353,7 +353,7 @@ export const storeCustomization = {
   offers: {
     header_status: true,
     header_bg:
-      "https://res.cloudinary.com/ahossain/image/upload/v1697439245/settings/yw3cd2xupqwqpqcbxv9l.jpg",
+      "/slider/slider-1.jpg",
     title: {
       en: "Mega Offer",
       de: "Mega Angebot",
@@ -363,7 +363,7 @@ export const storeCustomization = {
   privacy_policy: {
     status: true,
     header_bg:
-      "https://res.cloudinary.com/ahossain/image/upload/v1697439245/settings/yw3cd2xupqwqpqcbxv9l.jpg",
+      "/slider/slider-1.jpg",
     title: {
       en: "Privacy Policy",
       de: "Datenschutz-Bestimmungen",
@@ -375,7 +375,7 @@ export const storeCustomization = {
   term_and_condition: {
     status: true,
     header_bg:
-      "https://res.cloudinary.com/ahossain/image/upload/v1697439245/settings/yw3cd2xupqwqpqcbxv9l.jpg",
+      "/slider/slider-1.jpg",
     title: {
       en: "Terms & Conditions",
       de: "Terms & Bedingungen",
