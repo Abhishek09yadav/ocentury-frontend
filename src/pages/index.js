@@ -168,7 +168,7 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
               <ClassicShirtCard />
             </div>
 
-            <div>
+            <div className="mt-[4.5rem]">
               <FormalTrouser />
             </div>
 
