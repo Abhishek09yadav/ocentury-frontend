@@ -16,6 +16,7 @@ import MainCarousel from "@components/carousel/MainCarousel";
 import FeatureCategory from "@components/category/FeatureCategory";
 import AttributeServices from "@services/AttributeServices";
 import CMSkeleton from "@components/preloader/CMSkeleton";
+import ClassicShirtCard from "@components/classic-shirt/classicShirtCard";
 
 const Home = ({ popularProducts, discountProducts, attributes }) => {
   const router = useRouter();
@@ -159,6 +160,12 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
                 </div>
               </div>
             )} */}
+
+            {/* Classic Plain Shirt */}
+            <div>
+              <h1 className="px-6 font-[lora] text-[3.25rem]">Classic Plain Shirts</h1>
+              <ClassicShirtCard />
+            </div>
 
             {/* discounted products */}
             {storeCustomizationSetting?.home?.discount_product_status &&

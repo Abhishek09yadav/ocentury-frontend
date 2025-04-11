@@ -27,7 +27,7 @@ const ImageWithFallback = ({
         objectFit: "cover",
       }}
       sizes="100%"
-      className="object-cover transition duration-150 ease-linear transform group-hover:scale-105"
+      className="object-cover transition duration-500 ease-in-out transform group-hover:scale-105"
     />
   );
 };
