@@ -220,7 +220,6 @@ const ProductCard = ({ product, attributes }) => {
                   <FacebookIcon size={32} round />
                 </FacebookShareButton>
               </div>
-
               <div className="w-12 h-12 flex items-center justify-center  bg-gray-50 rounded-full shadow-md shadow-gray-200 hover:bg-gray-700 hover:text-gray-50">
                 <TwitterShareButton
                   url={`${process.env.NEXT_PUBLIC_STORE_DOMAIN}/product/${product.slug}`}
@@ -242,7 +241,7 @@ const ProductCard = ({ product, attributes }) => {
             onClick={toggleToolTip}
           >
             <FaShareAlt
-              className={`text-gray-100 dark:text-white transition-transform duration-300 ${
+              className={`text-gray-100 dark:text-white transition-transform duration-300 hover:rotate-180 ${
                 isToolTipVisible ? "rotate-180" : ""
               }`}
             />
