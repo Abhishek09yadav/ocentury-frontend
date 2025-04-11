@@ -27,7 +27,7 @@ class MyDocument extends Document {
           <meta
             property="og:description"
             content={
-              setting?.meta_description || "Grocery & Organic Food Store "
+              setting?.meta_description || ""
             }
           />
           <meta

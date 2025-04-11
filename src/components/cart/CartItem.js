@@ -12,7 +12,7 @@ const CartItem = ({ item, currency }) => {
   const { closeCartDrawer } = useContext(SidebarContext);
   const { handleIncreaseQuantity } = useAddToCart();
 
-  console.log("item>>", item);
+  // console.log("item>>", item);
 
   return (
     <div className="group w-full h-auto flex justify-start items-center bg-white py-3 px-4 border-b hover:bg-gray-50 transition-all border-gray-100 relative last:border-b-0">
