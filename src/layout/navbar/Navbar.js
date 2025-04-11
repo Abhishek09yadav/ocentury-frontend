@@ -75,9 +75,7 @@ const Navbar = () => {
     alt="logo"
   />
 </div>
-
             </Link>
-
             {/* Navigation Items */}
             <div className="hidden lg:flex items-center space-x-6 ml-6">
               {storeCustomizationSetting?.navbar?.categories_menu_status && (
@@ -161,7 +159,6 @@ const Navbar = () => {
                 <FaShoppingCart className="w-6 h-6 drop-shadow-xl" />
               </button>
               {/* Profile dropdown */}
-
               <button
                 className="pl-5 text-white text-2xl font-bold"
                 aria-label="Login"
