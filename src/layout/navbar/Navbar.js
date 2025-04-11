@@ -65,17 +65,17 @@ const Navbar = () => {
               href="/"
               className="mx-auto lg:mx-0 flex justify-center lg:justify-start w-full lg:w-auto"
             >
-              <div className="w-10 sm:w-12">
-                <Image
-                  width="0"
-                  height="0"
-                  sizes="100vw"
-                  className="w-full h-auto"
-                  priority
-                  src="/logo/logo.png"
-                  alt="logo"
-                />
-              </div>
+<div className="w-18 sm:w-20">
+  <Image
+    width={80}
+    height={80}
+    className="w-full h-auto"
+    priority
+    src="/logo/logo.png"
+    alt="logo"
+  />
+</div>
+
             </Link>
 
             {/* Navigation Items */}

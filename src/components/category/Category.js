@@ -26,23 +26,23 @@ const Category = () => {
   });
 
   // console.log("data", data, "error", error, "isFetched", isFetched);
-   const router = useRouter();
-    const userInfo = getUserSession();
+  const router = useRouter();
+  const userInfo = getUserSession();
   return (
     <div className="flex flex-col w-full h-full bg-white cursor-pointer scrollbar-hide">
       {categoryDrawerOpen && (
         <div className="w-full flex justify-between items-center h-16 px-6 py-2 bg-customPink text-white border-b border-gray-100">
-<h2 className="font-semibold font-serif text-lg m-0 text-heading flex items-center">
-  <Link href="/" className="mr-10 h-full">
-    <Image
-      src="/logo/logo.png"
-      alt="logo"
-      width={0}
-      height={0}
-      className="h-12 w-auto object-contain"
-    />
-  </Link>
-</h2>
+          <h2 className="font-semibold font-serif text-lg m-0 text-heading flex items-center">
+            <Link href="/" className="mr-6 h-full">
+              <Image
+                src="/logo/logo.png"
+                alt="logo"
+                width={110}
+                height={46}
+                className="object-contain"
+              />
+            </Link>
+          </h2>
 
           <button
             onClick={closeCategoryDrawer}
