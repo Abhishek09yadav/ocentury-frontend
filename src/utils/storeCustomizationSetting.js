@@ -1,5 +1,6 @@
 export const storeCustomization = {
   navbar: {
+    home_menu_status: true,
     categories_menu_status: true,
     about_menu_status: true,
     contact_menu_status: true,
@@ -10,6 +11,10 @@ export const storeCustomization = {
     help_text: {
       en: "We are available 24/7, Need help?",
       de: "Wir sind erreichbar 24/7, Brauchen Sie Hilfe?",
+    },
+    home: {
+      en: "Home",
+      de: "Startseite",
     },
     categories: {
       en: "Categories",

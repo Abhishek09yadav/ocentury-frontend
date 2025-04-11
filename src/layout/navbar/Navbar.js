@@ -78,6 +78,12 @@ const Navbar = () => {
             </Link>
             {/* Navigation Items */}
             <div className="hidden lg:flex items-center space-x-6 ml-6">
+              <Link
+                href="/"
+                className="text-white hover:text-gray-200 text-sm font-medium"
+              >
+                {showingTranslateValue(storeCustomizationSetting?.navbar?.home) || "Home"}
+              </Link>
               {storeCustomizationSetting?.navbar?.categories_menu_status && (
                 <Popover className="relative">
                   <Popover.Button className="group inline-flex items-center text-white hover:text-gray-200 text-sm font-medium focus:outline-none">

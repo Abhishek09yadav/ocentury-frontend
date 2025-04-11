@@ -20,6 +20,7 @@ import DefaultSeo from "@components/common/DefaultSeo";
 import { SidebarProvider } from "@context/SidebarContext";
 import SettingServices from "@services/SettingServices";
 import socket from "@utils/socket";
+import "./product.vishal.css";
 
 let persistor = persistStore(store);
 let stripePromise = getStripe();

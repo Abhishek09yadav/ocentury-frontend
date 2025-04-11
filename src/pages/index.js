@@ -17,6 +17,7 @@ import FeatureCategory from "@components/category/FeatureCategory";
 import AttributeServices from "@services/AttributeServices";
 import CMSkeleton from "@components/preloader/CMSkeleton";
 import Testimonials from "@components/Testimonials/Testimonials";
+import ClassicShirtCard from "@components/classic-shirt/classicShirtCard";
 
 const Home = ({ popularProducts, discountProducts, attributes }) => {
   const router = useRouter();
@@ -42,7 +43,9 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
           <div className="min-h-screen">
             <StickyCart />
             <div className="bg-white">
-              <div className="mx-auto py-5  px-3 sm:px-10">  {/* max-w-screen-2xl */}
+              <div className="mx-auto py-2">
+                {" "}
+                {/* max-w-screen-2xl */}
                 <div className="flex w-full">
                   <div className="flex-shrink  lg:block w-full ">
                     <MainCarousel />
@@ -129,7 +132,7 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
                       />
                     ) : (
                       // <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-5 2xl:grid-cols-6 gap-2 md:gap-3 lg:gap-3">
-                      <div className="flex md:flex-row flex-wrap gap-10 justify-center flex-col">
+                      <div className="flex md:flex-row flex-wrap gap-3 justify-center">
                         {popularProducts
                           ?.slice(
                             0,
@@ -160,6 +163,12 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
                 </div>
               </div>
             )} */}
+
+            {/* Classic Plain Shirt */}
+            <div>
+              <h1 className="px-6 font-[lora] text-[3.25rem]">Classic Plain Shirts</h1>
+              <ClassicShirtCard />
+            </div>
 
             {/* discounted products */}
             {storeCustomizationSetting?.home?.discount_product_status &&
@@ -205,7 +214,7 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
                         />
                       ) : (
                         // <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-5 2xl:grid-cols-6 gap-2 md:gap-3 lg:gap-3">
-                        <div className="flex md:flex-row flex-wrap gap-10 justify-center flex-col">
+                        <div className="flex md:flex-row flex-wrap gap-3 justify-center">
                           {discountProducts
                             ?.slice(
                               0,
