@@ -8,6 +8,13 @@ const Price = ({ product, price, card, currency, originalPrice }) => {
     <div className="font-serif product-price font-bold">
       {product?.isCombination ? (
         <>
+          {originalPrice > price && (
+            <span className="relative inline-block mr-4 text-sm text-gray-400 font-medium">
+              MRP {currency}{getNumberTwo(originalPrice)}
+              <span className="absolute left-0 top-5 w-full h-[1px] bg-gray-400 -translate-y-1/2 rotate-[-15deg] origin-left pointer-events-none"></span>
+            </span>
+
+          )}
           <span
             className={
               card
@@ -18,23 +25,17 @@ const Price = ({ product, price, card, currency, originalPrice }) => {
             {currency}
             {getNumberTwo(price)}
           </span>
-          {originalPrice > price ? (
-            <>
-              <del
-                className={
-                  card
-                    ? "sm:text-sm font-normal text-base text-gray-400 ml-1"
-                    : "text-lg font-normal text-gray-400 ml-1"
-                }
-              >
-                {currency}
-                {getNumberTwo(originalPrice)}
-              </del>
-            </>
-          ) : null}
         </>
       ) : (
         <>
+          {originalPrice > price && (
+            <span className="relative inline-block mr-1">
+                <span className="relative inline-block mr-4 text-sm text-gray-400 font-medium">
+                  MRP {currency}{getNumberTwo(originalPrice)}
+                  <span className="absolute left-0 top-5 w-full h-[1px] bg-gray-400 -translate-y-1/2 rotate-[-15deg] origin-left pointer-events-none"></span>
+                </span>
+            </span>
+          )}
           <span
             className={
               card
@@ -45,20 +46,6 @@ const Price = ({ product, price, card, currency, originalPrice }) => {
             {currency}
             {getNumberTwo(product?.prices?.price)}
           </span>
-          {originalPrice > price ? (
-            <>
-              <del
-                className={
-                  card
-                    ? "sm:text-sm font-normal text-base text-gray-400 ml-1"
-                    : "text-lg font-normal text-gray-400 ml-1"
-                }
-              >
-                {currency}
-                {getNumberTwo(originalPrice)}
-              </del>
-            </>
-          ) : null}
         </>
       )}
     </div>
