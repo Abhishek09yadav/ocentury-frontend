@@ -65,16 +65,16 @@ const Navbar = () => {
               href="/"
               className="mx-auto lg:mx-0 flex justify-center lg:justify-start w-full lg:w-auto"
             >
-<div className="w-18 sm:w-20">
-  <Image
-    width={80}
-    height={80}
-    className="w-full h-auto"
-    priority
-    src="/logo/logo.png"
-    alt="logo"
-  />
-</div>
+              <div className="w-18 sm:w-20">
+                <Image
+                  width={80}
+                  height={80}
+                  className="w-full h-auto"
+                  priority
+                  src="/logo/logo.png"
+                  alt="logo"
+                />
+              </div>
             </Link>
             {/* Navigation Items */}
             <div className="hidden lg:flex items-center space-x-6 ml-6">
@@ -82,13 +82,27 @@ const Navbar = () => {
                 href="/"
                 className="text-white hover:text-gray-200 text-sm font-medium"
               >
-                {showingTranslateValue(storeCustomizationSetting?.navbar?.home) || "Home"}
+                {showingTranslateValue(
+                  storeCustomizationSetting?.navbar?.home
+                ) || "Home"}
               </Link>
+              {storeCustomizationSetting?.navbar?.about_menu_status && (
+                <Link
+                  href="/about-us"
+                  className="text-white hover:text-gray-200 text-sm font-medium"
+                >
+                  {showingTranslateValue(
+                    storeCustomizationSetting?.navbar?.about_us
+                  )}
+                </Link>
+              )}
               {storeCustomizationSetting?.navbar?.categories_menu_status && (
                 <Popover className="relative">
                   <Popover.Button className="group inline-flex items-center text-white hover:text-gray-200 text-sm font-medium focus:outline-none">
                     <span>
-                      {showingTranslateValue(storeCustomizationSetting?.navbar?.categories)}
+                      {showingTranslateValue(
+                        storeCustomizationSetting?.navbar?.categories
+                      )}
                     </span>
                     <ChevronDownIcon
                       className="ml-1 h-3 w-3 group-hover:text-gray-200"
@@ -113,20 +127,15 @@ const Navbar = () => {
                   </Transition>
                 </Popover>
               )}
-              {storeCustomizationSetting?.navbar?.about_menu_status && (
-                <Link
-                  href="/about-us"
-                  className="text-white hover:text-gray-200 text-sm font-medium"
-                >
-                  {showingTranslateValue(storeCustomizationSetting?.navbar?.about_us)}
-                </Link>
-              )}
+
               {storeCustomizationSetting?.navbar?.contact_menu_status && (
                 <Link
                   href="/contact-us"
                   className="text-white hover:text-gray-200 text-sm font-medium"
                 >
-                  {showingTranslateValue(storeCustomizationSetting?.navbar?.contact_us)}
+                  {showingTranslateValue(
+                    storeCustomizationSetting?.navbar?.contact_us
+                  )}
                 </Link>
               )}
               {storeCustomizationSetting?.navbar?.privacy_policy_status && (
@@ -134,7 +143,9 @@ const Navbar = () => {
                   href="/privacy-policy"
                   className="text-white hover:text-gray-200 text-sm font-medium"
                 >
-                  {showingTranslateValue(storeCustomizationSetting?.navbar?.privacy_policy)}
+                  {showingTranslateValue(
+                    storeCustomizationSetting?.navbar?.privacy_policy
+                  )}
                 </Link>
               )}
               {storeCustomizationSetting?.navbar?.term_and_condition_status && (
@@ -142,7 +153,9 @@ const Navbar = () => {
                   href="/terms-and-conditions"
                   className="text-white hover:text-gray-200 text-sm font-medium"
                 >
-                  {showingTranslateValue(storeCustomizationSetting?.navbar?.term_and_condition)}
+                  {showingTranslateValue(
+                    storeCustomizationSetting?.navbar?.term_and_condition
+                  )}
                 </Link>
               )}
             </div>
