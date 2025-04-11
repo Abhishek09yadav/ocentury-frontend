@@ -271,11 +271,12 @@ const Footer = () => {
           )}
           {storeCustomizationSetting?.footer?.block4_status && (
             <div className="pb-3.5 sm:pb-0 col-span-1 md:col-span-2 lg:col-span-3">
-              <Link
+              {/* <Link
                 href="/"
                 className="mr-3 lg:mr-12 xl:mr-12"
                 rel="noreferrer"
-              >
+              > */}
+              <div className="mr-3 pb-3 lg:mr-12 xl:mr-12">
                 <div className="relative w-16 h-10">
                   <Image
                     // width={110}
@@ -288,7 +289,8 @@ const Footer = () => {
                     alt="logo"
                   />
                 </div>
-              </Link>
+              </div>
+              {/* </Link> */}
               <p className="leading-7 font-sans text-sm text-gray-600 mt-3">
                 <CMSkeleton
                   count={1}

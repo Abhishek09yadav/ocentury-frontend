@@ -16,6 +16,7 @@ import MainCarousel from "@components/carousel/MainCarousel";
 import FeatureCategory from "@components/category/FeatureCategory";
 import AttributeServices from "@services/AttributeServices";
 import CMSkeleton from "@components/preloader/CMSkeleton";
+import Testimonials from "@components/Testimonials/Testimonials";
 import ClassicShirtCard from "@components/classic-shirt/classicShirtCard";
 
 const Home = ({ popularProducts, discountProducts, attributes }) => {
@@ -236,6 +237,7 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
                 </div>
               )}
           </div>
+          <Testimonials />
         </Layout>
       )}
     </>
