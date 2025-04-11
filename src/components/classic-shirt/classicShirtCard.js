@@ -1,4 +1,6 @@
+
 const ClassicShirtCard = () => {
+
     const shirts = [
       {
         image: 'https://storage.googleapis.com/a1aa/image/_DBiIxtZhGY-_1WXwV3l9ksRaDoBo54CuXzs_1SU9Gg.jpg',
@@ -28,7 +30,7 @@ const ClassicShirtCard = () => {
               <img
                 src={shirt.image}
                 alt={shirt.alt}
-                className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-[30rem] object-cover transform transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-black opacity-20" />
               <div className="absolute bottom-4 left-4 text-white text-xl sm:text-2xl font-[Roboto] px-2 py-1 rounded group">
