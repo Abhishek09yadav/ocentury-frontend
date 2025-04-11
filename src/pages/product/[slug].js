@@ -459,7 +459,7 @@ const ProductScreen = ({ product, attributes, relatedProducts }) => {
                             <ul className="flex mt-4">
                               <li className="flex items-center text-center border border-gray-100 rounded-full hover:bg-emerald-500  mr-2 transition ease-in-out duration-500">
                                 <FacebookShareButton
-                                  url={`${process.env.NEXT_PUBLIC_STORE_DOMAIN}/${router.query.slug}`}
+                                  url={`${process.env.NEXT_PUBLIC_STORE_DOMAIN}/product/${router.query.slug}`}
                                   quote=""
                                 >
                                   <FacebookIcon size={32} round />
@@ -467,7 +467,7 @@ const ProductScreen = ({ product, attributes, relatedProducts }) => {
                               </li>
                               <li className="flex items-center text-center border border-gray-100 rounded-full hover:bg-emerald-500  mr-2 transition ease-in-out duration-500">
                                 <TwitterShareButton
-                                  url={`${process.env.NEXT_PUBLIC_STORE_DOMAIN}/${router.query.slug}`}
+                                  url={`${process.env.NEXT_PUBLIC_STORE_DOMAIN}/product/${router.query.slug}`}
                                   quote=""
                                 >
                                   <XIcon size={32} round />
@@ -475,7 +475,7 @@ const ProductScreen = ({ product, attributes, relatedProducts }) => {
                               </li>
                               <li className="flex items-center text-center border border-gray-100 rounded-full hover:bg-emerald-500  mr-2 transition ease-in-out duration-500">
                                 <RedditShareButton
-                                  url={`${process.env.NEXT_PUBLIC_STORE_DOMAIN}/${router.query.slug}`}
+                                  url={`${process.env.NEXT_PUBLIC_STORE_DOMAIN}/product/${router.query.slug}`}
                                   quote=""
                                 >
                                   <RedditIcon size={32} round />
@@ -483,7 +483,7 @@ const ProductScreen = ({ product, attributes, relatedProducts }) => {
                               </li>
                               <li className="flex items-center text-center border border-gray-100 rounded-full hover:bg-emerald-500  mr-2 transition ease-in-out duration-500">
                                 <WhatsappShareButton
-                                  url={`${process.env.NEXT_PUBLIC_STORE_DOMAIN}/${router.query.slug}`}
+                                  url={`${process.env.NEXT_PUBLIC_STORE_DOMAIN}/product/${router.query.slug}`}
                                   quote=""
                                 >
                                   <WhatsappIcon size={32} round />
@@ -491,7 +491,7 @@ const ProductScreen = ({ product, attributes, relatedProducts }) => {
                               </li>
                               <li className="flex items-center text-center border border-gray-100 rounded-full hover:bg-emerald-500  mr-2 transition ease-in-out duration-500">
                                 <LinkedinShareButton
-                                  url={`${process.env.NEXT_PUBLIC_STORE_DOMAIN}/${router.query.slug}`}
+                                  url={`${process.env.NEXT_PUBLIC_STORE_DOMAIN}/product/${router.query.slug}`}
                                   quote=""
                                 >
                                   <LinkedinIcon size={32} round />
