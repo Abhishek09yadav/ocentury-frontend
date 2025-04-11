@@ -40,8 +40,9 @@ const useUtilsFunction = () => {
   };
 
   const showingImage = (data) => {
-    return data !== undefined && data;
+    return typeof data === "string" && data.trim() !== "" ? data : null;
   };
+  
 
   const showingUrl = (data) => {
     return data !== undefined ? data : "!#";

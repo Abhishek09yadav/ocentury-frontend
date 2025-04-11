@@ -466,14 +466,14 @@ export const storeCustomization = {
     bottom_dots: true,
     both_slider: false,
     first_img:
-      "https://res.cloudinary.com/ahossain/image/upload/v1697688491/settings/slider-1_rl8qdc.jpg",
+      "/slider/slider-1.jpg",
     first_title: {
-      en: "The Best Quality Products Guaranteed!",
-      de: "Die besten Qualitätsprodukte garantiert!",
+      en: "",
+      de: "",
     },
     first_description: {
-      en: "The Best Quality Products Guaranteed!",
-      de: "Die besten Qualitätsprodukte garantiert!",
+      en: "",
+      de: "",
     },
     first_button: {
       en: "Shop Now",
@@ -481,14 +481,14 @@ export const storeCustomization = {
     },
     first_link: "/search?category=milk-dairy",
     second_img:
-      "https://res.cloudinary.com/ahossain/image/upload/v1697688491/settings/slider-2_o6aezc.jpg",
+      "/slider/slider-1.jpg",
     second_title: {
-      en: "Best Different Type of Grocery Store",
-      de: "Bestes anderes Lebensmittelgeschäft",
+      en: "",
+      de: "",
     },
     second_description: {
-      en: "Quickly aggregate empowered networks after emerging products...",
-      de: "Schnelle Bündelung leistungsstarker Netzwerke nach neuen Produkten ...",
+      en: "",
+      de: "",
     },
     second_button: {
       en: "Shop Now",
@@ -496,14 +496,14 @@ export const storeCustomization = {
     },
     second_link: "/search?category=fish-meat",
     third_img:
-      "https://res.cloudinary.com/ahossain/image/upload/v1697688492/settings/slider-3_iw4nnf.jpg",
+      "/slider/slider-1.jpg",
     third_title: {
-      en: "Quality Freshness Guaranteed!",
+      en: "",
       de: "Qualitätsfrische garantiert!",
     },
     third_description: {
-      en: "Intrinsicly fashion performance based products rather than accurate benefits...",
-      de: "Gestalten Sie Produkte grundsätzlich auf Leistung und nicht auf konkrete Vorteile ...",
+      en: "",
+      de: "",
     },
     third_button: {
       en: "Shop Now",
