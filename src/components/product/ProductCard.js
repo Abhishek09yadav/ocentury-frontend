@@ -86,9 +86,9 @@ const ProductCard = ({ product, attributes }) => {
         />
       )}
 
-      <div className="md:w-[44%] lg:w-[22%] w-full group box-border overflow-hidden flex rounded-md shadow-sm pe-0 flex-col items-center bg-white relative hover:shadow-2xl">
+      <div className="para-hover md:w-[44%] lg:w-[22%] w-[45%] group box-border overflow-hidden flex rounded-md shadow-sm pe-0 flex-col items-center  relative hover:shadow-2xl">
         <div className="w-full flex justify-between">
-          <Stock product={product} stock={product.stock} card />
+          {/* <Stock product={product} stock={product.stock} card /> */}
           <Discount product={product} />
         </div>
         <div
@@ -124,14 +124,14 @@ const ProductCard = ({ product, attributes }) => {
             <span className="text-gray-400 font-medium text-xs d-block mb-1">
               {product.unit}
             </span>
-            <h2 className="text-heading truncate mb-0 block text-sm font-medium text-gray-600">
-              <span className="line-clamp-2 font-bold">
+            <h2 className="text-heading truncate mb-0 block text-sm font-medium text-gray-600 relative">
+              <span className="line-clamp-2 font-bold para-hover-target">
                 {showingTranslateValue(product?.title)}
               </span>
             </h2>
           </div>
           {/* //^ Price section */}
-          <div className="flex justify-between items-center text-heading text-sm sm:text-base space-s-2 md:text-base lg:text-xl">
+          <div className="flex justify-between items-center text-heading text-sm sm:text-base space-s-2 md:text-base lg:text-xl para-hover-target">
             <Price
               card
               product={product}
