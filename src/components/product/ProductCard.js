@@ -212,23 +212,23 @@ const ProductCard = ({ product, attributes }) => {
                   <WhatsappIcon size={32} round />
                 </WhatsappShareButton>
               </div>
-              {/* <div className="w-12 h-12 flex items-center justify-center bg-gray-50 shadow-md shadow-gray-200 rounded-full hover:bg-sky-500 hover:text-gray-50">
+              <div className="w-12 h-12 flex items-center justify-center bg-gray-50 shadow-md shadow-gray-200 rounded-full hover:bg-sky-500 hover:text-gray-50">
                 <FacebookShareButton
-                   url={`${process.env.NEXT_PUBLIC_STORE_DOMAIN}/product/${product.slug}`}
+                  url={`${process.env.NEXT_PUBLIC_STORE_DOMAIN}/product/${product.slug}`}
                   quote=""
                 >
                   <FacebookIcon size={32} round />
                 </FacebookShareButton>
-              </div> */}
+              </div>
 
-              {/* <div className="w-12 h-12 flex items-center justify-center  bg-gray-50 rounded-full shadow-md shadow-gray-200 hover:bg-gray-700 hover:text-gray-50">
+              <div className="w-12 h-12 flex items-center justify-center  bg-gray-50 rounded-full shadow-md shadow-gray-200 hover:bg-gray-700 hover:text-gray-50">
                 <TwitterShareButton
-                   url={`${process.env.NEXT_PUBLIC_STORE_DOMAIN}/product/${product.slug}`}
+                  url={`${process.env.NEXT_PUBLIC_STORE_DOMAIN}/product/${product.slug}`}
                   quote=""
                 >
                   <XIcon size={32} round />
                 </TwitterShareButton>
-              </div> */}
+              </div>
             </div>
             <div className="absolute left-0 w-full bg-transparent z-50 h-4 -bottom-4" />
             <div className="absolute -bottom-2 left-[45%] h-0 w-fit border-l-8 border-r-8 border-t-8 border-transparent border-t-gray-100" />
