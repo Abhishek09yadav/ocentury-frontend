@@ -45,7 +45,9 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
           <div className="min-h-screen">
             <StickyCart />
             <div className="bg-white">
-              <div className="mx-auto py-2">  {/* max-w-screen-2xl */}
+              <div className="mx-auto py-2">
+                {" "}
+                {/* max-w-screen-2xl */}
                 <div className="flex w-full">
                   <div className="flex-shrink  lg:block w-full ">
                     <MainCarousel />
@@ -132,7 +134,7 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
                       />
                     ) : (
                       // <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-5 2xl:grid-cols-6 gap-2 md:gap-3 lg:gap-3">
-                      <div className="flex md:flex-row flex-wrap gap-10 justify-center flex-col">
+                      <div className="flex flex-row flex-wrap gap-3 justify-center">
                         {popularProducts
                           ?.slice(
                             0,
@@ -166,7 +168,9 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
 
             {/* Classic Plain Shirt */}
             <div>
-              <h1 className="px-6 font-[lora] text-[3.25rem] hover:cursor-pointer">Classic Plain Shirts</h1>
+              <h1 className="px-6 font-[lora] text-[3.25rem] hover:cursor-pointer">
+                Classic Plain Shirts
+              </h1>
               <ClassicShirtCard />
             </div>
 
@@ -221,7 +225,7 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
                         />
                       ) : (
                         // <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-5 2xl:grid-cols-6 gap-2 md:gap-3 lg:gap-3">
-                        <div className="flex md:flex-row flex-wrap gap-10 justify-center flex-col">
+                        <div className="flex flex-row flex-wrap gap-3 justify-center">
                           {discountProducts
                             ?.slice(
                               0,
