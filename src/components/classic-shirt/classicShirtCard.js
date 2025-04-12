@@ -3,19 +3,22 @@ const ClassicShirtCard = () => {
 
     const shirts = [
       {
-        image: 'https://storage.googleapis.com/a1aa/image/_DBiIxtZhGY-_1WXwV3l9ksRaDoBo54CuXzs_1SU9Gg.jpg',
+        image: "shirts/linen_shirt.jpeg",
+        // image: 'https://storage.googleapis.com/a1aa/image/_DBiIxtZhGY-_1WXwV3l9ksRaDoBo54CuXzs_1SU9Gg.jpg',
         alt: "Close-up of a light blue linen shirt with wooden buttons and a label that reads 'Punekar Cotton'",
-        title: 'Linen Shirts',
+        title: "Linen Shirts",
       },
       {
-        image: 'https://www.zodiaconline.com/media/catalog/product/cache/253fb0759a515d30bcbc159f082108b5/z/o/zodiac_shirts_filafil_dk11_cf_z1_100_cotton_fil_a_fil_008_fssc_nbd_anthra_21_01.jpg',
-        alt: 'White formal cotton shirt neatly folded on a table',
-        title: 'Formal Dark Cotton',
+        image: "shirts/formal_dark_cotton_shirt.jpeg",
+        // image: 'https://www.zodiaconline.com/media/catalog/product/cache/253fb0759a515d30bcbc159f082108b5/z/o/zodiac_shirts_filafil_dk11_cf_z1_100_cotton_fil_a_fil_008_fssc_nbd_anthra_21_01.jpg',
+        alt: "White formal cotton shirt neatly folded on a table",
+        title: "Formal Dark Cotton",
       },
       {
-        image: 'https://www.zodiaconline.com/media/catalog/product/z/o/zodiac_shirts_fine_twl_d12_cf_z1_100_cotton_pln_052_fssc_cac_purple_65_b_01.jpg?resize.width=500',
-        alt: 'A patterned casual shirt hanging on a wooden hanger',
-        title: 'Formal Super Fine Cotton',
+        image: "shirts/formal_super_fine_cotton.jpeg",
+        // image: 'https://www.zodiaconline.com/media/catalog/product/z/o/zodiac_shirts_fine_twl_d12_cf_z1_100_cotton_pln_052_fssc_cac_purple_65_b_01.jpg?resize.width=500',
+        alt: "A patterned casual shirt hanging on a wooden hanger",
+        title: "Formal Super Fine Cotton",
       },
     ];
   
