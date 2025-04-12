@@ -58,7 +58,7 @@ const Navbar = () => {
   return (
     <>
       <CartDrawer />
-      <div className="bg-customPink sticky top-0 z-20">
+      <div className="bg-customPink sticky top-0 z-40">
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-10">
           <div className="top-bar h-14 lg:h-18 flex items-center justify-between py-1 mx-auto">
             <div className="mx-auto lg:mx-0 flex justify-center lg:justify-start w-full lg:w-auto">
