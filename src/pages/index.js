@@ -166,7 +166,7 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
 
             {/* Classic Plain Shirt */}
             <div>
-              <h1 className="px-6 font-[lora] text-[3.25rem] hover:cursor-pointer">
+              <h1 className="px-6 font-[lora] text-[3.25rem] text-center ">
                 Classic Plain Shirts
               </h1>
               <ClassicShirtCard />
