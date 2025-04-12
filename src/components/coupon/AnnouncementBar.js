@@ -71,7 +71,7 @@ const announcements =
   }, [announcements.length]);
 
   return (
-    <div className="w-full bg-blue-900 text-white h-12 flex items-center overflow-hidden">
+    <div className="w-full bg-blue-900 text-white h-8 md:h-12  flex items-center overflow-hidden">
       <div
         className="flex transition-transform duration-700 ease-in-out"
         style={{
@@ -82,7 +82,7 @@ const announcements =
         {announcements.map((msg, idx) => (
           <div
             key={idx}
-            className="flex items-center justify-center flex-none w-full h-12 text-center font-medium text-base"
+            className="flex items-center justify-center flex-none w-full text-center font-medium text-sm sm:text-base md:text-lg"
           >
             {msg}
           </div>
