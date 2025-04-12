@@ -164,11 +164,11 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
 
             {/* Classic Plain Shirt */}
             <div>
-              <h1 className="px-6 font-[lora] text-[3.25rem]">Classic Plain Shirts</h1>
+              <h1 className="px-6 font-[lora] text-[3.25rem] hover:cursor-pointer">Classic Plain Shirts</h1>
               <ClassicShirtCard />
             </div>
 
-            <div className="mt-[4.5rem]">
+            <div className="mt-[4.5rem] hover:cursor-pointer">
               <FormalTrouser />
             </div>
 

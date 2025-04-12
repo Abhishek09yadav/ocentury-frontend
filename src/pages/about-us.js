@@ -116,6 +116,7 @@ const AboutUs = () => {
                   "/about-us.jpg"
                 }
                 alt="logo"
+                className=""
               />
             </div>
           </div>

@@ -74,8 +74,8 @@ const Testimonials = () => {
                   "{t.text}"
                 </h4>
                 <div className="mt-4 flex items-center space-x-3">
-                  <figure className="h-10 w-10 ">
-                    <img src={t.img} className="rounded-full " alt={t.name} />
+                  <figure className="h-10 w-10 overflow-hidden rounded-full">
+                    <img src={t.img} className="h-full w-full object-cover" alt={t.name} />
                   </figure>
                   <p className="font-lexend text-xl font-medium text-blue-950">
                     {t.name}

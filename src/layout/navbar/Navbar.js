@@ -61,10 +61,7 @@ const Navbar = () => {
       <div className="bg-customPink sticky top-0 z-20">
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-10">
           <div className="top-bar h-14 lg:h-18 flex items-center justify-between py-1 mx-auto">
-            <Link
-              href="/"
-              className="mx-auto lg:mx-0 flex justify-center lg:justify-start w-full lg:w-auto"
-            >
+            <div className="mx-auto lg:mx-0 flex justify-center lg:justify-start w-full lg:w-auto">
               <div className="w-18 sm:w-20">
                 <Image
                   width={80}
@@ -75,7 +72,7 @@ const Navbar = () => {
                   alt="logo"
                 />
               </div>
-            </Link>
+            </div>
             {/* Navigation Items */}
             <div className="hidden lg:flex items-center space-x-6 ml-6">
               <Link
