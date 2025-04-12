@@ -12,12 +12,7 @@ import OfferTimer from "@components/coupon/OfferTimer";
 import useUtilsFunction from "@hooks/useUtilsFunction";
 import CMSkeletonTwo from "@components/preloader/CMSkeletonTwo";
 
-const coupons = [
-  { code: 'SAVE50', discount: 50, minimumAmount: 1000 },
-  { code: 'FIRST20', discount: 20, minimumAmount: 500 },
-  { code: 'WELCOME30', discount: 30, minimumAmount: 700 },
-  { code: 'FREESHIP', discount: 0, minimumAmount: 500 },
-];
+
 
 export default function AnnouncementBar() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -72,22 +67,27 @@ const announcements =
 
   return (
     <div className="w-full bg-blue-900 text-white h-8 md:h-12  flex items-center overflow-hidden">
-      <div
-        className="flex transition-transform duration-700 ease-in-out"
-        style={{
-          transform: `translateX(-${currentIndex * 100}%)`,
-          width: `${announcements.length * 100}%`,
-        }}
+      <CopyToClipboard
+        text={data?.[currentIndex]?.couponCode}
+        onCopy={() => handleCopied(data?.[currentIndex]?.couponCode)}
       >
-        {announcements.map((msg, idx) => (
-          <div
-            key={idx}
-            className="flex items-center justify-center flex-none w-full text-center font-medium text-sm sm:text-base md:text-lg"
-          >
-            {msg}
-          </div>
-        ))}
-      </div>
+        <div
+          className="flex transition-transform duration-700 ease-in-out"
+          style={{
+            transform: `translateX(-${currentIndex * 100}%)`,
+            width: `${announcements.length * 100}%`,
+          }}
+        >
+          {announcements.map((msg, idx) => (
+            <div
+              key={idx}
+              className="flex items-center cursor-grab  active:cursor-grabbing justify-center flex-none w-full text-center font-medium text-sm sm:text-base md:text-lg"
+            >
+              {msg}
+            </div>
+          ))}
+        </div>
+      </CopyToClipboard>
     </div>
   );
 }
