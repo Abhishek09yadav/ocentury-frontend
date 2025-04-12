@@ -18,6 +18,8 @@ import AttributeServices from "@services/AttributeServices";
 import CMSkeleton from "@components/preloader/CMSkeleton";
 import Testimonials from "@components/Testimonials/Testimonials";
 import ClassicShirtCard from "@components/classic-shirt/classicShirtCard";
+import WhyChooseUs from "@components/whyChooseUs/WhyChooseUs";
+import ShirtGallery from "@components/shirt-gallery/ShirtGallery";
 
 const Home = ({ popularProducts, discountProducts, attributes }) => {
   const router = useRouter();
@@ -171,6 +173,9 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
             <div className="mt-[4.5rem] hover:cursor-pointer">
               <FormalTrouser />
             </div>
+
+             <WhyChooseUs />
+             <ShirtGallery />
 
             {/* discounted products */}
             {storeCustomizationSetting?.home?.discount_product_status &&
