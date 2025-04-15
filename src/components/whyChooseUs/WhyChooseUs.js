@@ -1,7 +1,9 @@
 import React from 'react';
 import { TbTruckDelivery } from "react-icons/tb";
-import { MdKeyboardReturn } from "react-icons/md";
-import { RiCustomerServiceLine } from "react-icons/ri";
+import { MdKeyboardReturn, MdSecurity } from "react-icons/md";
+import { RiCustomerServiceLine, RiSecurePaymentLine } from "react-icons/ri";
+import { BiPackage } from "react-icons/bi";
+import { AiOutlineTag } from "react-icons/ai";
 
 const WhyChooseUs = () => {
     return (
@@ -23,7 +25,7 @@ const WhyChooseUs = () => {
                 {/* Card 2 */}
                 <div className='flex flex-col'>
                     <h2 className='flex gap-4 items-center text-xl sm:text-2xl md:text-[2rem] text-gray-900'>
-                        <MdKeyboardReturn /> Easy Return and Exchange
+                        <MdKeyboardReturn /> Easy Returns
                     </h2>
                     <p className='text-base sm:text-lg text-gray-600 sm:ml-14'>
                         14-Day Hassle-Free Return and Exchange Policy
@@ -33,38 +35,40 @@ const WhyChooseUs = () => {
                 {/* Card 3 */}
                 <div className='flex flex-col'>
                     <h2 className='flex gap-4 items-center text-xl sm:text-2xl md:text-[2rem] text-gray-900'>
-                        <RiCustomerServiceLine /> Customer Support
+                        <RiCustomerServiceLine /> 24/7 Support
                     </h2>
                     <p className='text-base sm:text-lg text-gray-600 sm:ml-14'>
-                        Never Fear, Help is Here! Get 24x7 Assistance on All Things Shopping!
+                        Get 24x7 Assistance on All Things Shopping!
                     </p>
                 </div>
 
-                {/* Repeating for demo — you can remove or update */}
+                {/* Card 4 */}
                 <div className='flex flex-col'>
                     <h2 className='flex gap-4 items-center text-xl sm:text-2xl md:text-[2rem] text-gray-900'>
-                        <TbTruckDelivery /> Free Shipping
+                        <RiSecurePaymentLine /> Secure Payment
                     </h2>
                     <p className='text-base sm:text-lg text-gray-600 sm:ml-14'>
-                        Enjoy Pan-India Free Shipping on all Orders!
+                        Multiple Secure Payment Options Available
                     </p>
                 </div>
 
+                {/* Card 5 */}
                 <div className='flex flex-col'>
                     <h2 className='flex gap-4 items-center text-xl sm:text-2xl md:text-[2rem] text-gray-900'>
-                        <MdKeyboardReturn /> Easy Return and Exchange
+                        <BiPackage /> Quality Products
                     </h2>
                     <p className='text-base sm:text-lg text-gray-600 sm:ml-14'>
-                        14-Day Hassle-Free Return and Exchange Policy
+                        100% Genuine and Quality Assured Products
                     </p>
                 </div>
 
+                {/* Card 6 */}
                 <div className='flex flex-col'>
                     <h2 className='flex gap-4 items-center text-xl sm:text-2xl md:text-[2rem] text-gray-900'>
-                        <RiCustomerServiceLine /> Customer Support
+                        <AiOutlineTag /> Best Prices
                     </h2>
                     <p className='text-base sm:text-lg text-gray-600 sm:ml-14'>
-                        Never Fear, Help is Here! Get 24x7 Assistance on All Things Shopping!
+                        Competitive Prices and Regular Exciting Offers
                     </p>
                 </div>
             </div>

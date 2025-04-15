@@ -86,21 +86,16 @@ const ProductCard = ({ product, attributes }) => {
         />
       )}
 
-      <div className="para-hover md:w-[44%] lg:w-[22%] w-[45%] group box-border overflow-hidden flex rounded-md shadow-sm pe-0 flex-col items-center  relative hover:shadow-2xl">
+      <div className="para-hover w-[48%] sm:w-[48%] md:w-[44%] lg:w-[22%] group box-border overflow-hidden flex rounded-md shadow-sm pe-0 flex-col items-center relative hover:shadow-2xl">
         <div className="w-full flex justify-between">
           {/* <Stock product={product} stock={product.stock} card /> */}
           <Discount product={product} />
         </div>
         <div
           onClick={() => {
-            // handleModalOpen(!modalOpen, product._id);
-            // handleLogEvent(
-            //   "product",
-            //   `opened ${showingTranslateValue(product?.title)} product modal`
-            // );
             router.push(`/product/${product.slug}`);
           }}
-          className="relative flex justify-center cursor-pointer pt-2 w-full h-80"
+          className="relative flex justify-center cursor-pointer pt-2 w-full h-48 sm:h-64 md:h-72 lg:h-80"
         >
           <div className="relative w-full h-full">
             {product.image[0] ? (
@@ -119,19 +114,19 @@ const ProductCard = ({ product, attributes }) => {
             )}
           </div>
         </div>
-        <div className="w-full px-3 lg:px-4 pb-4 overflow-hidden">
+        <div className="w-full px-2 sm:px-3 lg:px-4 pb-3 sm:pb-4 overflow-hidden">
           <div className="relative mb-1 mt-4">
             <span className="text-gray-400 font-medium text-xs d-block mb-1">
               {product.unit}
             </span>
-            <h2 className="text-heading truncate mb-0 block text-sm font-medium text-gray-600 relative">
+            <h2 className="text-heading truncate mb-0 block text-xs sm:text-sm font-medium text-gray-600 relative">
               <span className="line-clamp-2 font-bold para-hover-target">
                 {showingTranslateValue(product?.title)}
               </span>
             </h2>
           </div>
           {/* //^ Price section */}
-          <div className="flex justify-between items-center text-heading text-sm sm:text-base space-s-2 md:text-base lg:text-xl para-hover-target">
+          <div className="flex justify-between items-center text-heading text-xs sm:text-sm md:text-base lg:text-xl para-hover-target">
             <Price
               card
               product={product}
@@ -155,18 +150,17 @@ const ProductCard = ({ product, attributes }) => {
                     item.id === product._id && (
                       <div
                         key={item.id}
-                        className="h-9  w-auto flex flex-nowrap items-center justify-evenly py-1 px-2 bg-customPink text-white rounded"
+                        className="h-7 sm:h-9 w-auto flex flex-nowrap items-center justify-evenly py-1 px-2 bg-customPink text-white rounded"
                       >
                         <button
                           onClick={() =>
                             updateItemQuantity(item.id, item.quantity - 1)
                           }
+                          className="text-sm sm:text-base"
                         >
-                          <span className="text-dark text-base">
-                            <IoRemove />
-                          </span>
+                          <IoRemove />
                         </button>
-                        <p className="text-sm text-dark px-1 font-serif font-semibold">
+                        <p className="text-xs sm:text-sm text-dark px-1 font-serif font-semibold">
                           {item.quantity}
                         </p>
                         <button
@@ -175,10 +169,9 @@ const ProductCard = ({ product, attributes }) => {
                               ? handleAddItem(item)
                               : handleIncreaseQuantity(item)
                           }
+                          className="text-sm sm:text-base"
                         >
-                          <span className="text-dark text-base">
-                            <IoAdd />
-                          </span>
+                          <IoAdd />
                         </button>
                       </div>
                     )
@@ -188,10 +181,10 @@ const ProductCard = ({ product, attributes }) => {
               <button
                 onClick={() => handleAddItem(product)}
                 aria-label="cart"
-                className="h-9 w-9 flex items-center justify-center border border-gray-200 rounded text-customPink hover:border-customPinkDark hover:bg-customPinkDark hover:text-white transition-all"
+                className="h-7 w-7 sm:h-9 sm:w-9 flex items-center justify-center border border-gray-200 rounded text-customPink hover:border-customPinkDark hover:bg-customPinkDark hover:text-white transition-all"
               >
                 {" "}
-                <span className="text-xl">
+                <span className="text-lg sm:text-xl">
                   <IoBagAddSharp />
                 </span>{" "}
               </button>
@@ -200,32 +193,32 @@ const ProductCard = ({ product, attributes }) => {
           {/* share button */}
           <div
             className={`absolute transition-transform ease-in-out shadow-lg shadow-gray-400/35 bg-gray-100 p-1 rounded-3xl ${
-              isToolTipVisible ? "flex -translate-y-20" : "hidden"
+              isToolTipVisible ? "flex -translate-y-16 sm:-translate-y-20" : "hidden"
             }`}
           >
             <div className="tooltip-container flex items-center justify-center gap-1">
-              <div className="w-12 h-12 flex items-center justify-center shadow-gray-200 rounded-full hover:bg-green-500 hover:text-gray-50">
+              <div className="w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center shadow-gray-200 rounded-full hover:bg-green-500 hover:text-gray-50">
                 <WhatsappShareButton
                   url={`${process.env.NEXT_PUBLIC_STORE_DOMAIN}/product/${product.slug}`}
                   quote=""
                 >
-                  <WhatsappIcon size={32} round />
+                  <WhatsappIcon size={24} round />
                 </WhatsappShareButton>
               </div>
-              <div className="w-12 h-12 flex items-center justify-center bg-gray-50 shadow-md shadow-gray-200 rounded-full hover:bg-sky-500 hover:text-gray-50">
+              <div className="w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center bg-gray-50 shadow-md shadow-gray-200 rounded-full hover:bg-sky-500 hover:text-gray-50">
                 <FacebookShareButton
                   url={`${process.env.NEXT_PUBLIC_STORE_DOMAIN}/product/${product.slug}`}
                   quote=""
                 >
-                  <FacebookIcon size={32} round />
+                  <FacebookIcon size={24} round />
                 </FacebookShareButton>
               </div>
-              <div className="w-12 h-12 flex items-center justify-center  bg-gray-50 rounded-full shadow-md shadow-gray-200 hover:bg-gray-700 hover:text-gray-50">
+              <div className="w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center  bg-gray-50 rounded-full shadow-md shadow-gray-200 hover:bg-gray-700 hover:text-gray-50">
                 <TwitterShareButton
                   url={`${process.env.NEXT_PUBLIC_STORE_DOMAIN}/product/${product.slug}`}
                   quote=""
                 >
-                  <XIcon size={32} round />
+                  <XIcon size={24} round />
                 </TwitterShareButton>
               </div>
             </div>
@@ -233,7 +226,7 @@ const ProductCard = ({ product, attributes }) => {
             <div className="absolute -bottom-2 left-[45%] h-0 w-fit border-l-8 border-r-8 border-t-8 border-transparent border-t-gray-100" />
           </div>
           <div
-            className={`relative border-4 border-gray-50 bg-gradient-to-r from-customPink to-customPink p-2 rounded-full transition-all duration-300 ease-in-out shadow-gray-300/50 shadow-xl hover:cursor-pointer w-10 h-10 flex items-center justify-center ${
+            className={`relative border-4 border-gray-50 bg-gradient-to-r from-customPink to-customPink p-2 rounded-full transition-all duration-300 ease-in-out shadow-gray-300/50 shadow-xl hover:cursor-pointer w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center ${
               isToolTipVisible
                 ? "scale-110 -translate-y-1 from-violet-800 to-indigo-800"
                 : ""
@@ -241,7 +234,7 @@ const ProductCard = ({ product, attributes }) => {
             onClick={toggleToolTip}
           >
             <FaShareAlt
-              className={`text-gray-100 dark:text-white transition-transform duration-300 hover:rotate-180 ${
+              className={`text-gray-100 dark:text-white text-sm sm:text-base transition-transform duration-300 hover:rotate-180 ${
                 isToolTipVisible ? "rotate-180" : ""
               }`}
             />
