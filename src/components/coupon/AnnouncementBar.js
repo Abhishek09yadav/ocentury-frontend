@@ -66,7 +66,7 @@ const announcements =
   }, [announcements.length]);
 
   return (
-    <div className="w-full bg-[#151144] text-[#FFD700] h-6 md:h-6  flex items-center overflow-hidden">
+    <div className="w-full bg-[#151144] text-[#FFD700] h-9 md:h-6  flex items-center overflow-hidden">
       <CopyToClipboard
         text={data?.[currentIndex]?.couponCode}
         onCopy={() => handleCopied(data?.[currentIndex]?.couponCode)}
