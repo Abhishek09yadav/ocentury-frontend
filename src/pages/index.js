@@ -133,7 +133,7 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
                         loading={loading}
                       />
                     ) : (
-                      <div className="flex flex-wrap gap-1 sm:gap-2 md:gap-3 justify-between px-2 sm:px-4">
+                      <div className="flex flex-wrap gap-1 md:gap-3 justify-between px-2 sm:px-4">
                         {popularProducts
                           ?.slice(
                             0,

@@ -9,11 +9,10 @@ const Price = ({ product, price, card, currency, originalPrice }) => {
       {product?.isCombination ? (
         <>
           {originalPrice > price && (
-            <span className="relative inline-block mr-4 text-sm text-gray-400 font-medium">
+            <span className="relative inline-block sm:mr-2 md:mr-4 text-[12px] lg:text-sm text-gray-400 font-medium">
               MRP {currency}{getNumberTwo(originalPrice)}
-              <span className="absolute left-0 top-5 w-full h-[1px] bg-gray-400 -translate-y-1/2 rotate-[-15deg] origin-left pointer-events-none"></span>
+              <span className="absolute left-0 top-5 w-24 lg:w-full h-[1px] bg-gray-400 -translate-y-1/2 rotate-[-10deg] lg:rotate-[-15deg] origin-left pointer-events-none"></span>
             </span>
-
           )}
           <span
             className={

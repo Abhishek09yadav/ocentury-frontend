@@ -65,43 +65,59 @@ const MainCarousel = () => {
           disableOnInteraction: false,
         }}
         loop={true}
-        pagination={
-          (storeCustomizationSetting?.slider?.bottom_dots ||
-            storeCustomizationSetting?.slider?.both_slider) && {
-            clickable: true,
-          }
-        }
-        navigation={
-          (storeCustomizationSetting?.slider?.left_right_arrow ||
-            storeCustomizationSetting?.slider?.both_slider) && {
-            clickable: true,
-          }
-        }
+        pagination={{
+          clickable: true,
+          el: '.swiper-pagination',
+          hideOnClick: true,
+          dynamicBullets: true,
+        }}
+        navigation={{
+          enabled: window?.innerWidth >= 640,
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        }}
+        breakpoints={{
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 1,
+            spaceBetween: 30,
+          },
+        }}
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
         {sliderData?.map((item, i) => (
-          <SwiperSlide className="w-full h-full relative overflow-hidden" key={i + 1}>
-
-            <div className="relative h-[55vh] sm:h-[70vh] md:h-[90vh]">
+          <SwiperSlide 
+            className="w-full relative overflow-hidden" 
+            key={i + 1}
+          >
+            <div className="relative h-[40vh] sm:h-[60vh] md:h-[80vh] lg:h-[90vh]">
               <Image
                 src={item.image || "/slider/slider-1.jpg"}
-                alt={item.title}
+                alt={item.title || 'Slider Image'}
                 fill
                 className="object-cover"
                 priority
+                sizes="100vw"
+                quality={85}
               />
             </div>
 
-            <div className="absolute top-0 left-0 z-10 p-r-16 flex-col flex w-full h-full place-items-start justify-center">
-              <div className="pl-4 pr-12 sm:pl-10 sm:pr-16 w-10/12 lg:w-8/12 xl:w-7/12">
-                <h1 className="mb-2 font-serif text-xl sm:text-lg md:text-2xl line-clamp-1 md:line-clamp-none  lg:line-clamp-none  lg:text-3xl font-bold text-gray-800">
+            <div className="absolute top-0 left-0 z-10 flex flex-col w-full h-full justify-center bg-black/10">
+              <div className="px-4 sm:px-10 md:px-16 w-full sm:w-10/12 md:w-8/12 lg:w-7/12">
+                <h1 className="mb-2 font-serif text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white drop-shadow-lg">
                   {item.title}
                 </h1>
-                <p className="text-base leading-6 text-gray-600 font-sans line-clamp-1  md:line-clamp-none lg:line-clamp-none">
+                <p className="text-sm sm:text-base md:text-lg text-white font-sans line-clamp-2 sm:line-clamp-none drop-shadow-lg">
                   {item.info}
                 </p>
-
               </div>
             </div>
           </SwiperSlide>

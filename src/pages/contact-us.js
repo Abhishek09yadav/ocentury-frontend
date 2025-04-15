@@ -80,18 +80,18 @@ const ContactUs = () => {
               />
             ) : (
               <div className="border p-10 rounded-lg text-center">
-                <span className="flex justify-center text-4xl text-emerald-500 mb-4">
+                <span className="flex justify-center text-4xl text-gray-400 mb-4">
                   <FiMail />
                 </span>
-                <h5 className="text-xl mb-2 font-bold">
+                <h5 className="text-xl mb-2 font-bold text-gray-500">
                   {showingTranslateValue(
                     storeCustomizationSetting?.contact_us?.email_box_title
                   )}
                 </h5>
-                <p className="mb-0 text-base opacity-90 leading-7">
+                <p className="mb-0 text-base opacity-90 leading-7 text-gray-500">
                   <a
                     href={`mailto:${storeCustomizationSetting?.contact_us?.email_box_email}`}
-                    className="text-emerald-500"
+                    className="text-gray-500"
                   >
                     {showingTranslateValue(
                       storeCustomizationSetting?.contact_us?.email_box_email
@@ -113,18 +113,18 @@ const ContactUs = () => {
               />
             ) : (
               <div className="border p-10 rounded-lg text-center">
-                <span className="flex justify-center text-4xl text-emerald-500 mb-4">
+                <span className="flex justify-center text-4xl text-gray-400 mb-4">
                   <FiBell />
                 </span>
-                <h5 className="text-xl mb-2 font-bold">
+                <h5 className="text-xl mb-2 font-bold text-gray-500">
                   {showingTranslateValue(
                     storeCustomizationSetting?.contact_us?.call_box_title
                   )}
                 </h5>
-                <p className="mb-0 text-base opacity-90 leading-7">
+                <p className="mb-0 text-base opacity-90 leading-7 ">
                   <a
                     href={`mailto:${storeCustomizationSetting?.contact_us?.call_box_phone}`}
-                    className="text-emerald-500"
+                    className="text-gray-500"
                   >
                     {showingTranslateValue(
                       storeCustomizationSetting?.contact_us?.call_box_phone
@@ -144,8 +144,8 @@ const ContactUs = () => {
                 loading={loading}
               />
             ) : (
-              <div className="border p-10 rounded-lg text-center">
-                <span className="flex justify-center text-4xl text-emerald-500 mb-4">
+              <div className="border p-10 rounded-lg text-center text-gray-500">
+                <span className="flex justify-center text-4xl text-gray-400 mb-4">
                   <FiMapPin />
                 </span>
                 <h5 className="text-xl mb-2 font-bold">
