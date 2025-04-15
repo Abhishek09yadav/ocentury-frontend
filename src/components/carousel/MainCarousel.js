@@ -67,14 +67,14 @@ const MainCarousel = () => {
         loop={true}
         pagination={{
           clickable: true,
-          el: '.swiper-pagination',
+          el: ".swiper-pagination",
           hideOnClick: true,
           dynamicBullets: true,
         }}
         navigation={{
           enabled: window?.innerWidth >= 640,
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
         }}
         breakpoints={{
           320: {
@@ -94,15 +94,12 @@ const MainCarousel = () => {
         className="mySwiper"
       >
         {sliderData?.map((item, i) => (
-          <SwiperSlide 
-            className="w-full relative overflow-hidden" 
-            key={i + 1}
-          >
+          <SwiperSlide className="w-full relative overflow-hidden" key={i + 1}>
             {/* Updated image container with better aspect ratio handling */}
-            <div className="relative w-full aspect-[16/9] sm:aspect-[16/8] md:aspect-[16/7] lg:aspect-[16/6]">
+            <div className="relative w-full aspect-[16/9] sm:aspect-[16/8] md:aspect-[16/7] lg:aspect-[16/9]">
               <Image
                 src={item.image || "/slider/slider-1.jpg"}
-                alt={item.title || 'Slider Image'}
+                alt={item.title || "Slider Image"}
                 fill
                 className="object-cover object-center" // Added object-center for better positioning
                 priority

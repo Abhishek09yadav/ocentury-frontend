@@ -19,6 +19,7 @@ import CartDrawer from "@components/drawer/CartDrawer";
 import { SidebarContext } from "@context/SidebarContext";
 import useUtilsFunction from "@hooks/useUtilsFunction";
 import Category from "@components/category/Category";
+import MobileFooter from "@layout/footer/MobileFooter";
 
 const Navbar = () => {
   const { t, lang } = useTranslation("common");
@@ -59,16 +60,19 @@ const Navbar = () => {
                 <Image
                   width={60}
                   height={60}
-                  className="w-full h-auto"
+                  className="w-full h-auto "
                   priority
                   src="/logo/gray-logo.png"
                   alt="logo"
                 />
               </div>
-
+              {/* <MobileFooter/> */}
               {/* Icons Section - Right */}
               <div className="flex items-center space-x-4 justify-end">
-                <button className="text-black text-2xl font-bold" aria-label="Alert">
+                <button
+                  className="text-black text-2xl font-bold"
+                  aria-label="Alert"
+                >
                   <FaBell className="w-6 h-6 drop-shadow-xl" />
                 </button>
                 <button
@@ -81,9 +85,15 @@ const Navbar = () => {
                   </span>
                   <FaShoppingCart className="w-6 h-6 drop-shadow-xl" />
                 </button>
-                <button className="text-black text-2xl font-bold" aria-label="Login">
+                <button
+                  className="text-black text-2xl font-bold"
+                  aria-label="Login"
+                >
                   {userInfo?.image ? (
-                    <Link href="/user/dashboard" className="relative top-1 w-6 h-6">
+                    <Link
+                      href="/user/dashboard"
+                      className="relative top-1 w-6 h-6"
+                    >
                       <Image
                         width={29}
                         height={29}
@@ -93,7 +103,10 @@ const Navbar = () => {
                       />
                     </Link>
                   ) : userInfo?.name ? (
-                    <Link href="/user/dashboard" className="leading-none font-bold font-serif block">
+                    <Link
+                      href="/user/dashboard"
+                      className="leading-none font-bold font-serif block"
+                    >
                       {userInfo?.name[0]}
                     </Link>
                   ) : (
@@ -104,94 +117,91 @@ const Navbar = () => {
                 </button>
               </div>
             </div>
-
           </div>
-            {/* Navigation Items - Below Logo */}
+          {/* Navigation Items - Below Logo */}
         </div>
-            {/* Navigation Items */}
-            <div className="hidden lg:flex items-center justify-center py-3 absolute z-[41] bg-transparent w-full space-x-6 hover:bg-white transition-colors duration-500 ease-in-out mx-auto">
-              <Link
-                href="/"
-                className="relative text-black hover:text-gray-700 text-sm font-medium after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full"
+        {/* Navigation Items */}
+        <div className="hidden lg:flex items-center justify-center py-3 absolute z-[41] bg-transparent w-full space-x-6 hover:bg-white transition-colors duration-500 ease-in-out mx-auto">
+          <Link
+            href="/"
+            className="relative text-black hover:text-gray-700 text-sm font-medium after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full"
+          >
+            {showingTranslateValue(storeCustomizationSetting?.navbar?.home) ||
+              "Home"}
+          </Link>
+          {storeCustomizationSetting?.navbar?.about_menu_status && (
+            <Link
+              href="/about-us"
+              className="relative text-black hover:text-gray-700 text-sm font-medium after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full"
+            >
+              {showingTranslateValue(
+                storeCustomizationSetting?.navbar?.about_us
+              )}
+            </Link>
+          )}
+          {storeCustomizationSetting?.navbar?.categories_menu_status && (
+            <Popover className="relative">
+              <Popover.Button className="group inline-flex items-center text-black hover:text-black-200 text-sm font-medium focus:outline-none  after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full">
+                <span>
+                  {showingTranslateValue(
+                    storeCustomizationSetting?.navbar?.categories
+                  )}
+                </span>
+                <ChevronDownIcon
+                  className="ml-1 h-3 w-3 group-hover:text-black-200"
+                  aria-hidden="true"
+                />
+              </Popover.Button>
+
+              <Transition
+                as={Fragment}
+                enter="transition ease-out duration-200"
+                enterFrom="opacity-0 translate-y-1"
+                enterTo="opacity-100 translate-y-0"
+                leave="transition ease-in duration-150"
+                leaveFrom="opacity-100 translate-y-0"
+                leaveTo="opacity-0 translate-y-1"
               >
-                {showingTranslateValue(
-                  storeCustomizationSetting?.navbar?.home
-                ) || "Home"}
-              </Link>
-
-              {storeCustomizationSetting?.navbar?.about_menu_status && (
-                <Link
-                  href="/about-us"
-                  className="relative text-black hover:text-gray-700 text-sm font-medium after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full"
-                >
-                  {showingTranslateValue(
-                    storeCustomizationSetting?.navbar?.about_us
-                  )}
-                </Link>
+                <Popover.Panel className="absolute z-10 -ml-1 mt-1 transform w-screen max-w-xs c-h-65vh bg-white">
+                  <div className="rounded-md shadow-lg ring-1 ring-black ring-opacity-5 overflow-y-scroll flex-grow scrollbar-hide w-full h-full">
+                    <Category />
+                  </div>
+                </Popover.Panel>
+              </Transition>
+            </Popover>
+          )}
+          {storeCustomizationSetting?.navbar?.contact_menu_status && (
+            <Link
+              href="/contact-us"
+              className="relative text-black hover:text-gray-700 text-sm font-medium after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full "
+            >
+              {showingTranslateValue(
+                storeCustomizationSetting?.navbar?.contact_us
               )}
-              {storeCustomizationSetting?.navbar?.categories_menu_status && (
-                <Popover className="relative">
-                  <Popover.Button className="group inline-flex items-center text-black hover:text-black-200 text-sm font-medium focus:outline-none  after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full">
-                    <span>
-                      {showingTranslateValue(
-                        storeCustomizationSetting?.navbar?.categories
-                      )}
-                    </span>
-                    <ChevronDownIcon
-                      className="ml-1 h-3 w-3 group-hover:text-black-200"
-                      aria-hidden="true"
-                    />
-                  </Popover.Button>
-
-                  <Transition
-                    as={Fragment}
-                    enter="transition ease-out duration-200"
-                    enterFrom="opacity-0 translate-y-1"
-                    enterTo="opacity-100 translate-y-0"
-                    leave="transition ease-in duration-150"
-                    leaveFrom="opacity-100 translate-y-0"
-                    leaveTo="opacity-0 translate-y-1"
-                  >
-                    <Popover.Panel className="absolute z-10 -ml-1 mt-1 transform w-screen max-w-xs c-h-65vh bg-white">
-                      <div className="rounded-md shadow-lg ring-1 ring-black ring-opacity-5 overflow-y-scroll flex-grow scrollbar-hide w-full h-full">
-                        <Category />
-                      </div>
-                    </Popover.Panel>
-                  </Transition>
-                </Popover>
+            </Link>
+          )}
+          {storeCustomizationSetting?.navbar?.privacy_policy_status && (
+            <Link
+              href="/privacy-policy"
+              className="relative text-black hover:text-gray-700 text-sm font-medium after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full"
+            >
+              {showingTranslateValue(
+                storeCustomizationSetting?.navbar?.privacy_policy
               )}
-
-              {storeCustomizationSetting?.navbar?.contact_menu_status && (
-                <Link
-                  href="/contact-us"
-                  className="relative text-black hover:text-gray-700 text-sm font-medium after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full "
-                >
-                  {showingTranslateValue(
-                    storeCustomizationSetting?.navbar?.contact_us
-                  )}
-                </Link>
+            </Link>
+          )}
+          {storeCustomizationSetting?.navbar?.term_and_condition_status && (
+            <Link
+              href="/terms-and-conditions"
+              className="relative text-black hover:text-gray-700 text-sm font-medium after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full"
+            >
+              {showingTranslateValue(
+                storeCustomizationSetting?.navbar?.term_and_condition
               )}
-              {storeCustomizationSetting?.navbar?.privacy_policy_status && (
-                <Link
-                  href="/privacy-policy"
-                  className="relative text-black hover:text-gray-700 text-sm font-medium after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full"
-                >
-                  {showingTranslateValue(
-                    storeCustomizationSetting?.navbar?.privacy_policy
-                  )}
-                </Link>
-              )}
-              {storeCustomizationSetting?.navbar?.term_and_condition_status && (
-                <Link
-                  href="/terms-and-conditions"
-                  className="relative text-black hover:text-gray-700 text-sm font-medium after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full"
-                >
-                  {showingTranslateValue(
-                    storeCustomizationSetting?.navbar?.term_and_condition
-                  )}
-                </Link>
-              )}
-            </div>
+            </Link>
+          )}
+                    
+        </div>
       </div>
     </>
   );
