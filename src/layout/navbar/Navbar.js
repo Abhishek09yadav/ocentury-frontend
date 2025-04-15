@@ -32,14 +32,9 @@ const Navbar = () => {
 
   const { storeCustomizationSetting } = useGetSetting();
 
-  // console.log("storeCustomizationSetting", storeCustomizationSetting);
-
-  // console.log("t", t, "lang::::", lang);
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // return;
     if (searchText) {
       router.push(`/search?query=${searchText}`, null, { scroll: false });
       setSearchText("");
@@ -50,44 +45,84 @@ const Navbar = () => {
     }
   };
 
-  // console.log(
-  //   "storeCustomizationSetting?.navbar?.header_logo",
-  //   storeCustomizationSetting?.navbar?.logo
-  // );
-
   return (
     <>
       <CartDrawer />
-      <div className="bg-white sticky top-0 z-40">
-        <div className="max-w-screen-2xl mx-auto px-3 sm:px-10">
-          <div className="top-bar h-36 lg:h-18 flex items-center flex-col justify-between py-1 mx-auto">
-            <div className="mx-auto  flex justify-center lg:justify-start w-full lg:w-auto">
-              {/* lg:mx-0 */}
-              <div className="w-18 sm:w-20">
+      <div className="top-0 z-40">
+        <div className="max-w-screen-2xl mx-auto px-3 sm:px-10 relative">
+          <div className="flex  flex-col items-center py-1">
+            {/* Top Section - Logo and Icons */}
+            <div className="w-full grid grid-cols-3 items-center justify-between">
+              {/* Logo Section - Left */}
+              <div></div>
+              <div className="w-24 sm:w-28 mx-auto flex items-center justify-center">
                 <Image
-                  width={80}
-                  height={80}
+                  width={60}
+                  height={60}
                   className="w-full h-auto"
                   priority
                   src="/logo/gray-logo.png"
                   alt="logo"
                 />
               </div>
+
+              {/* Icons Section - Right */}
+              <div className="flex items-center space-x-4 justify-end">
+                <button className="text-black text-2xl font-bold" aria-label="Alert">
+                  <FaBell className="w-6 h-6 drop-shadow-xl" />
+                </button>
+                <button
+                  aria-label="Total"
+                  onClick={toggleCartDrawer}
+                  className="relative text-black text-2xl font-bold"
+                >
+                  <span className="absolute z-10 top-0 right-0 inline-flex items-center justify-center p-1 h-5 w-5 text-xs font-medium leading-none text-red-100 transform -translate-x-1/2 -translate-y-1/2 bg-red-500 rounded-full">
+                    {totalItems}
+                  </span>
+                  <FaShoppingCart className="w-6 h-6 drop-shadow-xl" />
+                </button>
+                <button className="text-black text-2xl font-bold" aria-label="Login">
+                  {userInfo?.image ? (
+                    <Link href="/user/dashboard" className="relative top-1 w-6 h-6">
+                      <Image
+                        width={29}
+                        height={29}
+                        src={userInfo?.image}
+                        alt="user"
+                        className="bg-white rounded-full"
+                      />
+                    </Link>
+                  ) : userInfo?.name ? (
+                    <Link href="/user/dashboard" className="leading-none font-bold font-serif block">
+                      {userInfo?.name[0]}
+                    </Link>
+                  ) : (
+                    <Link href="/auth/login">
+                      <FaUser className="w-6 h-6 drop-shadow-xl" />
+                    </Link>
+                  )}
+                </button>
+              </div>
             </div>
+
+          </div>
+            {/* Navigation Items - Below Logo */}
+        </div>
             {/* Navigation Items */}
-            <div className="hidden lg:flex items-center space-x-6 ml-6">
+            <div className="hidden lg:flex items-center justify-center py-3 absolute z-[41] bg-transparent w-full space-x-6 hover:bg-white transition-colors duration-500 ease-in-out mx-auto">
               <Link
                 href="/"
-                className="text-black hover:text-gray-700 text-sm font-medium"
+                className="relative text-black hover:text-gray-700 text-sm font-medium after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full"
               >
                 {showingTranslateValue(
                   storeCustomizationSetting?.navbar?.home
                 ) || "Home"}
               </Link>
+
               {storeCustomizationSetting?.navbar?.about_menu_status && (
                 <Link
                   href="/about-us"
-                  className="text-black hover:text-gray-700 text-sm font-medium"
+                  className="relative text-black hover:text-gray-700 text-sm font-medium after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full"
                 >
                   {showingTranslateValue(
                     storeCustomizationSetting?.navbar?.about_us
@@ -96,7 +131,7 @@ const Navbar = () => {
               )}
               {storeCustomizationSetting?.navbar?.categories_menu_status && (
                 <Popover className="relative">
-                  <Popover.Button className="group inline-flex items-center text-black hover:text-black-200 text-sm font-medium focus:outline-none">
+                  <Popover.Button className="group inline-flex items-center text-black hover:text-black-200 text-sm font-medium focus:outline-none  after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full">
                     <span>
                       {showingTranslateValue(
                         storeCustomizationSetting?.navbar?.categories
@@ -129,7 +164,7 @@ const Navbar = () => {
               {storeCustomizationSetting?.navbar?.contact_menu_status && (
                 <Link
                   href="/contact-us"
-                  className="text-black hover:text-gray-700 text-sm font-medium"
+                  className="relative text-black hover:text-gray-700 text-sm font-medium after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full "
                 >
                   {showingTranslateValue(
                     storeCustomizationSetting?.navbar?.contact_us
@@ -139,7 +174,7 @@ const Navbar = () => {
               {storeCustomizationSetting?.navbar?.privacy_policy_status && (
                 <Link
                   href="/privacy-policy"
-                  className="text-black hover:text-gray-700 text-sm font-medium"
+                  className="relative text-black hover:text-gray-700 text-sm font-medium after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full"
                 >
                   {showingTranslateValue(
                     storeCustomizationSetting?.navbar?.privacy_policy
@@ -149,69 +184,14 @@ const Navbar = () => {
               {storeCustomizationSetting?.navbar?.term_and_condition_status && (
                 <Link
                   href="/terms-and-conditions"
-                  className="text-black hover:text-gray-700 text-sm font-medium"
+                  className="relative text-black hover:text-gray-700 text-sm font-medium after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full"
                 >
                   {showingTranslateValue(
                     storeCustomizationSetting?.navbar?.term_and_condition
                   )}
                 </Link>
               )}
-            </div>
-
-            <div className="hidden md:hidden md:items-center lg:flex xl:block absolute inset-y-0 right-0 pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-              <button
-                className="pr-5 text-black text-2xl font-bold"
-                aria-label="Alert"
-              >
-                <FaBell className="w-6 h-6 drop-shadow-xl" />
-              </button>
-              <button
-                aria-label="Total"
-                onClick={toggleCartDrawer}
-                className="relative px-5 text-black text-2xl font-bold"
-              >
-                <span className="absolute z-10 top-0 right-0 inline-flex items-center justify-center p-1 h-5 w-5 text-xs font-medium leading-none text-red-100 transform -translate-x-1/2 -translate-y-1/2 bg-red-500 rounded-full">
-                  {totalItems}
-                </span>
-                <FaShoppingCart className="w-6 h-6 drop-shadow-xl" />
-              </button>
-              {/* Profile dropdown */}
-              <button
-                className="pl-5 text-black text-2xl font-bold"
-                aria-label="Login"
-              >
-                {userInfo?.image ? (
-                  <Link
-                    href="/user/dashboard"
-                    className="relative top-1 w-6 h-6"
-                  >
-                    <Image
-                      width={29}
-                      height={29}
-                      src={userInfo?.image}
-                      alt="user"
-                      className="bg-white rounded-full"
-                    />
-                  </Link>
-                ) : userInfo?.name ? (
-                  <Link
-                    href="/user/dashboard"
-                    className="leading-none font-bold font-serif block"
-                  >
-                    {userInfo?.name[0]}
-                  </Link>
-                ) : (
-                  <Link href="/auth/login">
-                    <FaUser className="w-6 h-6 drop-shadow-xl" />
-                  </Link>
-                )}
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* second header */}
-        {/* <NavbarPromo /> */}
+            </div>
       </div>
     </>
   );
