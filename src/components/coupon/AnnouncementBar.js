@@ -66,7 +66,7 @@ const announcements =
   }, [announcements.length]);
 
   return (
-    <div className="w-full bg-blue-900 text-white h-8 md:h-12  flex items-center overflow-hidden">
+    <div className="w-full bg-blue-900 text-white h-6 md:h-6  flex items-center overflow-hidden">
       <CopyToClipboard
         text={data?.[currentIndex]?.couponCode}
         onCopy={() => handleCopied(data?.[currentIndex]?.couponCode)}
@@ -81,7 +81,7 @@ const announcements =
           {announcements.map((msg, idx) => (
             <div
               key={idx}
-              className="flex items-center cursor-grab  active:cursor-grabbing justify-center flex-none w-full text-center font-medium text-sm sm:text-base md:text-lg"
+              className="flex items-center cursor-grab  active:cursor-grabbing justify-center flex-none w-full text-center font-medium text-xs sm:text-base md:text-sm"
             >
               {msg}
             </div>
