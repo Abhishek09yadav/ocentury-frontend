@@ -58,17 +58,18 @@ const Navbar = () => {
   return (
     <>
       <CartDrawer />
-      <div className="bg-customPink sticky top-0 z-40">
+      <div className="bg-white sticky top-0 z-40">
         <div className="max-w-screen-2xl mx-auto px-3 sm:px-10">
-          <div className="top-bar h-14 lg:h-18 flex items-center justify-between py-1 mx-auto">
-            <div className="mx-auto lg:mx-0 flex justify-center lg:justify-start w-full lg:w-auto">
+          <div className="top-bar h-36 lg:h-18 flex items-center flex-col justify-between py-1 mx-auto">
+            <div className="mx-auto  flex justify-center lg:justify-start w-full lg:w-auto">
+              {/* lg:mx-0 */}
               <div className="w-18 sm:w-20">
                 <Image
                   width={80}
                   height={80}
                   className="w-full h-auto"
                   priority
-                  src="/logo/logo.png"
+                  src="/logo/gray-logo.png"
                   alt="logo"
                 />
               </div>
@@ -77,7 +78,7 @@ const Navbar = () => {
             <div className="hidden lg:flex items-center space-x-6 ml-6">
               <Link
                 href="/"
-                className="text-white hover:text-gray-200 text-sm font-medium"
+                className="text-black hover:text-gray-700 text-sm font-medium"
               >
                 {showingTranslateValue(
                   storeCustomizationSetting?.navbar?.home
@@ -86,7 +87,7 @@ const Navbar = () => {
               {storeCustomizationSetting?.navbar?.about_menu_status && (
                 <Link
                   href="/about-us"
-                  className="text-white hover:text-gray-200 text-sm font-medium"
+                  className="text-black hover:text-gray-700 text-sm font-medium"
                 >
                   {showingTranslateValue(
                     storeCustomizationSetting?.navbar?.about_us
@@ -95,14 +96,14 @@ const Navbar = () => {
               )}
               {storeCustomizationSetting?.navbar?.categories_menu_status && (
                 <Popover className="relative">
-                  <Popover.Button className="group inline-flex items-center text-white hover:text-gray-200 text-sm font-medium focus:outline-none">
+                  <Popover.Button className="group inline-flex items-center text-black hover:text-black-200 text-sm font-medium focus:outline-none">
                     <span>
                       {showingTranslateValue(
                         storeCustomizationSetting?.navbar?.categories
                       )}
                     </span>
                     <ChevronDownIcon
-                      className="ml-1 h-3 w-3 group-hover:text-gray-200"
+                      className="ml-1 h-3 w-3 group-hover:text-black-200"
                       aria-hidden="true"
                     />
                   </Popover.Button>
@@ -128,7 +129,7 @@ const Navbar = () => {
               {storeCustomizationSetting?.navbar?.contact_menu_status && (
                 <Link
                   href="/contact-us"
-                  className="text-white hover:text-gray-200 text-sm font-medium"
+                  className="text-black hover:text-gray-700 text-sm font-medium"
                 >
                   {showingTranslateValue(
                     storeCustomizationSetting?.navbar?.contact_us
@@ -138,7 +139,7 @@ const Navbar = () => {
               {storeCustomizationSetting?.navbar?.privacy_policy_status && (
                 <Link
                   href="/privacy-policy"
-                  className="text-white hover:text-gray-200 text-sm font-medium"
+                  className="text-black hover:text-gray-700 text-sm font-medium"
                 >
                   {showingTranslateValue(
                     storeCustomizationSetting?.navbar?.privacy_policy
@@ -148,7 +149,7 @@ const Navbar = () => {
               {storeCustomizationSetting?.navbar?.term_and_condition_status && (
                 <Link
                   href="/terms-and-conditions"
-                  className="text-white hover:text-gray-200 text-sm font-medium"
+                  className="text-black hover:text-gray-700 text-sm font-medium"
                 >
                   {showingTranslateValue(
                     storeCustomizationSetting?.navbar?.term_and_condition
@@ -159,7 +160,7 @@ const Navbar = () => {
 
             <div className="hidden md:hidden md:items-center lg:flex xl:block absolute inset-y-0 right-0 pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
               <button
-                className="pr-5 text-white text-2xl font-bold"
+                className="pr-5 text-black text-2xl font-bold"
                 aria-label="Alert"
               >
                 <FaBell className="w-6 h-6 drop-shadow-xl" />
@@ -167,7 +168,7 @@ const Navbar = () => {
               <button
                 aria-label="Total"
                 onClick={toggleCartDrawer}
-                className="relative px-5 text-white text-2xl font-bold"
+                className="relative px-5 text-black text-2xl font-bold"
               >
                 <span className="absolute z-10 top-0 right-0 inline-flex items-center justify-center p-1 h-5 w-5 text-xs font-medium leading-none text-red-100 transform -translate-x-1/2 -translate-y-1/2 bg-red-500 rounded-full">
                   {totalItems}
@@ -176,7 +177,7 @@ const Navbar = () => {
               </button>
               {/* Profile dropdown */}
               <button
-                className="pl-5 text-white text-2xl font-bold"
+                className="pl-5 text-black text-2xl font-bold"
                 aria-label="Login"
               >
                 {userInfo?.image ? (
