@@ -5,9 +5,8 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useCart } from "react-use-cart";
 import useRazorpay from "react-razorpay";
-import { useQuery } from "@tanstack/react-query";
+import { QueryClient, useQuery } from "@tanstack/react-query";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-
 //internal import
 import { getUserSession } from "@lib/auth";
 import { UserContext } from "@context/UserContext";
@@ -18,6 +17,7 @@ import { notifyError, notifySuccess } from "@utils/toast";
 import CustomerServices from "@services/CustomerServices";
 import NotificationServices from "@services/NotificationServices";
 import socket from "@utils/socket";
+import SettingServices from "@services/SettingServices";
 
 const useCheckoutSubmit = (storeSetting) => {
   const { dispatch } = useContext(UserContext);
@@ -290,11 +290,32 @@ const useCheckoutSubmit = (storeSetting) => {
           amount: Math.round(orderInfo.total).toString(),
         });
 
+      let settings = null;
+      const queryClient = new QueryClient({
+        defaultOptions: {
+          queries: {
+            retry: 1,
+            refetchOnWindowFocus: false,
+          },
+        },
+      });
+      try {
+        settings = await queryClient.fetchQuery({
+          queryKey: ["storeSetting"],
+          queryFn: async () => await SettingServices.getStoreSetting(),
+          staleTime: 4 * 60 * 1000, // Cache data for 4 minutes
+        });
+      } catch (error) {
+        console.error("Failed to fetch store settings:", error);
+      }
+
+      console.log(settings);
+
       const options = {
-        key: storeSetting?.razorpay_id,
+        key: settings?.razorpay_id,
         amount,
         currency,
-        name: "ocentury Store",
+        name: "O'Century Store",
         description: "This is the total cost of your purchase",
         order_id: id,
         handler: async (response) => {
