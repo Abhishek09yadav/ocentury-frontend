@@ -43,7 +43,7 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
       ) : (
         <Layout>
           <div className="min-h-screen">
-            <StickyCart />
+            {/* <StickyCart /> */}
             <div className="bg-white">
               <div className="mx-auto py-1">
                 {" "}
