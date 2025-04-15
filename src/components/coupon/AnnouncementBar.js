@@ -34,21 +34,23 @@ export default function AnnouncementBar() {
 
   // console.log("coupon  data", data);
 const announcements = [
-  "🎉 Season Deal Sale Is Live 🎉",
-  ...(data?.map((coupon) => {
-    const code = coupon.couponCode;
-    const discount = coupon.discountType.value;
-    const discountType = coupon.discountType.type;
-    const minAmount = coupon.minimumAmount;
+  "🎉 Summer Deal Sale Is Live 🎉",
+  ...(data
+    ?.filter((coupon) => dayjs(coupon.endTime).isAfter(dayjs())) // Filter out expired
+    .map((coupon) => {
+      const code = coupon.couponCode;
+      const discount = coupon.discountType.value;
+      const discountType = coupon.discountType.type;
+      const minAmount = coupon.minimumAmount;
 
-    if (discountType === "percentage" && discount > 0) {
-      return `CODE: ${code} | ${discount}% OFF on purchase of ₹${minAmount} & Above`;
-    } else if (discountType === "fixed" && discount > 0) {
-      return `CODE: ${code} | ₹${discount} OFF on purchase of ₹${minAmount} & Above`;
-    } else {
-      return `CODE: ${code} | Free Shipping on orders above ₹${minAmount}`;
-    }
-  })) || [],
+      if (discountType === "percentage" && discount > 0) {
+        return `CODE: ${code} | ${discount}% OFF on purchase of ₹${minAmount} & Above`;
+      } else if (discountType === "fixed" && discount > 0) {
+        return `CODE: ${code} | ₹${discount} OFF on purchase of ₹${minAmount} & Above`;
+      } else {
+        return `CODE: ${code} | Free Shipping on orders above ₹${minAmount}`;
+      }
+    }) || []),
 ];
 
   const handleCopied = (code) => {
@@ -56,7 +58,7 @@ const announcements = [
     setCopied(true);
   };
 
-  // console.log("data in announcementbar", data);
+  console.log("data in announcementbar", data);
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) =>
