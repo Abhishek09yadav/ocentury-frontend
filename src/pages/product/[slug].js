@@ -226,7 +226,7 @@ const ProductScreen = ({ product, attributes, relatedProducts }) => {
 
   // category name slug
   const category_name = showingTranslateValue(product?.category?.name)
-    .toLowerCase()
+    // .toLowerCase()
     .replace(/[^A-Z0-9]+/gi, "-");
 
   // console.log("discount", discount);
