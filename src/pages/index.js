@@ -45,7 +45,7 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
           <div className="min-h-screen">
             <StickyCart />
             <div className="bg-white">
-              <div className="mx-auto py-2">
+              <div className="mx-auto py-1">
                 {" "}
                 {/* max-w-screen-2xl */}
                 <div className="flex w-full">

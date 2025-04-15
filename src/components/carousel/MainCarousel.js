@@ -98,19 +98,22 @@ const MainCarousel = () => {
             className="w-full relative overflow-hidden" 
             key={i + 1}
           >
-            <div className="relative h-[40vh] sm:h-[60vh] md:h-[80vh] lg:h-[90vh]">
+            {/* Updated image container with better aspect ratio handling */}
+            <div className="relative w-full aspect-[16/9] sm:aspect-[16/8] md:aspect-[16/7] lg:aspect-[16/6]">
               <Image
                 src={item.image || "/slider/slider-1.jpg"}
                 alt={item.title || 'Slider Image'}
                 fill
-                className="object-cover"
+                className="object-cover object-center" // Added object-center for better positioning
                 priority
                 sizes="100vw"
                 quality={85}
+                loading="eager"
               />
             </div>
 
-            <div className="absolute top-0 left-0 z-10 flex flex-col w-full h-full justify-center bg-black/10">
+            {/* Updated overlay positioning */}
+            <div className="absolute inset-0 z-10 flex flex-col justify-center bg-black/20">
               <div className="px-4 sm:px-10 md:px-16 w-full sm:w-10/12 md:w-8/12 lg:w-7/12">
                 <h1 className="mb-2 font-serif text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white drop-shadow-lg">
                   {item.title}
