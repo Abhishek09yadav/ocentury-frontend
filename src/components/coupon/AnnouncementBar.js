@@ -33,8 +33,9 @@ export default function AnnouncementBar() {
   });
 
   // console.log("coupon  data", data);
-const announcements =
-  data?.map((coupon) => {
+const announcements = [
+  "🎉 Season Deal Sale Is Live 🎉",
+  ...(data?.map((coupon) => {
     const code = coupon.couponCode;
     const discount = coupon.discountType.value;
     const discountType = coupon.discountType.type;
@@ -47,7 +48,8 @@ const announcements =
     } else {
       return `CODE: ${code} | Free Shipping on orders above ₹${minAmount}`;
     }
-  }) || [];
+  })) || [],
+];
 
   const handleCopied = (code) => {
     setCopiedCode(code);
@@ -66,7 +68,7 @@ const announcements =
   }, [announcements.length]);
 
   return (
-    <div className="w-full bg-[#151144] text-[#FFD700] h-9 md:h-6  flex items-center overflow-hidden">
+    <div className="w-full bg-[#151144] text-[#eab676] h-9 md:h-7  flex items-center overflow-hidden">
       <CopyToClipboard
         text={data?.[currentIndex]?.couponCode}
         onCopy={() => handleCopied(data?.[currentIndex]?.couponCode)}
