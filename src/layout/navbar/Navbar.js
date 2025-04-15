@@ -20,11 +20,12 @@ import { SidebarContext } from "@context/SidebarContext";
 import useUtilsFunction from "@hooks/useUtilsFunction";
 import Category from "@components/category/Category";
 import MobileFooter from "@layout/footer/MobileFooter";
+import { FiAlignLeft } from "react-icons/fi";
 
 const Navbar = () => {
   const { t, lang } = useTranslation("common");
   const [searchText, setSearchText] = useState("");
-  const { toggleCartDrawer } = useContext(SidebarContext);
+  const { toggleCartDrawer, toggleCategoryDrawer } = useContext(SidebarContext);
   const { totalItems } = useCart();
   const router = useRouter();
   const { showingTranslateValue } = useUtilsFunction();
@@ -55,7 +56,18 @@ const Navbar = () => {
             {/* Top Section - Logo and Icons */}
             <div className="w-full grid grid-cols-3 items-center justify-between">
               {/* Logo Section - Left */}
-              <div></div>
+              <div>
+
+                <button
+                  aria-label="Bar"
+                  onClick={toggleCategoryDrawer}
+                  className="flex items-center justify-center flex-shrink-0 h-auto relative focus:outline-none"
+                >
+                  <span className="lg:hidden z-30 text-xl text-black">
+                    <FiAlignLeft className="w-6 h-6 drop-shadow-xl" />
+                  </span>
+                </button>
+              </div>
               <div className="w-24 sm:w-28 mx-auto flex items-center justify-center">
                 <Image
                   width={60}

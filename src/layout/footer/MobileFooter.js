@@ -21,8 +21,8 @@ const MobileFooter = () => {
       <div className="flex flex-col h-full justify-between align-middle bg-white rounded cursor-pointer overflow-y-scroll flex-grow scrollbar-hide w-full">
         <CategoryDrawer className="w-6 h-6 drop-shadow-xl" />
       </div>
-      <footer className="lg:hidden fixed z-30 bottom-0 bg-customPink flex items-center justify-between w-full h-16 px-3 sm:px-10">
-        <button
+      <footer className="lg:hidden fixed z-30 bottom-0 bg-customPink flex items-center justify-around w-full h-16 px-3 sm:px-10">
+        {/* <button
           aria-label="Bar"
           onClick={toggleCategoryDrawer}
           className="flex items-center justify-center flex-shrink-0 h-auto relative focus:outline-none"
@@ -30,7 +30,7 @@ const MobileFooter = () => {
           <span className="text-xl text-white">
             <FiAlignLeft className="w-6 h-6 drop-shadow-xl" />
           </span>
-        </button>
+        </button> */}
         <Link
           href="/"
           className="text-xl text-white"
