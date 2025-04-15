@@ -21,8 +21,8 @@ export default function ShirtImages() {
           />
         </div>
 
-        {/* Image 3 */}
-        <div className="absolute top-0 right-0 w-40 h-56 sm:w-52 sm:h-68 rounded-xl overflow-hidden shadow-md z-10 rotate-[3deg] sm:rotate-[5deg]">
+        {/* Image 3 - Hidden on mobile */}
+        <div className="hidden lg:block absolute top-0 right-0 w-52 h-68 rounded-xl overflow-hidden shadow-md z-10 rotate-[5deg]">
           <img
             src="/shirts/shirt3.jpg"
             alt="White Shirt"
@@ -30,8 +30,8 @@ export default function ShirtImages() {
           />
         </div>
 
-        {/* Image 4 */}
-        <div className="absolute bottom-10 left-16 w-44 h-60 sm:bottom-14 sm:left-24 sm:w-60 sm:h-72 rounded-xl overflow-hidden shadow-xl z-20 rotate-[-2deg] sm:rotate-[-4deg]">
+        {/* Image 4 - Hidden on mobile */}
+        <div className="hidden lg:block absolute bottom-14 left-24 w-60 h-72 rounded-xl overflow-hidden shadow-xl z-20 rotate-[-4deg]">
           <img
             src="/shirts/shirt4.jpeg"
             alt="Maroon Shirt Closeup"

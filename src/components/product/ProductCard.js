@@ -86,7 +86,7 @@ const ProductCard = ({ product, attributes }) => {
         />
       )}
 
-      <div className="para-hover w-[48%] sm:w-[48%] md:w-[44%] lg:w-[22%] group box-border overflow-hidden flex rounded-md shadow-sm pe-0 flex-col items-center relative hover:shadow-2xl">
+      <div className="para-hover w-[45%] sm:w-[48%] md:w-[44%] lg:w-[22%] group box-border overflow-hidden flex rounded-md shadow-sm pe-0 flex-col items-center relative hover:shadow-2xl">
         <div className="w-full flex justify-between">
           {/* <Stock product={product} stock={product.stock} card /> */}
           <Discount product={product} />
@@ -95,22 +95,29 @@ const ProductCard = ({ product, attributes }) => {
           onClick={() => {
             router.push(`/product/${product.slug}`);
           }}
-          className="relative flex justify-center cursor-pointer pt-2 w-full h-48 sm:h-64 md:h-72 lg:h-80"
+          className="relative w-full pt-[100%] cursor-pointer" // Square aspect ratio using padding-top
         >
-          <div className="relative w-full h-full">
+          <div className="absolute top-0 left-0 w-full h-full p-2">
             {product.image[0] ? (
-              <ImageWithFallback src={product.image[0]} alt="product" />
+              <div className="relative w-full h-full">
+                <ImageWithFallback 
+                  src={product.image[0]} 
+                  alt={showingTranslateValue(product?.title) || 'Product Image'} // Added meaningful alt text
+                  fill
+                  className="object-contain transition duration-700 ease-in-out transform group-hover:scale-105"
+                  sizes="(max-width: 640px) 48vw, (max-width: 768px) 44vw, 22vw"
+                />
+              </div>
             ) : (
-              <Image
-                src="https://res.cloudinary.com/ahossain/image/upload/v1655097002/placeholder_kvepfp.png"
-                fill
-                style={{
-                  objectFit: "contain",
-                }}
-                sizes="100%"
-                alt="product"
-                className="object-contain transition duration-700 ease-in-out transform group-hover:scale-105"
-              />
+              <div className="relative w-full h-full">
+                <Image
+                  src="https://res.cloudinary.com/ahossain/image/upload/v1655097002/placeholder_kvepfp.png"
+                  fill
+                  className="object-contain transition duration-700 ease-in-out transform group-hover:scale-105"
+                  sizes="(max-width: 640px) 48vw, (max-width: 768px) 44vw, 22vw"
+                  alt={`Placeholder image for ${showingTranslateValue(product?.title)}` || 'Product placeholder image'} // Added meaningful alt text
+                />
+              </div>
             )}
           </div>
         </div>
