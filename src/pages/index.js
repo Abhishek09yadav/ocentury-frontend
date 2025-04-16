@@ -172,7 +172,7 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
 
             {/* Classic Plain Shirt */}
             <div>
-              <h1 className="px-6 font-[lora] text-[3.25rem] text-center ">
+              <h1 className="px-6 font-[lora] text-[1.75rem] md:text-[2.25rem] lg:text-[3rem] text-center">
                 Classic Plain Shirts
               </h1>
               <ClassicShirtCard />
@@ -194,7 +194,7 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
                 >
                   <div className="mb-10 flex justify-center">
                     <div className="text-center w-full lg:w-2/5">
-                      <h2 className="px-6 font-[lora] text-[3rem] text-center ">
+                      <h2 className="px-6 font-[lora] text-[1.75rem] md:text-[2.25rem] lg:text-[3rem] text-center ">
                         <CMSkeleton
                           count={1}
                           height={30}

@@ -3,13 +3,13 @@ import ShirtImages from './ShirtImages';
 
 const ShirtGallery = () => {
   return (
-    <div data-aos="fade-right" data-aos-duration="1000" className="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-12 sm:py-16">
+    <div data-aos="fade-right" data-aos-duration="1000" className="flex flex-col md:flex-row justify-between items-center max-w-3xl md:max-w-5xl lg:max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-12 sm:py-16">
       {/* Left Section */}
       <div className="w-full md:w-1/2 text-center md:text-left mb-12 md:mb-0">
         <p className="text-gray-500 text-lg sm:text-xl mb-2">
           Give the gift that gives comfort
         </p>
-        <h2 className="text-[2rem] sm:text-[2.5rem] font-bold text-gray-900 mb-4">
+        <h2 className="px-6 font-[lora] text-[1.75rem] md:text-[2.25rem] lg:text-[3rem] text-center my-7">
           Comfortable Shirts
         </h2>
         <p className="text-gray-700 text-lg sm:text-[22px] mb-6">
