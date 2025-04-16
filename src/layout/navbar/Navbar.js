@@ -57,7 +57,6 @@ const Navbar = () => {
             <div className="w-full grid grid-cols-3 items-center justify-between">
               {/* Logo Section - Left */}
               <div>
-
                 <button
                   aria-label="Bar"
                   onClick={toggleCategoryDrawer}
@@ -136,7 +135,7 @@ const Navbar = () => {
         <div className="hidden lg:flex items-center justify-center py-3 absolute z-[41] bg-transparent w-full space-x-6 hover:bg-white transition-colors duration-500 ease-in-out mx-auto">
           <Link
             href="/"
-            className="relative text-black hover:text-gray-700 text-sm font-medium after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full"
+            className="font-montserrat relative text-[#192A56] hover:text-gray-700 text-lg font-medium after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full"
           >
             {showingTranslateValue(storeCustomizationSetting?.navbar?.home) ||
               "Home"}
@@ -144,7 +143,7 @@ const Navbar = () => {
           {storeCustomizationSetting?.navbar?.about_menu_status && (
             <Link
               href="/about-us"
-              className="relative text-black hover:text-gray-700 text-sm font-medium after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full"
+              className="font-montserrat relative text-[#192A56] hover:text-gray-700 text-lg font-medium after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full"
             >
               {showingTranslateValue(
                 storeCustomizationSetting?.navbar?.about_us
@@ -153,7 +152,7 @@ const Navbar = () => {
           )}
           {storeCustomizationSetting?.navbar?.categories_menu_status && (
             <Popover className="relative">
-              <Popover.Button className="group inline-flex items-center text-black hover:text-black-200 text-sm font-medium focus:outline-none  after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full">
+              <Popover.Button className="font-montserrat group inline-flex items-center text-[#192A56] hover:text-black-200 text-lg font-medium focus:outline-none  after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full">
                 <span>
                   {showingTranslateValue(
                     storeCustomizationSetting?.navbar?.categories
@@ -175,7 +174,7 @@ const Navbar = () => {
                 leaveTo="opacity-0 translate-y-1"
               >
                 <Popover.Panel className="absolute z-10 -ml-1 mt-1 transform w-screen max-w-xs c-h-65vh bg-white">
-                  <div className="rounded-md shadow-lg ring-1 ring-black ring-opacity-5 overflow-y-scroll flex-grow scrollbar-hide w-full h-full">
+                  <div className="font-montserrat rounded-md shadow-lg ring-1 ring-black ring-opacity-5 overflow-y-scroll flex-grow scrollbar-hide w-full h-full">
                     <Category />
                   </div>
                 </Popover.Panel>
@@ -185,7 +184,7 @@ const Navbar = () => {
           {storeCustomizationSetting?.navbar?.contact_menu_status && (
             <Link
               href="/contact-us"
-              className="relative text-black hover:text-gray-700 text-sm font-medium after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full "
+              className="font-montserrat relative text-[#192A56] hover:text-gray-700 text-lg font-medium after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full "
             >
               {showingTranslateValue(
                 storeCustomizationSetting?.navbar?.contact_us
@@ -195,7 +194,7 @@ const Navbar = () => {
           {storeCustomizationSetting?.navbar?.privacy_policy_status && (
             <Link
               href="/privacy-policy"
-              className="relative text-black hover:text-gray-700 text-sm font-medium after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full"
+              className="font-montserrat relative text-[#192A56] hover:text-gray-700 text-lg font-medium after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full"
             >
               {showingTranslateValue(
                 storeCustomizationSetting?.navbar?.privacy_policy
@@ -205,7 +204,7 @@ const Navbar = () => {
           {storeCustomizationSetting?.navbar?.term_and_condition_status && (
             <Link
               href="/terms-and-conditions"
-              className="relative text-black hover:text-gray-700 text-sm font-medium after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full"
+              className="font-montserrat relative text-[#192A56] hover:text-gray-700 text-lg font-medium after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full"
             >
               {showingTranslateValue(
                 storeCustomizationSetting?.navbar?.term_and_condition
