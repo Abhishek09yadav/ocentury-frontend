@@ -138,16 +138,8 @@ const ProductCard = ({ product, attributes }) => {
               card
               product={product}
               currency={currency}
-              price={
-                product?.isCombination
-                  ? product?.variants[0]?.price
-                  : product?.prices?.price
-              }
-              originalPrice={
-                product?.isCombination
-                  ? product?.variants[0]?.originalPrice
-                  : product?.prices?.originalPrice
-              }
+              price={product?.prices?.price}
+              originalPrice={product?.prices?.originalPrice}
             />
 
             {inCart(product._id) ? (
