@@ -34,9 +34,7 @@ const useCheckoutSubmit = (storeSetting) => {
   const [isCouponApplied, setIsCouponApplied] = useState(false);
   const [useExistingAddress, setUseExistingAddress] = useState(false);
   const [isCouponAvailable, setIsCouponAvailable] = useState(false);
-  const [selectedValue, setSelectedValue] = useState({
-    zipCode: "",
-  });
+  const [selectedValue, setSelectedValue] = useState({});
 
   const router = useRouter();
   const stripe = useStripe();
@@ -131,8 +129,7 @@ const useCheckoutSubmit = (storeSetting) => {
         address: data.address,
         country: data.country,
         city: data.city,
-        // zipCode: data.zipCode,
-        zipCode: selectedValue.zipCode,
+        zipCode: data.zipCode,
         location: selectedLocation ?? "",
       };
 

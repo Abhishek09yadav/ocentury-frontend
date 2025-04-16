@@ -37,7 +37,7 @@ const Checkout = () => {
   const { t } = useTranslation();
   const { storeCustomizationSetting } = useGetSetting();
   const { showingTranslateValue } = useUtilsFunction();
-  // const [zipCodes, setZipCodes] = useState([]);
+
   // const [isModalOpen, setIsModalOpen] = useState(false);
 
   // const handleOpenMap = () => setIsModalOpen(true);
@@ -97,19 +97,7 @@ const Checkout = () => {
   //   );
   // };
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const result = await requests.get("/tele/get/pincodes");
-  //       console.log("pincodes ", result.message);
-  //       setZipCodes(result.message);
-  //     } catch (error) {
-  //       console.error("Error fetching pincodes:", error);
-  //     }
-  //   };
 
-  //   fetchData();
-  // }, []);
 
   return (
     <>
@@ -253,16 +241,7 @@ const Checkout = () => {
                           type="text"
                           placeholder="2345"
                         />
-                        {/* <SelectOption
-                          name="zipCode"
-                          label="Zip Code"
-                          options={zipCodes?.map((e) => e)}
-                          register={register}
-                          required={true}
-                          value={selectedValue?.zipCode}
-                          // setValue={setValue}
-                          onChange={handleInputChange}
-                        /> */} 
+                    
                         <Error errorName={errors.zipCode} />
                       </div>
                       {/* <div className="col-span-6 sm:col-span-3 lg:col-span-2">
