@@ -4,16 +4,18 @@ import { MdKeyboardReturn, MdSecurity } from "react-icons/md";
 import { RiCustomerServiceLine, RiSecurePaymentLine } from "react-icons/ri";
 import { BiPackage } from "react-icons/bi";
 import { AiOutlineTag } from "react-icons/ai";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 
 const WhyChooseUs = () => {
     return (
         <div className='font-[lora] my-6 px-4 sm:px-6 md:px-10'>
-            <h1 className='text-3xl sm:text-4xl md:text-6xl text-center my-10 font-bold'>
+            <h1 className='px-6 my-8 font-[lora] text-[3.25rem] text-center '>
                 Why Choose Us?
             </h1>
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-10 gap-x-6'>
                 {/* Card 1 */}
-                <div className='flex flex-col'>
+                <div data-aos="fade-up" className='flex flex-col'>
                     <h2 className='flex gap-4 items-center text-xl sm:text-2xl md:text-[2rem] text-gray-900'>
                         <TbTruckDelivery /> Free Shipping
                     </h2>
@@ -23,7 +25,7 @@ const WhyChooseUs = () => {
                 </div>
 
                 {/* Card 2 */}
-                <div className='flex flex-col'>
+                <div data-aos="fade-up" className='flex flex-col'>
                     <h2 className='flex gap-4 items-center text-xl sm:text-2xl md:text-[2rem] text-gray-900'>
                         <MdKeyboardReturn /> Easy Returns
                     </h2>
@@ -33,7 +35,7 @@ const WhyChooseUs = () => {
                 </div>
 
                 {/* Card 3 */}
-                <div className='flex flex-col'>
+                <div data-aos="fade-up" className='flex flex-col'>
                     <h2 className='flex gap-4 items-center text-xl sm:text-2xl md:text-[2rem] text-gray-900'>
                         <RiCustomerServiceLine /> 24/7 Support
                     </h2>
@@ -43,7 +45,7 @@ const WhyChooseUs = () => {
                 </div>
 
                 {/* Card 4 */}
-                <div className='flex flex-col'>
+                <div data-aos="fade-up" className='flex flex-col'>
                     <h2 className='flex gap-4 items-center text-xl sm:text-2xl md:text-[2rem] text-gray-900'>
                         <RiSecurePaymentLine /> Secure Payment
                     </h2>
@@ -53,7 +55,7 @@ const WhyChooseUs = () => {
                 </div>
 
                 {/* Card 5 */}
-                <div className='flex flex-col'>
+                <div data-aos="fade-up" className='flex flex-col'>
                     <h2 className='flex gap-4 items-center text-xl sm:text-2xl md:text-[2rem] text-gray-900'>
                         <BiPackage /> Quality Products
                     </h2>
@@ -63,7 +65,7 @@ const WhyChooseUs = () => {
                 </div>
 
                 {/* Card 6 */}
-                <div className='flex flex-col'>
+                <div data-aos="fade-up" className='flex flex-col'>
                     <h2 className='flex gap-4 items-center text-xl sm:text-2xl md:text-[2rem] text-gray-900'>
                         <AiOutlineTag /> Best Prices
                     </h2>

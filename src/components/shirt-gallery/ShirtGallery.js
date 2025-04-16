@@ -3,7 +3,7 @@ import ShirtImages from './ShirtImages';
 
 const ShirtGallery = () => {
   return (
-    <div className="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-12 sm:py-16">
+    <div data-aos="fade-right" data-aos-duration="1000" className="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-12 sm:py-16">
       {/* Left Section */}
       <div className="w-full md:w-1/2 text-center md:text-left mb-12 md:mb-0">
         <p className="text-gray-500 text-lg sm:text-xl mb-2">

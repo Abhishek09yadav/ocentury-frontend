@@ -2,6 +2,9 @@ import { SidebarContext } from "@context/SidebarContext";
 import { useContext, useEffect } from "react";
 import { useRouter } from "next/router";
 import FormalTrouser from "src/formal-trouser/FormalTrouser";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+
 //internal import
 import Layout from "@layout/Layout";
 import Banner from "@components/banner/Banner";
@@ -27,7 +30,7 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
   const { loading, error, storeCustomizationSetting } = useGetSetting();
 
   // console.log("storeCustomizationSetting", storeCustomizationSetting);
-
+  AOS.init();
   useEffect(() => {
     if (router.asPath === "/") {
       setIsLoading(false);
@@ -99,10 +102,11 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
 
             {/* popular products */}
             {storeCustomizationSetting?.home?.popular_products_status && (
-              <div className="bg-gray-50 lg:py-16 py-10 mx-auto max-w-screen-2xl px-3 sm:px-10">
-                <div className="mb-10 flex justify-center">
-                  <div className="text-center w-full lg:w-2/5">
-                    <h2 className="text-xl lg:text-2xl mb-2 font-serif font-semibold">
+              <div className=" bg-gray-50 lg:py-16 py-10 mx-auto max-w-screen-2xl px-3 sm:px-10">
+                <div className="mb-10 flex ">
+                  <div className=" w-full lg:w-2/5">
+                    <h2 className="font-[lora] font-thin text-[2rem] ml-4 md:ml-8 lg:ml-12 lg:text-[3.25rem] mb-2">
+                    Bestseller
                       <CMSkeleton
                         count={1}
                         height={30}
@@ -133,7 +137,7 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
                         loading={loading}
                       />
                     ) : (
-                      <div className="flex flex-wrap gap-1 md:gap-3 justify-center px-2 sm:px-4">
+                      <div className="flex flex-wrap gap-2 md:gap-4 lg:gap-6 justify-center px-2 sm:px-4">
                         {popularProducts
                           ?.slice(
                             0,
@@ -189,7 +193,7 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
                 >
                   <div className="mb-10 flex justify-center">
                     <div className="text-center w-full lg:w-2/5">
-                      <h2 className="text-xl lg:text-2xl mb-2 font-serif font-semibold">
+                      <h2 className="px-6 font-[lora] text-[3rem] text-center ">
                         <CMSkeleton
                           count={1}
                           height={30}
@@ -223,8 +227,7 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
                           loading={loading}
                         />
                       ) : (
-                        // <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-5 2xl:grid-cols-6 gap-2 md:gap-3 lg:gap-3">
-                        <div className="flex flex-row flex-wrap gap-3 justify-center">
+                        <div className="flex flex-wrap gap-2 md:gap-4 lg:gap-6 justify-center px-2 sm:px-4">
                           {discountProducts
                             ?.slice(
                               0,
