@@ -89,14 +89,9 @@ const Category = () => {
                 <button
                   key={item.title}
                   onClick={() => {
-                    if (
-                      (item.title === "join-as-telecaller" && !userInfo) ||
-                      (item.title === "join-as-store-partner" && !userInfo)
-                    ) {
-                      toast.warn("Please login first");
-                    } else {
+                   
                       router.push(item.href);
-                    }
+                    
                   }}
                   className="p-2 flex font-serif items-center rounded-md hover:bg-gray-50 w-full hover:text-customPink text-left"
                 >
