@@ -69,7 +69,8 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
 
             {/* feature category's */}
             {storeCustomizationSetting?.home?.featured_status && (
-              <div className="bg-gray-100 lg:py-16 py-10">
+              // <div className="bg-gray-100 lg:py-16 py-10"> removed this part with below part
+              <div className="bg-gray-100 ">
                 <div className="mx-auto max-w-screen-2xl px-3 sm:px-10">
                   <div className="mb-10 flex justify-center">
                     <div className="text-center w-full lg:w-2/5">
@@ -95,7 +96,7 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
                     </div>
                   </div>
 
-                  <FeatureCategory />
+                  {/* <FeatureCategory /> */}
                 </div>
               </div>
             )}

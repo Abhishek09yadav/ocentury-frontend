@@ -79,7 +79,7 @@ const Navbar = () => {
               </div>
               {/* <MobileFooter/> */}
               {/* Icons Section - Right */}
-              <div className="flex items-center space-x-10 justify-end">
+              <div className="flex items-center space-x-3 lg:space-x-10  justify-end">
                 <button
                   className="text-black text-2xl font-bold"
                   aria-label="Alert"
@@ -94,7 +94,7 @@ const Navbar = () => {
                   <span className="absolute z-10 top-0 right-0 inline-flex items-center justify-center p-1 h-5 w-5 text-xs font-medium leading-none text-red-100 transform -translate-x-1/2 -translate-y-1/2 bg-red-500 rounded-full">
                     {totalItems}
                   </span>
-                  <FaShoppingCart className="w-6 h-6 hidden lg:block " />
+                  <FaShoppingCart className="w-6 h-6 " />
                 </button>
                 <button
                   className="text-black text-2xl font-bold"
