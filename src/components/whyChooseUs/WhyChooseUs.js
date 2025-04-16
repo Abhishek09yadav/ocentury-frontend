@@ -10,7 +10,7 @@ import 'aos/dist/aos.css';
 const WhyChooseUs = () => {
     return (
         <div className='font-[lora] my-6 px-4 sm:px-6 md:px-10'>
-            <h1 className='px-6 my-8 font-[lora] text-[3.25rem] text-center '>
+            <h1 className='px-6 my-8 font-[lora] text-[1.75rem] md:text-[2.25rem] lg:text-[3rem] text-center '>
                 Why Choose Us?
             </h1>
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-10 gap-x-6'>

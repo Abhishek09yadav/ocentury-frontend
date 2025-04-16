@@ -45,12 +45,13 @@ const Testimonials = () => {
       <div className="flex items-center justify-center gap-x-4 md:gap-x-7">
         {[...Array(5)].map((_, idx) => (
           <FaStar
+            className="text-2xl md:text-3xl lg:text-5xl "
             key={idx}
-            style={{ color: "#ffd319", fontSize: "xxx-large" }}
+            style={{ color: "#ffd319"}}
           />
         ))}
       </div>
-      <div className="mt-6 font-lexend text-xl font-bold leading-7 text-sky-950 md:mt-10 md:text-5xl md:leading-10">
+      <div className="px-6 font-[lora] text-[1.75rem] md:text-[2.25rem] lg:text-[3rem] text-center">
         Testimonials
       </div>
 
