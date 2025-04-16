@@ -11,6 +11,7 @@ import CouponServices from "@services/CouponServices";
 import OfferTimer from "@components/coupon/OfferTimer";
 import useUtilsFunction from "@hooks/useUtilsFunction";
 import CMSkeletonTwo from "@components/preloader/CMSkeletonTwo";
+import { toast } from "react-toastify";
 
 
 
@@ -64,6 +65,9 @@ const announcements = [
   const handleCopied = (code) => {
     setCopiedCode(code);
     setCopied(true);
+    // toast.success(`Copied "${code}" to clipboard! 🎉`, {
+    //   position: "top-right",
+    // });
   };
 
   console.log("data in announcementbar", data);
