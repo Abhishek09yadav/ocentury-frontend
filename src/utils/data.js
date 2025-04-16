@@ -1,5 +1,5 @@
 import {
-  // FiUser,
+  FiUser,
   FiGift,
   FiGrid,
   FiAlertCircle,
@@ -16,16 +16,22 @@ import {
   FiSettings,
   FiList,
   FiPhoneIncoming,
+  FiHome,
 } from "react-icons/fi";
 import { IoDocument } from "react-icons/io5";
 
 
 const pages = [
-  // {
-  //   title: 'User',
-  //   href: '/user/dashboard',
-  //   icon: FiUser,
-  // },
+  {
+    title: "Home",
+    href: "/",
+    icon: FiHome,
+  },
+  {
+    title: "Profile",
+    href: "/user/dashboard",
+    icon: FiUser,
+  },
   {
     title: "faq-page",
     href: "/faq",
