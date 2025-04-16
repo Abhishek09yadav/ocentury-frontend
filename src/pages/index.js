@@ -137,7 +137,7 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
                         loading={loading}
                       />
                     ) : (
-                      <div data-aos="fade-up" className="flex flex-wrap gap-2 md:gap-4 lg:gap-6 justify-center px-2 sm:px-4">
+                      <div className="flex flex-wrap gap-2 md:gap-4 lg:gap-6 justify-center px-2 sm:px-4">
                         {popularProducts
                           ?.slice(
                             0,
@@ -193,7 +193,7 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
                 >
                   <div className="mb-10 flex justify-center">
                     <div className="text-center w-full lg:w-2/5">
-                      <h2 className="text-xl lg:text-2xl mb-2 font-serif font-semibold">
+                      <h2 className="px-6 font-[lora] text-[3rem] text-center ">
                         <CMSkeleton
                           count={1}
                           height={30}
