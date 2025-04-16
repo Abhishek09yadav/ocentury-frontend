@@ -241,7 +241,7 @@ const ProductScreen = ({ product, attributes, relatedProducts }) => {
           title={showingTranslateValue(product?.title)}
           description={showingTranslateValue(product.description)}
         >
-          <div className="px-0 py-10 lg:py-10">
+          <div className="px-0 py-10 lg:py-16">
             <div className="mx-auto px-3 lg:px-10 max-w-screen-2xl">
               <div className="flex items-center pb-4">
                 <ol className="flex items-center w-full overflow-hidden font-serif">
