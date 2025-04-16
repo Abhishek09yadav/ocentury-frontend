@@ -86,7 +86,7 @@ const ProductCard = ({ product, attributes }) => {
         />
       )}
 
-      <div className="para-hover w-[45%] sm:w-[48%] md:w-[44%] lg:w-[22%] group box-border overflow-hidden flex rounded-md shadow-sm pe-0 flex-col items-center relative hover:shadow-2xl">
+      <div data-aos="fade-up" className="para-hover w-[48%] sm:w-[45%] md:w-[31%] lg:w-[23%] group box-border overflow-hidden flex rounded-md shadow-sm pe-0 flex-col items-center relative hover:shadow-2xl">
         <div className="w-full flex justify-between">
           {/* <Stock product={product} stock={product.stock} card /> */}
           <Discount product={product} />
