@@ -31,10 +31,17 @@ export default function AnnouncementBar() {
     // staleTime: 5 * 60 * 1000, //default cache for 5 minute, if you want to without cache then comment this and gcTime lines
     // gcTime: 5 * 60 * 1000,
   });
+ const getCurrentSeason = () => {
+   const month = new Date().getMonth() + 1;
+   if (month >= 3 && month <= 6) return "☀️ Summer";
+   if (month >= 7 && month <= 9) return "🌧️ Monsoon";
+   return "❄️ Winter"; // Oct to Feb
+ };
+   const seasonPrefix = `${getCurrentSeason()} Deals Are Live!`;
 
   // console.log("coupon  data", data);
 const announcements = [
-  "🎉 Summer Deal Sale Is Live 🎉",
+  seasonPrefix,
   ...(data
     ?.filter((coupon) => dayjs(coupon.endTime).isAfter(dayjs())) // Filter out expired
     .map((coupon) => {
@@ -42,13 +49,14 @@ const announcements = [
       const discount = coupon.discountType.value;
       const discountType = coupon.discountType.type;
       const minAmount = coupon.minimumAmount;
+      const title = coupon.title.en || "Get";
 
       if (discountType === "percentage" && discount > 0) {
-        return `CODE: ${code} | ${discount}% OFF on purchase of ₹${minAmount} & Above`;
+        return `${title} ${discount}% OFF on purchase of ₹${minAmount} | Use Code ${code}`;
       } else if (discountType === "fixed" && discount > 0) {
-        return `CODE: ${code} | ₹${discount} OFF on purchase of ₹${minAmount} & Above`;
+        return `${title} ₹${discount} OFF on purchase of ₹${minAmount}  | Use Code ${code}`;
       } else {
-        return `CODE: ${code} | Free Shipping on orders above ₹${minAmount}`;
+        return `${title} Free Shipping on orders above ₹${minAmount} | Use Code ${code}`;
       }
     }) || []),
 ];
