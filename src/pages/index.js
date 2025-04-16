@@ -1,5 +1,5 @@
 import { SidebarContext } from "@context/SidebarContext";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import FormalTrouser from "src/formal-trouser/FormalTrouser";
 import AOS from 'aos';
@@ -29,7 +29,28 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
   const { isLoading, setIsLoading } = useContext(SidebarContext);
   const { loading, error, storeCustomizationSetting } = useGetSetting();
 
-  // console.log("storeCustomizationSetting", storeCustomizationSetting);
+  const [productsToShow, setProductsToShow] = useState(4);
+  const [showLoadMore, setShowLoadMore] = useState(true);
+
+  const [discountedProductsToShow, setDiscountedProductsToShow] = useState(4);
+  const [showLoadMoreDiscounted, setShowLoadMoreDiscounted] = useState(true);
+
+  const handleLoadMore = () => {
+    const nextProducts = productsToShow + 4;
+    setProductsToShow(nextProducts);
+    if (nextProducts >= popularProducts.length) {
+      setShowLoadMore(false);
+    }
+  };
+
+  const handleLoadMoreDiscounted = () => {
+    const nextProducts = discountedProductsToShow + 4;
+    setDiscountedProductsToShow(nextProducts);
+    if (nextProducts >= discountProducts.length) {
+      setShowLoadMoreDiscounted(false);
+    }
+  };
+
   AOS.init();
   useEffect(() => {
     if (router.asPath === "/") {
@@ -138,21 +159,29 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
                         loading={loading}
                       />
                     ) : (
-                      <div className="flex flex-wrap gap-2 md:gap-4 lg:gap-6 justify-center px-2 sm:px-4">
-                        {popularProducts
-                          ?.slice(
-                            0,
-                            storeCustomizationSetting?.home
-                              ?.popular_product_limit
-                          )
-                          .map((product) => (
-                            <ProductCard
-                              key={product._id}
-                              product={product}
-                              attributes={attributes}
-                            />
-                          ))}
-                      </div>
+                      <>
+                        <div className="flex flex-wrap gap-2 md:gap-4 lg:gap-6 justify-center px-2 sm:px-4">
+                          {popularProducts
+                            ?.slice(0, productsToShow)
+                            .map((product) => (
+                              <ProductCard
+                                key={product._id}
+                                product={product}
+                                attributes={attributes}
+                              />
+                            ))}
+                        </div>
+                        {showLoadMore && popularProducts.length > 4 && (
+                          <div className="flex justify-center mt-8">
+                            <button
+                              onClick={handleLoadMore}
+                              className="bg-customPink text-white px-6 py-3 rounded-md hover:bg-customPinkDark transition-colors duration-300 font-medium text-sm sm:text-base"
+                            >
+                              View More
+                            </button>
+                          </div>
+                        )}
+                      </>
                     )}
                   </div>
                 </div>
@@ -230,11 +259,7 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
                       ) : (
                         <div className="flex flex-wrap gap-2 md:gap-4 lg:gap-6 justify-center px-2 sm:px-4">
                           {discountProducts
-                            ?.slice(
-                              0,
-                              storeCustomizationSetting?.home
-                                ?.latest_discount_product_limit
-                            )
+                            ?.slice(0, discountedProductsToShow)
                             .map((product) => (
                               <ProductCard
                                 key={product._id}
@@ -242,6 +267,16 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
                                 attributes={attributes}
                               />
                             ))}
+                        </div>
+                      )}
+                      {showLoadMoreDiscounted && discountProducts.length > 4 && (
+                        <div className="flex justify-center mt-8">
+                          <button
+                            onClick={handleLoadMoreDiscounted}
+                            className="bg-customPink text-white px-6 py-3 rounded-md hover:bg-customPinkDark transition-colors duration-300 font-medium text-sm sm:text-base"
+                          >
+                            View More
+                          </button>
                         </div>
                       )}
                     </div>
