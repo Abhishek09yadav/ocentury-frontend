@@ -9,16 +9,14 @@ const DefaultSeo = () => {
 
   return (
     <NextSeo
-      title={
-        globalSetting?.meta_title || "ocentury - Grocery & Organic Food Store "
-      }
+      title={globalSetting?.meta_title || "ocentury - clothing Store "}
       openGraph={{
         type: "website",
         locale: "en_IE",
         url: globalSetting?.meta_url || "https://www.ocentury.in/",
         site_name:
           globalSetting?.meta_title ||
-          "ocentury - Grocery & Organic Food Store ",
+          "ocentury - clothing Store ",
       }}
       twitter={{
         handle: "@handle",
