@@ -33,27 +33,27 @@ const pages = [
     icon: FiUser,
   },
   {
-    title: "faq-page",
+    title: "FAQs",
     href: "/faq",
     icon: FiHelpCircle,
   },
   {
-    title: "about-us-page",
+    title: "About us",
     href: "/about-us",
     icon: FiUsers,
   },
   {
-    title: "contact-us-page",
+    title: "Contact us",
     href: "/contact-us",
     icon: FiPhoneIncoming,
   },
   {
-    title: "privacy-policy-page",
+    title: "Privacy Policy",
     href: "/privacy-policy",
     icon: FiPocket,
   },
   {
-    title: "terms-and-conditions-page",
+    title: "Terms & Conditions",
     href: "/terms-and-conditions",
     icon: FiFileText,
   },
