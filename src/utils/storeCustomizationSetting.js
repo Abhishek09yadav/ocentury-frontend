@@ -394,7 +394,7 @@ export const storeCustomization = {
     leftcol_status: true,
     rightcol_status: true,
     header_bg:
-      "https://res.cloudinary.com/ahossain/image/upload/v1697439245/settings/yw3cd2xupqwqpqcbxv9l.jpg",
+      "slider/slider-1.jpg",
     left_img:
       "https://res.cloudinary.com/ahossain/image/upload/v1697687955/settings/faq_qr1y1h.svg",
     title: {
