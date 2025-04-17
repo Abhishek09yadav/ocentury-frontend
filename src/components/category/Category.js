@@ -19,14 +19,20 @@ const Category = () => {
   const { categoryDrawerOpen, closeCategoryDrawer } =
     useContext(SidebarContext);
   const { showingTranslateValue } = useUtilsFunction();
+  const router = useRouter();
 
   const { data, error, isLoading, isFetched } = useQuery({
     queryKey: ["category"],
     queryFn: async () => await CategoryServices.getShowingCategory(),
   });
 
+  // Add this handler function
+  const handlePageClick = (href) => {
+    router.push(href);
+    closeCategoryDrawer(); // Close the drawer when page link is clicked
+  };
+
   // console.log("data", data, "error", error, "isFetched", isFetched);
-  const router = useRouter();
   const userInfo = getUserSession();
   return (
     <div className="flex flex-col w-full h-full bg-white cursor-pointer scrollbar-hide">
@@ -88,11 +94,7 @@ const Category = () => {
               {pages.map((item) => (
                 <button
                   key={item.title}
-                  onClick={() => {
-                   
-                      router.push(item.href);
-                    
-                  }}
+                  onClick={() => handlePageClick(item.href)}
                   className="p-2 flex font-serif items-center rounded-md hover:bg-gray-50 w-full hover:text-customPink text-left"
                 >
                   <item.icon
