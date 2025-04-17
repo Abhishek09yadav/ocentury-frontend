@@ -24,7 +24,7 @@ const Layout = ({ title, description, children }) => {
         <AnnouncementBar />
         <Navbar />
         <div className="bg-gray-50">{children}</div>
-        <MobileFooter />
+        {/* <MobileFooter /> */}
         <div className="w-full">
           {/* <FooterTop /> */}
           <div className="hidden relative lg:block mx-auto max-w-screen-2xl py-6 px-3 sm:px-10">

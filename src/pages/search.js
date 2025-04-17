@@ -79,7 +79,7 @@ const Search = ({ products, attributes }) => {
                 <Loading loading={isLoading} />
               ) : (
                 <>
-                  <div className="flex md:flex-row flex-wrap gap-10 justify-center flex-col">
+                  <div className="flex md:flex-row flex-wrap gap-2 md:gap-10 justify-center flex-row">
                     {productData?.slice(0, visibleProduct).map((product, i) => (
                       <ProductCard
                         key={i + 1}

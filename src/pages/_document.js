@@ -20,7 +20,7 @@ class MyDocument extends Document {
           <meta
             property="og:title"
             content={
-              setting?.meta_title || "ocentury - Grocery & Organic Food Store "
+              setting?.meta_title || "ocentury - clothing Store "
             }
           />
           <meta property="og:type" content="eCommerce Website" />
