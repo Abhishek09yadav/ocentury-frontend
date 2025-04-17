@@ -99,8 +99,8 @@ const Navbar = () => {
                   </span>
                   <FiShoppingCart className="w-6 h-6 " />
                 </button>
-                {/* <button
-                  className="text-black text-2xl font-bold"
+                <button
+                  className="text-black text-2xl font-bold hidden lg:block"
                   aria-label="Login"
                 >
                   {userInfo?.image ? (
@@ -128,7 +128,7 @@ const Navbar = () => {
                       <FaUser className="w-6 h-6 " />
                     </Link>
                   )}
-                </button> */}
+                </button>
               </div>
             </div>
           </div>
