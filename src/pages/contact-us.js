@@ -27,7 +27,7 @@ const ContactUs = () => {
   const submitHandler = async (data) => {
     setIsSubmitting(true);
     const formData = {
-      access_key: "93d67399-7852-4437-b553-73042a7abb7c", // Replace this with your actual Web3Forms key
+      access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
       name: data.name,
       email: data.email,
       subject: data.subject,
