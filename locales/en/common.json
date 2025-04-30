@@ -223,6 +223,7 @@
   "phoneNumber": "Phone Number",
 
   "shippingDetails": "Shipping Details",
+  "state": "State",
   "streetAddress": "Street address",
   "city": "City",
   "country": "Country",
