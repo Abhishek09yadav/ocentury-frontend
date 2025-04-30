@@ -4,17 +4,17 @@ import 'aos/dist/aos.css';
 const ClassicShirtCard = () => {
   const shirts = [
     {
-      image: "shirts/linen_shirt.jpeg",
+      image: "shirts/t-shirt1.png",
       alt: "Close-up of a light blue linen shirt with wooden buttons and a label that reads 'Punekar Cotton'",
-      title: "Linen Shirts",
+      title: "Royal blue floral",
     },
     {
-      image: "shirts/formal_dark_cotton_shirt.jpeg",
+      image: "shirts/t-shirt2.png",
       alt: "White formal cotton shirt neatly folded on a table",
       title: "Formal Dark Cotton",
     },
     {
-      image: "shirts/formal_super_fine_cotton.jpeg",
+      image: "shirts/t-shirt3.png",
       alt: "A patterned casual shirt hanging on a wooden hanger",
       title: "Formal Super Fine Cotton",
     },
