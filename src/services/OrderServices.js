@@ -25,9 +25,9 @@ const OrderServices = {
   },
 
   //for sending email invoice to customer
-  sendEmailInvoiceToCustomer: async (body) => {
-    return requests.post("/order/customer/invoice", body);
-  },
+  // sendEmailInvoiceToCustomer: async (body) => {
+  //   return requests.post("/order/customer/invoice", body);
+  // },
 };
 
 export default OrderServices;

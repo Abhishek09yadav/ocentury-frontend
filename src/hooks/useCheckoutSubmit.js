@@ -201,14 +201,14 @@ const useCheckoutSubmit = (storeSetting) => {
         },
       };
 
-      if (globalSetting?.email_to_customer) {
-        // Trigger email in the background
-        OrderServices.sendEmailInvoiceToCustomer(updatedData).catch(
-          (emailErr) => {
-            console.error("Failed to send email invoice:", emailErr.message);
-          }
-        );
-      }
+      // if (globalSetting?.email_to_customer) {
+      //   // Trigger email in the background
+      //   OrderServices.sendEmailInvoiceToCustomer(updatedData).catch(
+      //     (emailErr) => {
+      //       console.error("Failed to send email invoice:", emailErr.message);
+      //     }
+      //   );
+      // }
 
       // Add notification
       await NotificationServices.addNotification(notificationInfo);
