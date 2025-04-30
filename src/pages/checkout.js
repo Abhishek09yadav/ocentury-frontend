@@ -223,6 +223,18 @@ const Checkout = () => {
                         />
                         <Error errorName={errors.country} />
                       </div>
+                      <div className="col-span-6 sm:col-span-3 lg:col-span-2">
+                        <InputArea
+                          register={register}
+                          label="state"
+                          // label={showingTranslateValue(
+                          //   storeCustomizationSetting?.checkout?.state
+                          // )}
+                          name="state"
+                          type="text"
+                        />
+                        <Error errorName={errors.state} />
+                      </div>
 
                       <div className="col-span-6 sm:col-span-3 lg:col-span-2">
                         <InputArea

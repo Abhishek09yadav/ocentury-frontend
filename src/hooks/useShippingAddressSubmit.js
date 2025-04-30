@@ -90,6 +90,7 @@ const useShippingAddressSubmit = (id) => {
     if (isFetched && data) {
       setValue("name", data.name);
       setValue("address", data.address);
+      setValue("state", data.state);
       setValue("contact", data.contact);
       setValue("email", data.email || userInfo?.email);
       setValue("country", data.country);

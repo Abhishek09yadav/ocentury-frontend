@@ -128,6 +128,7 @@ const useCheckoutSubmit = (storeSetting) => {
         email: data.email,
         address: data.address,
         country: data.country,
+        state: data.state,
         city: data.city,
         zipCode: data.zipCode,
         location: selectedLocation ?? "",
@@ -370,6 +371,7 @@ const useCheckoutSubmit = (storeSetting) => {
       // setValue("email", address.email);
       setValue("city", address.city);
       setValue("country", address.country);
+      setValue("state", address.state);
       setValue("zipCode", address.zipCode);
       console.log("address.zipCode", address.zipCode);
     } else {
@@ -380,6 +382,7 @@ const useCheckoutSubmit = (storeSetting) => {
       // setValue("email");
       setValue("city");
       setValue("country");
+      setValue("state");
       setValue("zipCode");
     }
   };

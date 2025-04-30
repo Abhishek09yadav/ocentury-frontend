@@ -582,6 +582,10 @@ export const storeCustomization = {
       en: "Country",
       de: "Land",
     },
+    state: {
+      en: "state",
+      de: "state",
+    },
     zip_code: {
       en: "Zip Code",
       de: "PLZ",

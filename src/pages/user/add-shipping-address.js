@@ -113,6 +113,17 @@ const AddShippingAddress = () => {
                         <Error errorName={errors.country} />
                       </div>
                       <div className="col-span-6 sm:col-span-3">
+                        <InputArea
+                          register={register}
+                          label="State"
+                          name="state"
+                          type="text"
+                          placeholder="Input your State"
+                        />
+
+                        <Error errorName={errors.state} />
+                      </div>
+                      <div className="col-span-6 sm:col-span-3">
                         {/* <SelectOption
                           name="city"
                           label="City"
@@ -133,7 +144,7 @@ const AddShippingAddress = () => {
                         />
                         <Error errorName={errors.city} />
                       </div>
-                      <div className="col-span-6 sm:col-span-3">
+                      {/* <div className="col-span-6 sm:col-span-3"> */}
                         {/* <SelectOption
                           name="area"
                           label="Area"
@@ -144,7 +155,7 @@ const AddShippingAddress = () => {
                           onChange={handleInputChange}
                           value={selectedValue?.area}
                         /> */}
-                        <InputArea
+                        {/* <InputArea
                           register={register}
                           label="Area"
                           name="area"
@@ -153,7 +164,7 @@ const AddShippingAddress = () => {
                           required={true}
                         />
                         <Error errorName={errors.area} />
-                      </div>
+                      </div> */}
                       <div className="col-span-6 sm:col-span-3">
                         <InputArea
                           register={register}
