@@ -287,7 +287,7 @@ const Checkout = () => {
                             Number(
                               storeCustomizationSetting?.checkout
                                 ?.shipping_one_cost
-                            ) || 60
+                            ) || 0
                           }
                         />
                         <Error errorName={errors.shippingOption} />
@@ -311,7 +311,7 @@ const Checkout = () => {
                             Number(
                               storeCustomizationSetting?.checkout
                                 ?.shipping_two_cost
-                            ) || 20
+                            ) || 0
                           }
                         />
                         <Error errorName={errors.shippingOption} />
