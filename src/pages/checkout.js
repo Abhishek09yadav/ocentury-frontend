@@ -211,22 +211,10 @@ const Checkout = () => {
                         />
                         <Error errorName={errors.city} />
                       </div>
-
                       <div className="col-span-6 sm:col-span-3 lg:col-span-2">
                         <InputArea
                           register={register}
-                          label={showingTranslateValue(
-                            storeCustomizationSetting?.checkout?.country
-                          )}
-                          name="country"
-                          type="text"
-                        />
-                        <Error errorName={errors.country} />
-                      </div>
-                      <div className="col-span-6 sm:col-span-3 lg:col-span-2">
-                        <InputArea
-                          register={register}
-                          label="state"
+                          label="State"
                           // label={showingTranslateValue(
                           //   storeCustomizationSetting?.checkout?.state
                           // )}
@@ -240,12 +228,24 @@ const Checkout = () => {
                         <InputArea
                           register={register}
                           label={showingTranslateValue(
+                            storeCustomizationSetting?.checkout?.country
+                          )}
+                          name="country"
+                          type="text"
+                        />
+                        <Error errorName={errors.country} />
+                      </div>
+
+                      <div className="col-span-6 sm:col-span-3 lg:col-span-2">
+                        <InputArea
+                          register={register}
+                          label={showingTranslateValue(
                             storeCustomizationSetting?.checkout?.zip_code
                           )}
                           name="zipCode"
                           type="text"
                         />
-                    
+
                         <Error errorName={errors.zipCode} />
                       </div>
                       {/* <div className="col-span-6 sm:col-span-3 lg:col-span-2">

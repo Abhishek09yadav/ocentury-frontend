@@ -11,7 +11,7 @@ const ClassicShirtCard = () => {
     {
       image: "shirts/t-shirt2.png",
       alt: "White formal cotton shirt neatly folded on a table",
-      title: "Formal Dark Cotton",
+      title: "Formal Printed Cotton",
     },
     {
       image: "shirts/t-shirt3.png",
