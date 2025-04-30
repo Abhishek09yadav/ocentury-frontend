@@ -347,7 +347,7 @@ const useCheckoutSubmit = (storeSetting) => {
 
   const handleShippingCost = (value) => {
     // console.log("handleShippingCost", value);
-    setShippingCost(Number(value));
+    setShippingCost(Number(value) || 0);
   };
 
   //handle default shipping address
