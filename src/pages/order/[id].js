@@ -58,8 +58,8 @@ const Order = ({ params }) => {
               globalSetting={globalSetting}
             />
             <div className="bg-white p-8 rounded-b-xl">
-              <div className="flex lg:flex-row md:flex-row sm:flex-row flex-col justify-between invoice-btn">
-                <PDFDownloadLink
+              <div className="flex lg:flex-row md:flex-row sm:flex-row flex-col justify-end invoice-btn">
+                {/* <PDFDownloadLink
                   document={
                     <InvoiceForDownload
                       data={data}
@@ -84,14 +84,15 @@ const Order = ({ params }) => {
                       </button>
                     )
                   }
-                </PDFDownloadLink>
+                </PDFDownloadLink> */}
 
                 <ReactToPrint
                   trigger={() => (
                     <button className="mb-3 sm:mb-0 md:mb-0 lg:mb-0 flex items-center justify-center bg-emerald-500  text-white transition-all font-serif text-sm font-semibold h-10 py-2 px-5 rounded-md">
-                      {showingTranslateValue(
+                      {/* {showingTranslateValue(
                         storeCustomizationSetting?.dashboard?.print_button
-                      )}{" "}
+                      )}{" "} */}
+                      Print / Download Invoice
                       <span className="ml-2">
                         <IoPrintOutline />
                       </span>
