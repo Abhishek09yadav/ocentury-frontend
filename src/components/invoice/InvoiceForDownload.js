@@ -322,7 +322,7 @@ const InvoiceForDownload = ({
               </Text>
               <Text style={styles.info}>
                 {data?.user_info?.city}, {data?.user_info?.country},{" "}
-                {data?.user_info?.zipCode}
+                {data?.user_info?.zipCode}, {data?.user_info?.state}
               </Text>
             </View>
           </View>
