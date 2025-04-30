@@ -134,7 +134,6 @@ const Checkout = () => {
                           )}
                           name="firstName"
                           type="text"
-                          placeholder="John"
                         />
                         <Error errorName={errors.firstName} />
                       </div>
@@ -147,7 +146,6 @@ const Checkout = () => {
                           )}
                           name="lastName"
                           type="text"
-                          placeholder="Doe"
                           required={false}
                         />
                         <Error errorName={errors.lastName} />
@@ -162,7 +160,6 @@ const Checkout = () => {
                           name="email"
                           type="email"
                           readOnly={true}
-                          placeholder="youremail@gmail.com"
                         />
                         <Error errorName={errors.email} />
                       </div>
@@ -175,7 +172,6 @@ const Checkout = () => {
                           )}
                           name="contact"
                           type="tel"
-                          placeholder="+062-6532956"
                         />
 
                         <Error errorName={errors.contact} />
@@ -200,7 +196,6 @@ const Checkout = () => {
                           )}
                           name="address"
                           type="text"
-                          placeholder="123 Boulevard Rd, Beverley Hills"
                         />
                         <Error errorName={errors.address} />
                       </div>
@@ -213,7 +208,6 @@ const Checkout = () => {
                           )}
                           name="city"
                           type="text"
-                          placeholder="Los Angeles"
                         />
                         <Error errorName={errors.city} />
                       </div>
@@ -226,7 +220,6 @@ const Checkout = () => {
                           )}
                           name="country"
                           type="text"
-                          placeholder="United States"
                         />
                         <Error errorName={errors.country} />
                       </div>
@@ -239,7 +232,6 @@ const Checkout = () => {
                           )}
                           name="zipCode"
                           type="text"
-                          placeholder="2345"
                         />
                     
                         <Error errorName={errors.zipCode} />
@@ -267,7 +259,7 @@ const Checkout = () => {
                         storeCustomizationSetting?.checkout?.shipping_cost
                       )}
                     />
-                    <div className="grid grid-cols-6 gap-6">
+                    {/* <div className="grid grid-cols-6 gap-6">
                       <div className="col-span-6 sm:col-span-3">
                         <InputShipping
                           currency={currency}
@@ -316,7 +308,7 @@ const Checkout = () => {
                         />
                         <Error errorName={errors.shippingOption} />
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                   <div className="form-group mt-12">
                     <h2 className="font-semibold text-base text-gray-700 pb-3">
@@ -465,7 +457,6 @@ const Checkout = () => {
                         <input
                           ref={couponRef}
                           type="text"
-                          placeholder={t("common:couponCode")}
                           className="form-input py-2 px-3 md:px-4 w-full appearance-none transition ease-in-out border text-input text-sm rounded-md h-12 duration-200 bg-white border-gray-200 focus:ring-0 focus:outline-none focus:border-emerald-500 placeholder-gray-500 placeholder-opacity-75"
                         />
                         {isCouponAvailable ? (
