@@ -65,9 +65,73 @@ const useCheckoutSubmit = (storeSetting) => {
     register,
     handleSubmit,
     setValue,
+    watch,
     formState: { errors },
   } = useForm();
 
+
+  
+  // Watch the zipCode field to trigger the API call when it changes
+  const zipCode = watch("zipCode");
+
+   useEffect(() => {
+     const fetchLocationDetails = async () => {
+       if (zipCode && zipCode.length >= 6) {
+         try {
+           const response = await fetch(
+             `https://api.postalpincode.in/pincode/${zipCode}`
+           );
+           if (!response.ok) {
+             throw new Error("Invalid zip code or no data available");
+           }
+           const data = await response.json();
+           const place = data[0]?.PostOffice[0];
+           console.log("place", place);
+
+           // Update form fields with the fetched data
+           setValue("city", place["District"], { shouldValidate: true });
+           setValue("state", place["State"], { shouldValidate: true });
+           setValue("country", place["Country"], { shouldValidate: true }); 
+         } catch (error) {
+           console.error("Failed to fetch location details:", error);
+       
+          //  notifyError("Invalid zip code or no data available");
+         }
+       }
+     };
+
+     fetchLocationDetails();
+   }, [zipCode]);
+
+
+  // another way to fetch location details using zip code
+  //  useEffect(() => {
+  //    const fetchLocationDetails = async () => {
+  //      if (zipCode && zipCode.length >= 6) {
+  //        try {
+  //          const response = await fetch(
+  //            `https://api.zippopotam.us/in/${zipCode}`
+  //          );
+  //          if (!response.ok) {
+  //            throw new Error("Invalid zip code or no data available");
+  //          }
+  //          const data = await response.json();
+  //          const place = data.places[0];
+
+  //          // Update form fields with the fetched data
+  //          setValue("city", place["place name"], { shouldValidate: true });
+  //          setValue("state", place["state"], { shouldValidate: true });
+  //          setValue("country", "India", { shouldValidate: true }); 
+  //        } catch (error) {
+  //          console.error("Failed to fetch location details:", error);
+       
+  //         //  notifyError("Invalid zip code or no data available");
+  //        }
+  //      }
+  //    };
+
+  //    fetchLocationDetails();
+  //  }, [zipCode]);
   useEffect(() => {
     if (Cookies.get("couponInfo")) {
       const coupon = JSON.parse(Cookies.get("couponInfo"));
@@ -201,14 +265,14 @@ const useCheckoutSubmit = (storeSetting) => {
         },
       };
 
-      if (globalSetting?.email_to_customer) {
-        // Trigger email in the background
-        OrderServices.sendEmailInvoiceToCustomer(updatedData).catch(
-          (emailErr) => {
-            console.error("Failed to send email invoice:", emailErr.message);
-          }
-        );
-      }
+      // if (globalSetting?.email_to_customer) {
+      //   // Trigger email in the background
+      //   OrderServices.sendEmailInvoiceToCustomer(updatedData).catch(
+      //     (emailErr) => {
+      //       console.error("Failed to send email invoice:", emailErr.message);
+      //     }
+      //   );
+      // }
 
       // Add notification
       await NotificationServices.addNotification(notificationInfo);

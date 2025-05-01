@@ -71,7 +71,7 @@ const Navbar = () => {
                 </button>
               </div>
               <div className="w-24 sm:w-28 mx-auto flex items-center justify-center">
-                <Image
+                <img
                   width={60}
                   height={60}
                   className="w-full h-auto "
