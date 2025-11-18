@@ -102,7 +102,7 @@ const MainCarousel = () => {
                 alt={item.title || "Slider Image"}
                 fill
                 className="object-cover object-center" // Added object-center for better positioning
-                priority
+                priority="true"
                 sizes="100vw"
                 quality={85}
                 loading="eager"

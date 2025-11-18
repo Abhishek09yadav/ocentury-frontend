@@ -25,7 +25,7 @@ const FooterTop = () => {
               alt="app download"
               width={500}
               height={394}
-              priority
+              priority="true"
               className="block w-auto"
             />
           </div>
@@ -99,7 +99,7 @@ const FooterTop = () => {
                 }
                 width={500}
                 height={394}
-                priority
+                priority="true"
                 alt="app download"
                 className="block w-auto"
               />

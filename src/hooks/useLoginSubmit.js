@@ -47,7 +47,7 @@ const useLoginSubmit = () => {
       } else if (router.pathname === "/auth/forget-password") {
         // Call the forget password API for reset password
         const res = await CustomerServices.forgetPassword({
-          email,
+          email: email,
         });
 
         // console.log("res", res);

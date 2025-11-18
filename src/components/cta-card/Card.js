@@ -19,7 +19,7 @@ const Card = () => {
               height={234}
               src={item.image}
               alt={item.title}
-              priority
+              priority="true"
               className="object-cover"
             />
             <div className="absolute top-0 left-0 z-10 p-r-16 flex-col flex w-full text-center justify-center">

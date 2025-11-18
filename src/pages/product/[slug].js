@@ -284,7 +284,7 @@ const ProductScreen = ({ product, attributes, relatedProducts }) => {
                         alt="product"
                         width={650}
                         height={650}
-                        priority
+                        priority="true"
                       />
                     ) : (
                       <Image
